@@ -1,0 +1,10 @@
+---
+"pane_group:add_right": "cmd-\\"
+"pane_group:navigate_next": ctrl-alt-shift-cmd-right
+"pane_group:add_down": cmd-/
+"editor_view:right": alt-l
+"workspace:toggle_keybindings_page": alt-/
+"editor_view:left": alt-h
+"editor_view:up": alt-k
+"editor_view:down": alt-j
+"pane_group:navigate_prev": ctrl-alt-shift-cmd-left

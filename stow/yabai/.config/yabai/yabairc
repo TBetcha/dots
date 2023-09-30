@@ -1,0 +1,140 @@
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+####################
+# LAYOUT SETTINGS #
+###################
+
+# default layout (can be bsp, stack or float)
+yabai -m config layout bsp
+
+# new window spawns to the right if vertical split, or bottom if horizontal split
+yabai -m config window_placement second_child
+
+# border
+yabai -m config window_border on
+yabai -m config window_shadow off
+yabai -m config window_opacity on
+yabai -m config active_window_opacity 0.80
+yabai -m config normal_window_opacity 0.50
+# yabai -m config active_window_border_color 0xFFFFFFFF
+yabai -m config active_window_border_color 0xFF64DD17
+
+# padding set to 12px
+yabai -m config top_padding 4
+yabai -m config bottom_padding 12
+yabai -m config left_padding 12
+yabai -m config right_padding 12
+yabai -m config window_gap 12
+
+
+##################
+# MOUSE SETTINGS #
+##################
+
+# center mouse on window with focus
+yabai -m config mouse_follows_focus on
+yabai -m config focus_follows_mouse off
+
+# modifier for clicking and dragging with mouse
+yabai -m config mouse_modifier ctrl
+
+# set modifier + left-click drag to move window
+yabai -m config mouse_action1 move
+
+# set modifier + right-click drag to resize window
+yabai -m config mouse_action2 resize
+
+# when window is dropped in center of another window, swap them (on edges it will split it)
+yabai -m mouse_drop_action swap
+
+
+###################
+# DEKTOP SETTINGS #
+###################
+
+# disable specific apps
+yabai -m rule --add app="^System Settings$" manage=off opacity=0.7
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^Logitech\ G\ HUB$" manage=off
+yabai -m rule --add app="^IStat\ Menus$" manage=off
+yabai -m rule --add app="^Bartender$" manage=off
+yabai -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^Alfred$" manage=off
+yabai -m rule --add app="^Nord\ VPN$" manage=off
+yabai -m rule --add app="^Weather$" manage=off
+yabai -m rule --add app="^balenaEtcher$" manage=off
+
+# I don't really hav anythign to put here yet added this to keep pattern
+yabai -m space 9 --label other
+yabai -m rule --add app="DisplayBuddy" space=^"other"
+
+yabai -m space 8 --label OS
+yabai -m rule --add app="The\ Unarchiver" space=^"OS"
+yabai -m rule --add app="Home" space=^"OS"
+yabai -m rule --add app="BetterTouchTool" space=^"OS"
+yabai -m rule --add app="Karabiner-EventsViewer" space=^"OS"
+yabai -m rule --add app="Karabiner-Elements" space=^"OS"
+yabai -m rule --add app="Alfred\ Preferences" space=^"OS"
+yabai -m rule --add app="CleanMyMac \X" space=^"OS"
+yabai -m rule --add app="Photos" space=^"OS"
+yabai -m rule --add app="App Store" space=^"OS"
+yabai -m rule --add app="Setapp" space=^"OS"
+yabai -m rule --add app="^OpenVPN Connect$" opacity=0.5
+
+yabai -m space 7 --label media
+yabai -m rule --add app="Music" space=^"media" opacity=0.7
+yabai -m rule --add app="Overcast" space=^"media" opacity=0.7
+yabai -m rule --add app="Spotify" space=^"media" opacity=0.7
+
+yabai -m space 6 --label reference
+yabai -m rule --add app="Pages" space=^"reference"
+yabai -m rule --add app="Numbers" space=^"reference"
+yabai -m rule --add app="Microsoft\ Word" space=^"reference"
+yabai -m rule --add app="Microsoft\ PowerPoint" space=^"reference"
+yabai -m rule --add app="Microsoft\ Excel" space=^"reference"
+yabai -m rule --add app="PDF\ Reader\ Pro" space=^"reference"
+
+yabai -m space 5 --label devtools
+yabai -m rule --add app="Boop" space=^"devtools"
+yabai -m rule --add app="Postman" space=^"devtools"  opacity=0.7
+yabai -m rule --add app="SnippetsLab" space=^"devtools"
+yabai -m rule --add app="Lens" space=^"devtools"
+
+yabai -m space 4 --label development
+yabai -m rule --add app="kitty" space=^"development" opacity=1.0
+yabai -m rule --add app="Visual Studio Code - Insiders" space=^"development"
+yabai -m rule --add app="Warp" space=^"development"
+yabai -m rule --add app="iTerm" space=^"development"
+yabai -m rule --add app="Alacritty" space=^"development"
+yabai -m rule --add app="Rider" space=^"development"
+
+yabai -m space 3 --label browser
+yabai -m rule --add app="Firefox" space=^"browser" opacity=0.7
+yabai -m rule --add app="Brave" space=^"browser"opacity=0.5
+yabai -m rule --add app="Arc" space=^"browser" opacity=0.7
+yabai -m rule --add app="Google\ Chrome" space=^"browser" opacity=0.7
+yabai -m rule --add app="^Safari*" space=^"browser" opacity=0.7
+
+yabai -m space 2 --label communication
+yabai -m rule --add app="Messages" space=^"communication" opacity=0.7
+yabai -m rule --add app="Spark" space=^"communication" opacity=0.7
+yabai -m rule --add app="Spark\ Desktop" space=^"communication" opacity=0.7
+yabai -m rule --add app="Find\ My" space=^"communication"
+yabai -m rule --add app="Discord" space=^"communication" opacity=0.7
+yabai -m rule --add app="FaceTime" space=^"communication" opacity=0.7
+yabai -m rule --add app="Microsoft\ Teams" space=^"communication" opacity=0.7
+yabai -m rule --add app="zoom\.us" space=^"communication"
+yabai -m rule --add app="Slack" space=^"communication" opacity=0.7
+
+yabai -m space 1 --label productivity
+yabai -m rule --add app="BusyCal" space=^"productivity" opacity=0.7
+yabai -m rule --add app="Todoist" space=^"productivity" opacity=0.7
+yabai -m rule --add app="Bear" space=^"productivity" opacity=0.7
+yabai -m rule --add app="Notion" space=^"productivity" opacity=0.7
+
+# Auto update yabai
+# YABAI_CERT=yabai-cert sh -c "$(curl -fsSL "https://git.io/update-yabai")" &
+#
+# shasum -a 256 $(which yabai) &  sudo visudo -f /private/etc/sudoers.d/yabai

@@ -1,0 +1,24 @@
+-- local lspconfig_status, copilot = pcall(require, "copilot")
+-- if not lspconfig_status then
+-- 	return
+-- end
+-- -- function map(mode, lhs, rhs, opts)
+-- -- 	local options = { noremap = true }
+-- --
+-- -- 	if opts then
+-- -- 		options = vim.tbl_extend("force", options, opts)
+-- -- 	end
+-- --
+-- -- 	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+-- -- end
+--
+-- -- vim.keymap.set"<silent><script><expr> <C-[> copilot#Accept(<Cr>)"
+-- vim.keymap.set({"i", "n"}, "<C-j>", "copilot#Accept('<CR>')", { silent = true, expr = true })
+-- -- vim.keymap.set("n", "<C-j>", "copilot#Accept('<CR>')", { silent = true, expr = true })
+-- vim.keymap.set("i", "<C-g>", "copilot-suggest('<CR>')", { silent = true, expr = true })
+-- vim.keymap.set({"i", "n"}, "<C-]>", "copilot-next('<CR>')", { silent = true, expr = true })
+-- vim.keymap.set({"i", "n"}, "<C-[>", "copilot-previous('<CR>')", { silent = true, expr = true })
+-- vim.g.copilot_no_tab_map = true
+--
+--
+
