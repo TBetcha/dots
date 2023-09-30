@@ -63,7 +63,7 @@ opt.undofile = true
 opt.hidden = true
 
 -- searching
-opt.hlsearch = true
+opt.hlsearch = false
 opt.incsearch = true
 opt.showmatch = true
 opt.ignorecase = true
