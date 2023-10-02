@@ -1,9 +1,9 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
-####################
+######################
 # LAYOUT SETTINGS #
-###################
+#####################
 
 # default layout (can be bsp, stack or float)
 yabai -m config layout bsp
@@ -49,9 +49,9 @@ yabai -m config mouse_action2 resize
 yabai -m mouse_drop_action swap
 
 
-###################
+#####################
 # DEKTOP SETTINGS #
-###################
+#####################
 
 # disable specific apps
 yabai -m rule --add app="^System Settings$" manage=off opacity=0.7

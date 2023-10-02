@@ -1,4 +1,5 @@
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
+# SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
+SPACE_ICONS=("PROD" "COMM" "WWW" "DEV" "DEV" "REF" "ENT" "OS" "OS" "OTH")
 
 for i in "${!SPACE_ICONS[@]}"
 do
@@ -6,8 +7,8 @@ do
     sketchybar --add space space.$sid left     \
         --set space.$sid associated_space=$sid     \
                          icon=${SPACE_ICONS[i]}                     \
-                         icon.padding_left=8                        \
-                         icon.padding_right=8                       \
+                         icon.padding_left=5                        \
+                         icon.padding_right=5                       \
                          background.padding_left=5                  \
                          background.padding_right=5                 \
                          background.color=0x44ffffff                \

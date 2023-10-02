@@ -35,7 +35,6 @@ if not fb_status then
 	return
 end
 
-
 -- TODO: fix me
 vim.keymap.set("n", "<leader>?", builtin.oldfiles, { desc = "[?] Find recently opened files" })
 vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[ ] Find existing buffers" })
@@ -141,12 +140,12 @@ telescope.setup({
 		},
 		grep_string = {
 			vimgrep_arguments = vimgrep_arguments,
-			prompt_prefix = "  ",
+			prompt_prefix = "   ",
 			layout_strategy = "horizontal",
 		},
 		live_grep = {
 			vimgrep_arguments = vimgrep_arguments,
-			prompt_prefix = "  ",
+			prompt_prefix = "   ",
 			layout_strategy = "horizontal",
 		},
 		lsp_definitions = {
@@ -163,8 +162,8 @@ telescope.setup({
 			fuzzy = true, -- false will only do exact matching
 			override_generic_sorter = true, -- override the generic sorter
 			override_file_sorter = true, -- override the file sorter
-			case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-			-- the default case_mode is "smart_case"
+			case_mode = "smart_case", -- or ignore_case or respect_case-- the default case_mode is smart_case"
+			
 		},
 		fzy_native = {
 			override_generic_sorter = true,
