@@ -155,7 +155,7 @@ return require("packer").startup(function(use)
 	use("romgrk/barbar.nvim")
 	-- --------------------------
 	-- file explorer
-	use("nvim-tree/nvim-tree.lua")
+	-- use("nvim-tree/nvim-tree.lua")
 	-- scala lsp
 	-- use("scalameta/nvim-metals")
 	-- debugger

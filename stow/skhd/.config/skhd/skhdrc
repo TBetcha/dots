@@ -58,17 +58,17 @@ ctrl - 0x32 : yabai -m space --focus last
 #
 #
 # # create desktop and follow focus - uses jq for parsing json (brew install jq)
-ctrl + cmd - t : yabai -m space --create && \
-                index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
-                yabai -m space --focus "${index}" && \
-                sketchybar -m --trigger space_change
+# ctrl + cmd - t : yabai -m space --create && \
+#                 index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
+#                 yabai -m space --focus "${index}" && \
+#                 sketchybar -m --trigger space_change
 
 # # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
-# ctrl + shift - t : yabai -m space --create && \
-#                   index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
-#                   yabai -m window --space "${index}" && \
-#                   yabai -m space --focus "${index}" && \
-#                   sketchybar -m --trigger space_change
+ctrl + shift - t : yabai -m space --create && \
+                  index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
+                  yabai -m window --space "${index}" && \
+                  yabai -m space --focus "${index}" && \
+                  sketchybar -m --trigger space_change
 
 # -- Modifying Window Size --
 
