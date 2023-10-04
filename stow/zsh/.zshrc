@@ -216,7 +216,7 @@ alias gd="git diff"
 alias gps="git push"
 alias gpl="git pull"
 alias gcreds="ssh-add --apple-use-keychain ~/.ssh/id_ed25519"
-alias gempty="git commit --allow-empty -m 'argo sucks'"
+alias gempty="git commit --allow-empty -m 'empty'"
 alias gch="git checkout"
 alias glog='g log --graph --pretty='\''%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen%cr %C(bold blue)%an%Creset'\'''
 
