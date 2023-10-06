@@ -73,27 +73,27 @@ map({ "t", "i" }, "<C-l>", "<C-\\><C-N><C-w>l")
 map("n", "<leader>vs", "<C-w>v") -- split window vertically
 map("n", "<leader>hs", "<C-w>s") -- split window horizontally
 map("n", "<leader>eq", "<C-w>=") -- make split windows equal width & height
-map("n", "<leader>sx", ":close<CR>") -- close current split window
+map("n", "<leader>sx", "<cmd>:close<CR>") -- close current split window
 --splits-sizes
-map("n", "<C-right>", ":vert res +5<CR>") -- horizontally larger
-map("n", "<C-left>", ":vert res -5<CR>") -- horizontal smaller
-map("n", "<C-up>", ":res +5<CR>") -- vertically taller
-map("n", "<C-down>", ":res -5<CR>") -- vertically shorter
+map("n", "<C-right>", "<cmd>:vert res +5<CR>") -- horizontally larger
+map("n", "<C-left>", "<cmd>:vert res -5<CR>") -- horizontal smaller
+map("n", "<C-up>", "<cmd>:res +5<CR>") -- vertically taller
+map("n", "<C-down>", "<cmd>:res -5<CR>") -- vertically shorter
 
 -- tabs
-map("n", "<leader>tt", ":tabnew<CR>") -- open new tab
-map("n", "<leader>tx", ":tabclose<CR>") -- close current tab
-map("n", "<leader>tn", ":tabn<CR>") --  go to next tab
-map("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
+map("n", "<leader>to", "<cmd>:tabnew<CR>") -- open new tab
+map("n", "<leader>tx", "<cmd>:tabclose<CR>") -- close current tab
+map("n", "<leader>tn", "<cmd>:tabn<CR>") --  go to next tab
+map("n", "<leader>tp", "<cmd>:tabp<CR>") --  go to previous tab
 
 -- buffers
-map("n", "<leader>bb", ":new<CR>") -- open new buffer
-map("n", "<leader>q", ":bd<CR>") -- close current buffer
-map("n", "<leader>Q", ":bd!<CR>") -- close current buffer
-map("n", "<S-l>", ":bn<CR>") --  go to next buffer
-map("n", "<S-h>", ":bp<CR>") --  go to previous buffer
-map('n', '<leader>,', '<Cmd>:bp<CR>')
-map('n', '<leader>.', '<Cmd>:bn<CR>')
+map("n", "<leader>bo", "<cmd>:new<CR>") -- open new buffer
+map("n", "<leader>q", "<cmd>:bd<CR>") -- close current buffer
+map("n", "<leader>Q", "<cmd>:bd!<CR>") -- close current buffer
+map("n", "<S-l>", "<cmd>:bn<CR>") --  go to next buffer
+map("n", "<S-h>", "<cmd>:bp<CR>") --  go to previous buffer
+map('n', '<leader>,', '<cmd>:bp<CR>')
+map('n', '<leader>.', '<cmd>:bn<CR>')
 
 -- map <Esc> to exit terminal-mode: >vim
 map("t", "<Esc>", "<C-\\><C-n>")

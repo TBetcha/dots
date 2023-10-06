@@ -6,39 +6,39 @@ vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function(use)
 	--   -- Packer can manage itself
 
-    -- tmux nav
-    use('christoomey/vim-tmux-navigator')
+	-- tmux nav
+	use("christoomey/vim-tmux-navigator")
 	-- theme
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("wbthomason/packer.nvim")
 
 	-- LSP STUFF
-	use {
-	    'VonHeikemen/lsp-zero.nvim',
-	    branch = 'v3.x',
-	    requires = {
-	        -- LSP Support
-	        { 'neovim/nvim-lspconfig' },             -- Required
-	        { 'williamboman/mason.nvim' },           -- Optional
-	        { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+	use({
+		"VonHeikemen/lsp-zero.nvim",
+		branch = "v3.x",
+		requires = {
+			-- LSP Support
+			{ "neovim/nvim-lspconfig" }, -- Required
+			{ "williamboman/mason.nvim" }, -- Optional
+			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
 
-	        -- Autocompletion
-	        { 'hrsh7th/nvim-cmp' },     -- Required
-	        { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-	        { 'L3MON4D3/LuaSnip' },     -- Required
-	    }
-	}
-    -- builtin lsp to easily configure language servers
+			-- Autocompletion
+			{ "hrsh7th/nvim-cmp" }, -- Required
+			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
+			{ "L3MON4D3/LuaSnip" }, -- Required
+		},
+	})
+	-- builtin lsp to easily configure language servers
 	use("neovim/nvim-lspconfig")
-    -- for autocompletion
+	-- for autocompletion
 	use("hrsh7th/cmp-nvim-lsp")
 	-- autocompletion plugin
 	use("hrsh7th/nvim-cmp")
-    -- source for text in buffer
+	-- source for text in buffer
 	use("hrsh7th/cmp-buffer")
-    -- source for file system paths
+	-- source for file system paths
 	use("hrsh7th/cmp-path")
-    -- copilot that doesn't suck
+	-- copilot that doesn't suck
 	use({
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
@@ -50,7 +50,7 @@ return require("packer").startup(function(use)
 			})
 		end,
 	})
-    -- copilot completions sources
+	-- copilot completions sources
 	use({
 		"zbirenbaum/copilot-cmp",
 		after = { "copilot.lua" },
@@ -58,32 +58,32 @@ return require("packer").startup(function(use)
 			require("copilot_cmp").setup()
 		end,
 	})
-    -- tabnine completion source
+	-- tabnine completion source
 	use({ "tzachar/cmp-tabnine", run = "./install.sh" })
 	-- use tree sitter nodes for completionspack
 	use({ "ray-x/cmp-treesitter" })
-    -- snippet engine
+	-- snippet engine
 	use("L3MON4D3/LuaSnip")
-    -- for autocompletion
+	-- for autocompletion
 	use("saadparwaiz1/cmp_luasnip")
-    -- useful snippets
+	-- useful snippets
 	use("rafamadriz/friendly-snippets")
 	-- managing & installing lsp servers, linters & formatters
 	use("williamboman/mason.nvim")
-    -- bridges gap b/w mason & lspconfig
+	-- bridges gap b/w mason & lspconfig
 	use("williamboman/mason-lspconfig.nvim")
 	-- formatting
 	use("jose-elias-alvarez/null-ls.nvim")
-    -- bridges gap b/w mason & null-ls
+	-- bridges gap b/w mason & null-ls
 	use("jayp0521/mason-null-ls.nvim")
-    -- ts plugin
+	-- ts plugin
 	-- use("jose-elias-alvarez/typescript.nvim")
 	--icons in lsp menu
 	use({ "onsails/lspkind.nvim" })
 	--enhanced lsp stuff that uses treesitter and not regex
-	use({ "glepnir/lspsaga.nvim", branch = "main" })
+	use({ "glepnir/lspsaga.nvim", branch = "5dc14c9fd4230549da532c51ad555a4f64aa80d5" })
 
-    --END OF LSP STUFF
+	--END OF LSP STUFF
 
 	-- show diagnostics and location list
 	use({
@@ -102,26 +102,11 @@ return require("packer").startup(function(use)
 		"nvim-lualine/lualine.nvim",
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	})
-    -- file navigation based off ranger
-	use({
-		"kelly-lin/ranger.nvim",
-		config = function()
-			require("ranger-nvim").setup({ replace_netrw = false })
-			vim.api.nvim_set_keymap("n", "<leader>ef", "", {
-				noremap = true,
-				callback = function()
-					require("ranger-nvim").open(true)
-				end,
-			})
-		end,
-	})
-	-- like easymotion
-	use("folke/flash.nvim")
 	--rust stuff
 	use("simrat39/rust-tools.nvim")
 	-- reload that other plugins rely on
 	use({ "nvim-lua/plenary.nvim" })
-    -- telescope
+	-- telescope
 	use({ "nvim-telescope/telescope.nvim", tag = "0.1.2" })
 	-- fzf searching for telescope
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
@@ -169,6 +154,24 @@ return require("packer").startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 	-- highlight todos
 	use("folke/todo-comments.nvim")
-    -- markdown preview
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+	-- markdown preview
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		setup = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	})
+	use({
+		"folke/noice.nvim",
+		requires = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			{ "MunifTanjim/nui.nvim" },
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			{ "rcarriga/nvim-notify" },
+		},
+	})
 end)

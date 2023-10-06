@@ -32,7 +32,7 @@ shift + alt - right : yabai -m window --display east; yabai -m display --focus e
 
 # rotate
 shift + alt + cmd + ctrl - r : yabai -m space --rotate 270
-shift + cmd - r : yabai -m space --rotate 90
+shift + ctrl - r : yabai -m space --rotate 90
 
 # flip y-axis
 shift + alt + cmd + ctrl - y : yabai -m space --mirror y-axis
@@ -56,7 +56,7 @@ shift + alt + cmd + ctrl - 0x1E : yabai -m window --swap smallest
 shift + alt + cmd + ctrl - w : yabai -m space --destroy && yabai -m window --focus recent && sketchybar -m --trigger space_change
 
 # create desktop
-shift + alt + cmd + ctrl - a : yabai -m space --create 
+shift + alt + cmd + ctrl - a : yabai -m space --create  && yabai -m space --focus last
 
 # focus 
 cmd - 1 : yabai -m space --focus 1
@@ -122,16 +122,16 @@ ctrl + shift - 9 : yabai -m space --move 9 && sketchybar -m --trigger space_chan
 ctrl + shift - 0 : yabai -m space --move last && sketchybar -m --trigger space_change
 
 # send window to specific space and follow focus  works
-shift + alt + cmd + ctrl - 1 : yabai -m window --space 1 && yabai -m space --focus 1 && yabai -m window --focus mouse && sketchybar -m --trigger space_change && skhd -k "opt - 1"
-shift + alt + cmd + ctrl - 2 : yabai -m window --space 2 && yabai -m space --focus 2 && yabai -m window --focus mouse && sketchybar -m --trigger space_change && skhd -k "opt - 2"
-shift + alt + cmd + ctrl - 3 : yabai -m window --space 3 && yabai -m space --focus 3 && yabai -m window --focus mouse && sketchybar -m --trigger space_change && skhd -k "opt - 3"
-shift + alt + cmd + ctrl - 4 : yabai -m window --space 4 && yabai -m space --focus 4 && yabai -m window --focus mouse && sketchybar -m --trigger space_change && skhd -k "opt - 4"
-shift + alt + cmd + ctrl - 5 : yabai -m window --space 5 && yabai -m space --focus 5 && yabai -m window --focus mouse && sketchybar -m --trigger space_change && skhd -k "opt - 5"
-shift + alt + cmd + ctrl - 6 : yabai -m window --space 6 && yabai -m space --focus 6 && yabai -m window --focus mouse && sketchybar -m --trigger space_change && skhd -k "opt - 6"
-shift + alt + cmd + ctrl - 7 : yabai -m window --space 7 && yabai -m space --focus 7 && yabai -m window --focus mouse && sketchybar -m --trigger space_change && skhd -k "opt - 7"
-shift + alt + cmd + ctrl - 8 : yabai -m window --space 8 && yabai -m space --focus 8 && yabai -m window --focus mouse && sketchybar -m --trigger space_change && skhd -k "opt - 8"
-shift + alt + cmd + ctrl - 9 : yabai -m window --space 9 && yabai -m space --focus 9 && yabai -m window --focus mouse && sketchybar -m --trigger space_change && skhd -k "opt - 9"
-shift + alt + cmd + ctrl - 0 : yabai -m window --space last && yabai -m space --focus last && yabai -m window --focus mouse && sketchybar -m --trigger space_change  && skhd -k "opt - 0"
+shift + alt + cmd + ctrl - 1 : yabai -m window --space 1 && yabai -m space --focus 1 && yabai -m window --focus mouse && sketchybar -m --trigger space_change 
+shift + alt + cmd + ctrl - 2 : yabai -m window --space 2 && yabai -m space --focus 2 && yabai -m window --focus mouse && sketchybar -m --trigger space_change
+shift + alt + cmd + ctrl - 3 : yabai -m window --space 3 && yabai -m space --focus 3 && yabai -m window --focus mouse && sketchybar -m --trigger space_change
+shift + alt + cmd + ctrl - 4 : yabai -m window --space 4 && yabai -m space --focus 4 && yabai -m window --focus mouse && sketchybar -m --trigger space_change
+shift + alt + cmd + ctrl - 5 : yabai -m window --space 5 && yabai -m space --focus 5 && yabai -m window --focus mouse && sketchybar -m --trigger space_change
+shift + alt + cmd + ctrl - 6 : yabai -m window --space 6 && yabai -m space --focus 6 && yabai -m window --focus mouse && sketchybar -m --trigger space_change
+shift + alt + cmd + ctrl - 7 : yabai -m window --space 7 && yabai -m space --focus 7 && yabai -m window --focus mouse && sketchybar -m --trigger space_change
+shift + alt + cmd + ctrl - 8 : yabai -m window --space 8 && yabai -m space --focus 8 && yabai -m window --focus mouse && sketchybar -m --trigger space_change
+shift + alt + cmd + ctrl - 9 : yabai -m window --space 9 && yabai -m space --focus 9 && yabai -m window --focus mouse && sketchybar -m --trigger space_change
+shift + alt + cmd + ctrl - 0 : yabai -m window --space last && yabai -m space --focus last && yabai -m window --focus mouse && sketchybar -m --trigger space_change
 
 # move window to space # w/o focus
 shift + cmd - 1 : yabai -m window --space 1;
@@ -150,7 +150,7 @@ shift + cmd - 0 : yabai -m window --space last;
 ###############
 #
 ## open terminal, blazingly fast compared to iTerm/Hyper
-cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+shift + alt + cmd + ctrl - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 #
 
 # move window and split - similar to the above slight difference but not needed
