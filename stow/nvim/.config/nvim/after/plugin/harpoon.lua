@@ -1,3 +1,9 @@
+local harpoon_status, harpoon = pcall(require, "harpoon")
+if not harpoon_status then
+    return
+end
+
+
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 local tmux =require("harpoon.tmux")
@@ -20,14 +26,14 @@ vim.keymap.set("n", "<leader>t2", function() tmux.gotoTerminal(2) end)
 vim.keymap.set("n", "<leader>t0", function() term.gotoTerminal(1) end)
 
 
+--
+-- vim.cmd('highlight! HarpoonInactive guibg=NONE guifg=#63698c')
+-- vim.cmd('highlight! HarpoonActive guibg=NONE guifg=white')
+-- vim.cmd('highlight! HarpoonNumberActive guibg=NONE guifg=#7aa2f7')
+-- vim.cmd('highlight! HarpoonNumberInactive guibg=NONE guifg=#7aa2f7')
+-- vim.cmd('highlight! TabLineFill guibg=NONE guifg=white')
 
-vim.cmd('highlight! HarpoonInactive guibg=NONE guifg=#63698c')
-vim.cmd('highlight! HarpoonActive guibg=NONE guifg=white')
-vim.cmd('highlight! HarpoonNumberActive guibg=NONE guifg=#7aa2f7')
-vim.cmd('highlight! HarpoonNumberInactive guibg=NONE guifg=#7aa2f7')
-vim.cmd('highlight! TabLineFill guibg=NONE guifg=white')
-
-require("harpoon").setup({global_settings = {
+harpoon.setup({
     -- sets the marks upon calling `toggle` on the ui, instead of require `:w`.
     save_on_toggle = false,
 
@@ -47,7 +53,7 @@ require("harpoon").setup({global_settings = {
     mark_branch = false,
 
     -- enable tabline with harpoon marks
-    tabline = false,
-    tabline_prefix = " ->>  ",
-    tabline_suffix = "   ",
-}})
+    tabline = true,
+    tabline_prefix = "=> ",
+    tabline_suffix = " |",
+})

@@ -4,6 +4,11 @@ if not noice_status then
     return
 end
 
+local notify_status, notify = pcall(require, "notify")
+if not notify_status then
+    return
+end
+
 noice.setup({
   lsp = {
     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
@@ -21,4 +26,8 @@ noice.setup({
     inc_rename = false, -- enables an input dialog for inc-rename.nvim
     lsp_doc_border = false, -- add a border to hover docs and signature help
   },
+})
+
+notify.setup({
+    background_colour = "#000000",
 })

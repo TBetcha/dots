@@ -24,7 +24,7 @@ require("catppuccin").setup({
 		strings = {},
 		variables = {},
 		numbers = {},
-		booleans = {},
+		booleans = {"italic"},
 		properties = {},
 		types = {},
 		operators = {},
@@ -37,9 +37,9 @@ require("catppuccin").setup({
 		nvimtree = true,
 		treesitter = true,
 		barbar = true,
-		flash = true,
+		flash = false,
 		treesitter_context = true,
-		notify = false,
+		notify = true,
 		mini = false,
 		telescope = {
 			enabled = true,
@@ -53,7 +53,6 @@ require("catppuccin").setup({
 			colored_indent_levels = false,
 		},
         mason=true,
-        
 
 		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 	},

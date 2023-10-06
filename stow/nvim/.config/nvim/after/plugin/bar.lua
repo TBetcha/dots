@@ -40,15 +40,18 @@ map('n', '<A-a>', '<Cmd>BufferCloseAllButCurrentOrPinned<CR>', opts)
 --                 :BufferCloseBuffersLeft
 --                 :BufferCloseBuffersRight
 -- Sort automatically by...
-map('n', '<leader>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
-map('n', '<leader>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
+map('n', '<leader>sb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
+map('n', '<leader>sbw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 
 -- Other:
 -- :BarbarEnable - enables barbar (enabled by default)
 -- :BarbarDisable - very bad command, should never be used
 --
 
-require'barbar'.setup {
+
+local icons = require("tbetcha.icons")
+
+bar.setup {
 	icons = {
 		-- Configure the base icons on the bufferline.
 		-- Valid options to display the buffer index and -number are `true`, 'superscript' and 'subscript'
@@ -57,10 +60,10 @@ require'barbar'.setup {
 		button = '',
 		-- Enables / disables diagnostic symbols
 		diagnostics = {
-			[vim.diagnostic.severity.ERROR] = {enabled = true, icon = ' '},
-			[vim.diagnostic.severity.WARN] = {enabled = false, icon = ' '},
-			[vim.diagnostic.severity.INFO] = {enabled = false, icon = ' '},
-			[vim.diagnostic.severity.HINT] = {enabled = false, icon = '⚑ '},
+			[vim.diagnostic.severity.ERROR] = {enabled = true, icon = icons.diagnostics.Error},
+			[vim.diagnostic.severity.WARN] = {enabled = false, icon = icons.diagnostics.Warn},
+			[vim.diagnostic.severity.INFO] = {enabled = false, icon = icons.diagnostics.Info},
+			[vim.diagnostic.severity.HINT] = {enabled = false, icon = icons.diagnostics.Hint},
 		},
 		gitsigns = {
 			added = {enabled = true, icon = '+'},

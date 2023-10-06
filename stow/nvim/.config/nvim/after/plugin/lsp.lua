@@ -63,6 +63,8 @@ end
 
 local keymap = vim.keymap -- for conciseness
 
+local icons = require("tbetcha.icons")
+
 -- enable mason
 mason.setup()
 
@@ -186,10 +188,10 @@ vim.api.nvim_set_hl(0, "CmpItemKindTabNine", { fg = "#6CC644" })
 lsp.set_preferences({
     suggest_lsp_servers = false,
     lsp.set_sign_icons({
-        error = " ",
-        warn = " ",
-        hint = "⚑",
-        info = " " }),
+        error = icons.diagnostics.Error,
+        warn = icons.diagnostics.Warn,
+        hint = icons.diagnostics.Hint,
+        info = icons.diagnostics.Info, }),
 })
 
 -- remaps exist in the current buffer. If we have an lsp use it— if not things like gd will try to do vims best jump to def

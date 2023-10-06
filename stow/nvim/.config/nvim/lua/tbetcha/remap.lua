@@ -1,5 +1,5 @@
 -- local vim.keymap = vim.vim.keymap
-map = vim.keymap.set
+local map = vim.keymap.set
 
 vim.g.mapleader = " "
 
