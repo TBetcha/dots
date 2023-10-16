@@ -4,8 +4,10 @@
 #########################
 
 abbr .. "cd ../"
-abbr ... "cd ../../"
-abbr .... "cd ../../../"
+abbr .2 "cd ../.."
+abbr .3 "cd ../../.."
+abbr .4 "cd ../../../.."
+abbr .5 "cd ../../../../.."
 abbr cx "chmod +x"
 abbr c clear
 
@@ -21,7 +23,8 @@ abbr n "nvim"
 abbr v "nvim"
 
 #Tmux
-abbr tx "tmux"
+alias tx "tmux"
+abbr txl "tmux ls"
 abbr txk "tmux kill-server"
 abbr txks "tmux kill-session -t"
 abbr txas "tmux attach-session -t"
@@ -32,7 +35,7 @@ abbr txnds "tmux new -d -s"
 #Programs
 abbr ld "lazydocker"
 abbr lg "lazygit"
-abbr cat "ccat"
+abbr cat "bat"
 abbr ls "lsd -al ."
 abbr lt "lsd --tree"
 abbr search "findme"
@@ -46,7 +49,7 @@ abbr binc "brew info --cask"
 
 #Git
 abbr g  "git"
-abbr ga "git add ."
+abbr ga. "git add ."
 abbr gs "git status"
 abbr gc "git commit -m"
 abbr gd "git diff"
