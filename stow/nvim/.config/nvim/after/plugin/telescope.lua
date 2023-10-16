@@ -35,21 +35,21 @@ if not fb_status then
   return
 end
 
--- TODO: fix me
-vim.keymap.set("n", "<leader>?", builtin.oldfiles, { desc = "[?] Find recently opened files" })
-vim.keymap.set("n", "<leader>bb", builtin.buffers, { desc = "[ ] Find existing buffers" })
+vim.keymap.set("n", "<leader>rf", builtin.oldfiles, { desc = "[R]ecently opened [F]iles" })
+vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[S]earch [B]uffers" })
 vim.keymap.set("n", "<leader>gf", builtin.git_files, { desc = "Search [G]it [F]iles" })
 vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
 vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
 vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
-vim.keymap.set("n", "<leader>rg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
+vim.keymap.set("n", "<leader>rg", builtin.live_grep, { desc = "[R]ip [G]rep" })
 vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
-vim.keymap.set("n", "tgd", builtin.lsp_definitions, { desc = "[S]how [L]SP [D]efinitions" })
-vim.keymap.set("n", "tgi", builtin.lsp_implementations, { desc = "[S]how [L]SP [I]mplementations" })
-vim.keymap.set("n", "tgc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["tgc" for git commits]
-vim.keymap.set("n", "tgf", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["tgf" for git file commits]
-vim.keymap.set("n", "tgb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["tgb" for git branch]
-vim.keymap.set("n", "tgs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["tgs" for git status]
+vim.keymap.set("n", "<leader>tgd", builtin.lsp_definitions, { desc = "[T]elescope [G]o to [D]efinitions" })
+vim.keymap.set("n", "<leader>tgi", builtin.lsp_implementations, { desc = "[T]elescope [G]o to [I]mplementations" })
+vim.keymap.set("n", "<leader>mk", builtin.marks, { desc = "[M]ar[K]s" })
+vim.keymap.set("n", "<leader>tgc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["tgc" for git commits]
+vim.keymap.set("n", "<leader>tgf", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["tgf" for git file commits]
+vim.keymap.set("n", "<leader>tgb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["tgb" for git branch]
+vim.keymap.set("n", "<leader>tgs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["tgs" for git status]
 vim.keymap.set(
   "n",
   "<leader>zo",

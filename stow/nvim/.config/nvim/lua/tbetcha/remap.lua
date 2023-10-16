@@ -28,8 +28,8 @@ map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
 -- beginning and end of line easier...shift sucks
-map("n","gl","$")
-map("n","gh","^")
+map({"n","v"},"gl","$")
+map({"n", "v"},"gh","^")
 
 -- clear highlight
 map("n", "qq", "<cmd>:nohl<cr>")
@@ -92,8 +92,9 @@ map("n", "<leader>q", "<cmd>:bd<CR>") -- close current buffer
 map("n", "<leader>Q", "<cmd>:bd!<CR>") -- close current buffer
 map("n", "<S-l>", "<cmd>:bn<CR>") --  go to next buffer
 map("n", "<S-h>", "<cmd>:bp<CR>") --  go to previous buffer
-map('n', '<leader>,', '<cmd>:bp<CR>')
-map('n', '<leader>.', '<cmd>:bn<CR>')
+map('n', '<leader>,', '<cmd>:bp<CR>') --  go to previous buffer
+map('n', '<leader>.', '<cmd>:bn<CR>') --  go to next buffer
+map("n", "<leader>w", "<cmd>bp|bd #<CR>") -- close buffer; retain split
 
 -- map <Esc> to exit terminal-mode: >vim
 map("t", "<Esc>", "<C-\\><C-n>")
