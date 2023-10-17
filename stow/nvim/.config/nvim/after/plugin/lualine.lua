@@ -43,6 +43,7 @@
 -- Credit: glepnir
 local lualine = require('lualine')
 
+local icons = require("tbetcha.icons")
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
@@ -179,11 +180,12 @@ ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 ins_left {
   'diagnostics',
   sources = { 'nvim_diagnostic' },
-  symbols = { error = ' ', warn = ' ', info = ' ' },
+  symbols = { error = icons.diagnostics.Error, warn = icons.diagnostics.Warn , info = icons.diagnostics.Warn, hint=icons.diagnostics.Hint} ,
   diagnostics_color = {
     color_error = { fg = colors.red },
     color_warn = { fg = colors.yellow },
     color_info = { fg = colors.cyan },
+    color_hint = { fg = colors.green },
   },
 }
 
@@ -194,8 +196,24 @@ ins_left {
     return '%='
   end,
 }
-
 ins_left {
+  'branch',
+  icon = '',
+  color = { fg = colors.violet, gui = 'bold' },
+}
+
+ins_left{
+  'diff',
+  -- Is it me or the symbol for modified us really weird
+  symbols = { added = icons.git.added, modified = icons.git.changed, removed = icons.git.deleted },
+  diff_color = {
+    added = { fg = colors.green },
+    modified = { fg = colors.orange },
+    removed = { fg = colors.red },
+  },
+  cond = conditions.hide_in_width,
+}
+ins_right {
   -- Lsp server name .
   function()
     local msg = 'No Active Lsp'
@@ -230,25 +248,6 @@ ins_right {
   icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
   color = { fg = colors.green, gui = 'bold' },
 }
-
-ins_right {
-  'branch',
-  icon = '',
-  color = { fg = colors.violet, gui = 'bold' },
-}
-
-ins_right {
-  'diff',
-  -- Is it me or the symbol for modified us really weird
-  symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
-  diff_color = {
-    added = { fg = colors.green },
-    modified = { fg = colors.orange },
-    removed = { fg = colors.red },
-  },
-  cond = conditions.hide_in_width,
-}
-
 ins_right {
   function()
     return '▊'

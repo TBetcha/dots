@@ -9,10 +9,10 @@
 ################################
 #
 # focus windows
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - h : yabai -m window --focus west
-alt - l : yabai -m window --focus east
+cmd - j : yabai -m window --focus south
+cmd - k : yabai -m window --focus north
+cmd - h : yabai -m window --focus west
+cmd - l : yabai -m window --focus east
 #
 ############################
 # -- EXTERNAL DISPLAYS --#
@@ -96,10 +96,10 @@ shift + alt + cmd + ctrl - right : yabai -m window --resize right:50:0; \
 #################################
 #
 # swap windows
-shift + alt + cmd + ctrl - j : yabai -m window --swap south
-shift + alt + cmd + ctrl - k : yabai -m window --swap north
-shift + alt + cmd + ctrl - h : yabai -m window --swap west
-shift + alt + cmd + ctrl - l : yabai -m window --swap east
+shift + cmd - j : yabai -m window --swap south
+shift + cmd - k : yabai -m window --swap north
+shift + cmd - h : yabai -m window --swap west
+shift + cmd - l : yabai -m window --swap east
 #
 # fast focus desktop - wait on sonoma
 cmd - left : yabai -m space --focus prev && sketchybar -m --trigger space_change|| skhd -k "opt - left"
