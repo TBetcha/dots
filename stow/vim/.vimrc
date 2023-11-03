@@ -138,6 +138,7 @@ set incsearch  " Enable incremental search
 set hlsearch   " Enable highlight search
 set termwinsize=12x0   " Set terminal size
 set splitbelow         " Always split below
+set splitright         " Always split below
 set mouse=a            " Enable mouse drag on window splits
 set termguicolors "needed for embark theme
 set tabstop=4 " How many columns of whitespace a \t is worth
@@ -146,7 +147,7 @@ set expandtab" Use spaces when tabbing
 
 " NerdTree
 nmap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <leader>e :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
 
 let NERDTreeShowBookmarks = 1   " Show the bookmarks table
@@ -175,9 +176,9 @@ let g:ctrlsf_default_root = 'cwd' " Search from the current working directory
 
 
 " (Ctrl+F) Open search prompt (Normal Mode)
-nmap <C-F>f <Plug>CtrlSFPrompt 
+nmap <leader>sf <Plug>CtrlSFPrompt 
 " (Ctrl-F + f) Open search prompt with selection (Visual Mode)
-xmap <C-F>f <Plug>CtrlSFVwordPath
+xmap <leader>rg <Plug>CtrlSFVwordPath
 " (Ctrl-F + F) Perform search with selection (Visual Mode)
 xmap <C-F>F <Plug>CtrlSFVwordExec
 " (Ctrl-F + n) Open search prompt with current word (Normal Mode)
@@ -185,7 +186,7 @@ nmap <C-F>n <Plug>CtrlSFCwordPath
 " (Ctrl-F + o )Open CtrlSF window (Normal Mode)
 nnoremap <C-F>o :CtrlSFOpen<CR>
 " (Ctrl-F + t) Toggle CtrlSF window (Normal Mode)
-nnoremap <C-F>t :CtrlSFToggle<CR>
+nnoremap <leader>cf :CtrlSFToggle<CR>
 " (Ctrl-F + t) Toggle CtrlSF window (Insert Mode)
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 

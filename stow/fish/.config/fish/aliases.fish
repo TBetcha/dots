@@ -22,6 +22,7 @@ alias vi "nvim"
 alias n "nvim"
 alias v "nvim"
 alias . "nvim ."
+alias vimdiff 'nvim -d'
 
 #Tmux
 alias tx "tmux"
