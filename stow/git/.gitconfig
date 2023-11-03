@@ -26,4 +26,4 @@
 [diff-so-fancy]
 	first-run = false
 [diff]
-	tool = lazygit
+	tool = nvimdiff
