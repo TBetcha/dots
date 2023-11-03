@@ -36,7 +36,7 @@ if not fb_status then
 end
 
 vim.keymap.set("n", "<leader>rf", builtin.oldfiles, { desc = "[R]ecently opened [F]iles" })
-vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[S]earch [B]uffers" })
+vim.keymap.set("n", "<leader>bb", builtin.buffers, { desc = " [B][B]uffers" })
 vim.keymap.set("n", "<leader>gf", builtin.git_files, { desc = "Search [G]it [F]iles" })
 vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
 vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
@@ -84,8 +84,8 @@ local vimgrep_arguments = {
 -- -- I want to search in hidden/dot files.
 -- table.insert(vimgrep_arguments, "--hidden")
 -- -- I don't want to search in the `.git` directory.
--- table.insert(vimgrep_arguments, "--glob")
--- table.insert(vimgrep_arguments, "!**/.git/*")
+table.insert(vimgrep_arguments, "--glob")
+table.insert(vimgrep_arguments, "!**/.git/*")
 --
 local center_list = require("telescope.themes").get_dropdown({
   winblend = 10,

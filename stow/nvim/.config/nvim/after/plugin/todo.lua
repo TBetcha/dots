@@ -8,6 +8,7 @@ todo.setup({
 	highlight = {
         -- HACK: setting to false so fsharp will work correctly
 		comments_only = false, -- uses treesitter to match keywords in comments only
+        exclude = {"proto"}
 	},
 })
 

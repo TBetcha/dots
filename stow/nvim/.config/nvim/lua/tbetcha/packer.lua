@@ -185,4 +185,14 @@ return require("packer").startup(function(use)
       require("colorizer").setup()
     end,
   })
+  use("chentoast/marks.nvim")
+  use({
+    "NeogitOrg/neogit",
+    requires = {
+      "nvim-lua/plenary.nvim", -- required
+      "nvim-telescope/telescope.nvim", -- optional
+      "sindrets/diffview.nvim", -- optional
+      "ibhagwan/fzf-lua", -- optional
+    },
+  })
 end)

@@ -1,6 +1,7 @@
 [user]
 	email = troy.boettger@gmail.com
-	name = TMB
+	name = Tbetcha
+	signingkey = 7DAAE552563BD34F
 [init]
 	defaultBranch = main
 [core]
