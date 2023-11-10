@@ -95,6 +95,7 @@ abbr jup "jupyter notebook"
 abbr vs "code-insiders ./"
 abbr dw "dotnet watch run"
 abbr db "dotnet build"
+abbr dr "dotnet restore"
 abbr zoostart "~/kafka34/bin/zookeeper-server-start.sh ~/kafka34/config/zookeeper.properties"
 abbr kafkastart "~/kafka34/bin/kafka-server-start.sh ~/kafka34/config/server.properties"
 abbr sy "yabai --start-service; and skhd --start-service"
@@ -132,6 +133,8 @@ alias fast "cd ~/code/dmg/FastAccept/State/dmg.fast-accept-app.state"
 alias myst "cd ~/code/dmg/MyJobs/State/dmg.my-jobs-app.state"
 alias myapi "cd ~/code/dmg/MyJobs/API/dmg.my-jobs-app.api"
 alias diapi "cd ~/code/dmg/DispatcherInvoicerOnboarding/API/dmg.dispatcher-invoicer-onboarding-app.api"
+alias pdapi "cd ~/code/dmg/ProviderDashboard/API/dmg.provider-dashboard-app.api"
+alias pdst "cd ~/code/dmg/ProviderDashboard/State/dmg.provider-dashboard-app.state"
 
 #########################
 # PERSONAL PROJ ALIASES #

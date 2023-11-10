@@ -149,8 +149,9 @@ shift + cmd - 0 : yabai -m window --space last;
 # -- APPS -- #
 ###############
 #
-## open terminal, blazingly fast compared to iTerm/Hyper
+##blazingly fast
 shift + alt + cmd + ctrl - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+cmd - b : /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser
 #
 
 # move window and split - similar to the above slight difference but not needed
