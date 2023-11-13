@@ -107,7 +107,7 @@ return require("packer").startup(function(use)
   -- reload that other plugins rely on
   use({ "nvim-lua/plenary.nvim" })
   -- telescope
-  use({ "nvim-telescope/telescope.nvim", tag = "0.1.2" })
+  use({ "nvim-telescope/telescope.nvim", tag = "0.1.4" })
   -- fzf searching for telescope
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
   -- zoxide telescope extension
@@ -186,13 +186,7 @@ return require("packer").startup(function(use)
     end,
   })
   use("chentoast/marks.nvim")
-  use({
-    "NeogitOrg/neogit",
-    requires = {
-      "nvim-lua/plenary.nvim", -- required
-      "nvim-telescope/telescope.nvim", -- optional
-      "sindrets/diffview.nvim", -- optional
-      "ibhagwan/fzf-lua", -- optional
-    },
-  })
+  use("kristijanhusak/vim-dadbod-ui")
+  use("tpope/vim-dadbod")
+  use('kristijanhusak/vim-dadbod-completion')
 end)

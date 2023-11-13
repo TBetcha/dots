@@ -46,6 +46,7 @@ abbr la "lsd --tree --long --git -a"
 abbr search "findme"
 abbr stow "stow --target $HOME"
 abbr gpg "7DAAE552563BD34F"
+abbr kill-spaces "rm ~/Library/Preferences/com.apple.spaces.plist"
 
 #Brew
 abbr bi "brew install"
