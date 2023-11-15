@@ -45,6 +45,11 @@ if not lspzero_status then
     return
 end
 
+local lspconfig_status, lspconfig = pcall(require, "lspconfig")
+if not lspconfig_status then
+    return
+end
+
 local comparators = {}
 
 comparators.score = function(entry1, entry2)
@@ -84,7 +89,7 @@ mason_lspconfig.setup({
         lsp.default_setup,
         lua_ls = function()
             local lua_opts = lsp.nvim_lua_ls()
-            require("lspconfig").lua_ls.setup(lua_opts)
+            lspconfig.lua_ls.setup(lua_opts)
         end,
     },
     -- auto-install configured servers (with lspconfig)
@@ -197,7 +202,6 @@ lsp.set_preferences({
 -- remaps exist in the current buffer. If we have an lsp use it— if not things like gd will try to do vims best jump to def
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
-
     -- jump into doc window with kk use gx to go to link
     keymap.set("n", "<leader>fa", "<cmd>Lspsaga finder tyd+ref+def<CR>", opts) -- show definition, references
     keymap.set("n", "gdc", function() vim.lsp.buf.declaration() end, opts) -- got to declaration
@@ -227,6 +231,7 @@ lsp.on_attach(function(client, bufnr)
         keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
     end
 end)
+
 
 lsp.setup()
 

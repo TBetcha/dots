@@ -1,4 +1,4 @@
--- This  file can be loaded by calling `lua require('plugins')` from your init.vim
+-- This  file can be loaded by calling `lua require('plugins')` from your init.vimlazy
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -18,13 +18,15 @@ require("lazy").setup({
   -- tmux nav
   "christoomey/vim-tmux-navigator",
   -- theme
-  { "catppuccin/nvim", name = "catppuccin" },
-  -- "navarasu/onedark.nvim",
-  { "EdenEast/nightfox.nvim" },
   {
-    "olimorris/onedarkpro.nvim",
+    "EdenEast/nightfox.nvim",
     priority = 1000, -- Ensure it loads first
   },
+  { "catppuccin/nvim", name = "catppuccin" },
+  -- {
+  --   "olimorris/onedarkpro.nvim",
+  -- },
+  -- "navarasu/onedark.nvim",
   -- LSP STUFF
   {
     "VonHeikemen/lsp-zero.nvim",

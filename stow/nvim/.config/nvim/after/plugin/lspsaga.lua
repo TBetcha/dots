@@ -17,4 +17,8 @@ saga.setup({
       normal_bg = "#022746",
     },
   },
+  winbar = {
+      color_mode = true,
+      
+  }
 })
