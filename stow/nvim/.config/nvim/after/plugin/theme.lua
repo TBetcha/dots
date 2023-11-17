@@ -51,13 +51,13 @@ function ColorMyPencils(color)
 end
 
 function LineNumberColors()
-    vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "gray", bold = false })
+    vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#ABB2BF", bold = false })
     vim.api.nvim_set_hl(0, "LineNr", { fg = "#61AFEF", bold = true })
-    vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "gray", bold = false })
+    vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#ABB2BF", bold = false })
 end
 
 function HarpoonColors()
-    vim.cmd("highlight! HarpoonInactive guibg=NONE guifg=white")
+    vim.cmd("highlight! HarpoonInactive guibg=NONE guifg=#ABB2BF")
     vim.cmd("highlight! HarpoonActive guibg=NONE guifg=#E06C75")
     vim.cmd("highlight! HarpoonNumberActive guibg=NONE guifg=#61AFEF")
     vim.cmd("highlight! HarpoonNumberInactive guibg=NONE guifg=#E5C07B")
