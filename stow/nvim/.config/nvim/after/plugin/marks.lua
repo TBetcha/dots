@@ -32,4 +32,3 @@ require'marks'.setup {
   },
   mappings = {}
 }
-

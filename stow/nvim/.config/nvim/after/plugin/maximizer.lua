@@ -1,1 +1,1 @@
-vim.keymap.set("n", "<leader>mx", ":MaximizerToggle<CR>")
+vim.keymap.set("n", "<leader>max", ":MaximizerToggle<CR>")

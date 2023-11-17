@@ -18,14 +18,14 @@ require("lazy").setup({
   -- tmux nav
   "christoomey/vim-tmux-navigator",
   -- theme
+  -- {
+  --   "EdenEast/nightfox.nvim",
+  -- },
+  -- { "catppuccin/nvim", name = "catppuccin" },
   {
-    "EdenEast/nightfox.nvim",
+    "olimorris/onedarkpro.nvim",
     priority = 1000, -- Ensure it loads first
   },
-  { "catppuccin/nvim", name = "catppuccin" },
-  -- {
-  --   "olimorris/onedarkpro.nvim",
-  -- },
   -- "navarasu/onedark.nvim",
   -- LSP STUFF
   {
