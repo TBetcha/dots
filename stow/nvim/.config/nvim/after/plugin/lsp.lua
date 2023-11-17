@@ -203,7 +203,7 @@ lsp.set_preferences({
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
     -- jump into doc window with kk use gx to go to link
-    keymap.set("n", "<leader>fa", "<cmd>Lspsaga finder tyd+ref+def<CR>", opts) -- show definition, references
+    keymap.set("n", "<leader>fa", "<cmd>Lspsaga finder tyd+ref+imp+def<CR>", opts) -- show definition, references
     keymap.set("n", "gdc", function() vim.lsp.buf.declaration() end, opts) -- got to declaration
     keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end, opts)                                                   -- lsp go to definition
     keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
