@@ -29,7 +29,10 @@ if not zoxide_status then
   return
 end
 
+<<<<<<< HEAD
 -- https://github.com/nvim-telescope/telescope-file-browser.nvim
+=======
+>>>>>>> 9e5ebbb5cdf551e14eeffe278f098b42ed21d4c2
 local fb_status, fb = require("telescope").load_extension("file_browser")
 if not fb_status then
   return
