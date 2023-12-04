@@ -92,7 +92,7 @@ require("lazy").setup({
   -- bridges gap b/w mason & null-ls
   "jayp0521/mason-null-ls.nvim",
   -- ts plugin
-  ("jose-elias-alvarez/typescript.nvim")
+  ("jose-elias-alvarez/typescript.nvim"),
   --icons in lsp menu
   { "onsails/lspkind.nvim" },
   --enhanced lsp stuff that uses treesitter and not regex
