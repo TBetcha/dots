@@ -1,14 +1,15 @@
 format = """
-[](#89B4FA)\
+[](#e06c75)\
 $username\
-[󰀵 ](fg:#11111b bg:#89B4FA)\
-[](bg:#CDD6F4 fg:#89B4FA)\
+[󰀵 ](fg:#11111b bg:#e06c75)\
+[](bg:#CDD6F4 fg:#e06c75)\
 $directory\
-[](fg:#cdd6f4 bg:#fab387)\
+[](fg:#cdd6f4 bg:#61afef)\
 $git_branch\
 $git_status\
-[](fg:#fab387 bg:#cba6f7)\
+[](fg:#61afef bg:#cba6f7)\
 $c\
+$dotnet\
 $elixir\
 $elm\
 $golang\
@@ -20,9 +21,9 @@ $nim\
 $rust\
 [](fg:#cba6f7 bg:#a6e3a1)\
 $docker_context\
-[](fg:#a6e3a1 bg:#89b4fa)\
+[](fg:#a6e3a1 bg:#e06c75)\
 $time\
-[ ](fg:#89B4FA)\
+[ ](fg:#e06c75)\
 """
 
 # Disable the blank line at the start of the prompt
@@ -31,7 +32,7 @@ $time\
 # You can also replace your username with a neat symbol like  to save some space
 [username]
 show_always = true
-style_user = "fg:#11111b bg:#89B4FA"
+style_user = "fg:#11111b bg:#e06c75"
 style_root = "fg:#11111b bg:#f38ba8"
 format = '[$user ]($style)'
 
@@ -82,18 +83,19 @@ format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
 
 [git_branch]
 symbol = ""
-style = "fg:#11111b bg:#fab387"
-format = '[[ $symbol $branch ](fg:#11111b bg:#fab387)]($style)'
+style = "fg:#11111b bg:#61afef"
+format = '[[ $symbol $branch ](fg:#11111b bg:#61afef)]($style)'
 
 [git_status]
-style = "fg:#11111b bg:#fab387"
-format = '[[($all_status$ahead_behind )](fg:#11111b bg:#fab387)]($style)'
+style = "fg:#11111b bg:#61afef"
+format = '[[($all_status$ahead_behind )](fg:#11111b bg:#61afef)]($style)'
 
 [golang]
 symbol = " "
 style = "fg:#11111b bg:##cba6f7"
 #format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
 format = '[[ $symbol](fg:#11111b bg:#cba6f7)]($style)'
+
 [haskell]
 symbol = " "
 style = "fg:#11111b bg:#cba6f7"
@@ -137,5 +139,5 @@ format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "fg:#11111b bg:#89b4fa"
-format = '[[ $time ](fg:#11111b bg:#89b4fa)]($style)'
+style = "fg:#11111b bg:#e06c75"
+format = '[[ $time ](fg:#11111b bg:#e06c75)]($style)'

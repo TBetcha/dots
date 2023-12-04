@@ -29,7 +29,7 @@ if not zoxide_status then
   return
 end
 
-- https://github.com/nvim-telescope/telescope-file-browser.nvim
+-- https://github.com/nvim-telescope/telescope-file-browser.nvim
 local fb_status, fb = require("telescope").load_extension("file_browser")
 if not fb_status then
   return
@@ -80,7 +80,7 @@ local vimgrep_arguments = {
   "--smart-case",
   "--hidden",
 }
---
+
 -- -- I want to search in hidden/dot files.
 -- table.insert(vimgrep_arguments, "--hidden")
 -- -- I don't want to search in the `.git` directory.

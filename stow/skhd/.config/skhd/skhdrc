@@ -1,87 +1,85 @@
-#  _  _  ___   _ ____
-# / ___|| |/ / | | |  _ \
-# \___ \| ' /| |_| | | | |
-#  ___) | . \|  _  | |_| |
-# |____/|_|\_\_| |_|____/
-#
-################################
-# -- CHANGING WINDOW FOCUS --#
-################################
-#
-# focus windows
+# -- Changing Window Focus --
+
+# change window focus within space
 cmd - j : yabai -m window --focus south
 cmd - k : yabai -m window --focus north
 cmd - h : yabai -m window --focus west
 cmd - l : yabai -m window --focus east
-#
-############################
-# -- EXTERNAL DISPLAYS --#
-############################
-#
-# focus external displays
+
+#change focus between external displays (left and right)
 alt + cmd - left: yabai -m display --focus west
 alt + cmd - right: yabai -m display --focus east
 
-# move window to display left and right
-shift + alt - left : yabai -m window --display west; yabai -m display --focus west;
-shift + alt - right : yabai -m window --display east; yabai -m display --focus east;
-#
-###############################
-# -- MODIFYING THE LAYOUT --#
-###############################
+# -- Modifying the Layout --
 
-# rotate
+# cycle space management type - doesn't work
+ctrl + alt + shift - backspace : source ~/.config/scripts/.space_change && sketchybar -m --trigger mode_change
+
+# rotate layout clockwise
 shift + alt + cmd + ctrl - r : yabai -m space --rotate 270
-shift + ctrl - r : yabai -m space --rotate 90
+shift + cmd - r : yabai -m space --rotate 90
 
-# flip y-axis
+# flip along y-axis
 shift + alt + cmd + ctrl - y : yabai -m space --mirror y-axis
 
-# flip x-axis
+# flip along x-axis
 shift + alt + cmd + ctrl- x : yabai -m space --mirror x-axis
 
-# float
+# toggle window float
 shift + alt + cmd + ctrl - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
-# toggle split type '\'
+# toggle window split type '\'
 shift + alt + cmd + ctrl - 0x2A: yabai -m window --toggle split && sketchybar -m --trigger mode_change
 
-# swap largest window '['
+# swap current window with largest window '['
 shift + alt + cmd + ctrl - 0x21 : yabai -m window --swap largest
 
-# swap smallest window ']'
+# swap current window with smallest window ']'
 shift + alt + cmd + ctrl - 0x1E : yabai -m window --swap smallest
 
-# destroy desktop
+
+# destroy desktop - works
 shift + alt + cmd + ctrl - w : yabai -m space --destroy && yabai -m window --focus recent && sketchybar -m --trigger space_change
 
-# create desktop
-shift + alt + cmd + ctrl - a : yabai -m space --create  && yabai -m space --focus last
 
-# focus 
-cmd - 1 : yabai -m space --focus 1
-cmd - 2 : yabai -m space --focus 2
-cmd - 3 : yabai -m space --focus 3
-cmd - 4 : yabai -m space --focus 4
-cmd - 5 : yabai -m space --focus 5
-cmd - 6 : yabai -m space --focus 6
-cmd - 7 : yabai -m space --focus 7
-cmd - 8 : yabai -m space --focus 8
-cmd - 9 : yabai -m space --focus 9
-cmd - 0 : yabai -m space --focus last
+# WAIT ON SONOMA
+
+# focus a specific desktop (auto create desktops if it doesn't exist?)
+cmd - 1 : yabai -m space --focus 1 && sketchybar -m --trigger space_change
+cmd - 2 : yabai -m space --focus 2 && sketchybar -m --trigger space_change
+cmd - 3 : yabai -m space --focus 3 && sketchybar -m --trigger space_change
+cmd - 4 : yabai -m space --focus 4 && sketchybar -m --trigger space_change
+cmd - 5 : yabai -m space --focus 5 && sketchybar -m --trigger space_change
+cmd - 6 : yabai -m space --focus 6 && sketchybar -m --trigger space_change
+cmd - 7 : yabai -m space --focus 7 && sketchybar -m --trigger space_change
+cmd - 8 : yabai -m space --focus 8 && sketchybar -m --trigger space_change
+cmd - 9 : yabai -m space --focus 9 && sketchybar -m --trigger space_change
+# cmd - 0 : yabai -m space --focus 10 && sketchybar -m --trigger space_change
 #
-#################################
-# -- MODIFYING WINDOW SIZE -- #
-#################################
 #
-# maximize
+# # create desktop and follow focus - uses jq for parsing json (brew install jq)
+ctrl + cmd - t : yabai -m space --create && \
+                index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
+                yabai -m space --focus "${index}" && \
+                sketchybar -m --trigger space_change
+
+# # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
+# ctrl + shift - t : yabai -m space --create && \
+#                   index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
+#                   yabai -m window --space "${index}" && \
+#                   yabai -m space --focus "${index}" && \
+#                   sketchybar -m --trigger space_change
+
+# -- Modifying Window Size --
+
+# maximize a window
 shift + alt + cmd + ctrl - m : yabai -m window --toggle zoom-fullscreen
 shift + alt  - m : yabai -m window --toggle native-fullscreen
 
-# balance 
+# balance out tree of windows (resize to occupy same area)
 shift + alt + cmd + ctrl - e : yabai -m space --balance
 
-# Resize
+# Resize windows
 shift + alt + cmd + ctrl - left : yabai -m window --resize left:-50:0; \
                   yabai -m window --resize right:-50:0
 shift + alt + cmd + ctrl - down : yabai -m window --resize bottom:0:50; \
@@ -91,48 +89,60 @@ shift + alt + cmd + ctrl - up : yabai -m window --resize top:0:-50; \
 shift + alt + cmd + ctrl - right : yabai -m window --resize right:50:0; \
                   yabai -m window --resize left:50:0
 
-#################################
-# -- MOVING WINDOWS AROUND -- #
-#################################
-#
+# -- Moving Windows Around --
+
 # swap windows
 shift + cmd - j : yabai -m window --swap south
-shift + cmd - k : yabai -m window --swap north
+shift + cmd  - k : yabai -m window --swap north
 shift + cmd - h : yabai -m window --swap west
 shift + cmd - l : yabai -m window --swap east
+
+
+# move window and split
+# ctrl + alt - j : yabai -m window --warp south
+# ctrl + alt - k : yabai -m window --warp north
+# ctrl + alt - h : yabai -m window --warp west
+# ctrl + alt - l : yabai -m window --warp east
 #
+# move window to display left and right
+shift + alt - left : yabai -m window --display west; yabai -m display --focus west;
+shift + alt - right : yabai -m window --display east; yabai -m display --focus east;
+
+
 # fast focus desktop - wait on sonoma
-cmd - left : yabai -m space --focus prev && sketchybar -m --trigger space_change|| skhd -k "opt - left"
-cmd - right : yabai -m space --focus next && sketchybar -m --trigger space_change|| skhd -k "opt - right"
+cmd - left : yabai -m space --focus prev && sketchybar -m --trigger space_change
+cmd - right : yabai -m space --focus next && sketchybar -m --trigger space_change
+# cmd + ctrl - right : (yabai -m space --focus next || yabai -m space --focus first) || skhd -k "cmd - right"
 
 # move window to prev and next space - works
 shift + alt + cmd + ctrl - p : yabai -m window --space prev && yabai -m space --focus prev
 shift + alt + cmd + ctrl - n : yabai -m window --space next && yabai -m space --focus next
 #
 # swap space with give space SKETCH  works
-ctrl + shift - 1 : yabai -m space --move 1 && sketchybar -m --trigger space_change
-ctrl + shift - 2 : yabai -m space --move 2 && sketchybar -m --trigger space_change
-ctrl + shift - 3 : yabai -m space --move 3 && sketchybar -m --trigger space_change
-ctrl + shift - 4 : yabai -m space --move 4 && sketchybar -m --trigger space_change
-ctrl + shift - 5 : yabai -m space --move 5 && sketchybar -m --trigger space_change
-ctrl + shift - 6 : yabai -m space --move 6 && sketchybar -m --trigger space_change
-ctrl + shift - 7 : yabai -m space --move 7 && sketchybar -m --trigger space_change
-ctrl + shift - 8 : yabai -m space --move 8 && sketchybar -m --trigger space_change
-ctrl + shift - 9 : yabai -m space --move 9 && sketchybar -m --trigger space_change
-ctrl + shift - 0 : yabai -m space --move last && sketchybar -m --trigger space_change
+# ctrl + shift - 1 : yabai -m space --move 1 && sketchybar -m --trigger space_change
+# ctrl + shift - 2 : yabai -m space --move 2 && sketchybar -m --trigger space_change
+# ctrl + shift - 3 : yabai -m space --move 3 && sketchybar -m --trigger space_change
+# ctrl + shift - 4 : yabai -m space --move 4 && sketchybar -m --trigger space_change
+# ctrl + shift - 5 : yabai -m space --move 5 && sketchybar -m --trigger space_change
+# ctrl + shift - 6 : yabai -m space --move 6 && sketchybar -m --trigger space_change
+# ctrl + shift - 7 : yabai -m space --move 7 && sketchybar -m --trigger space_change
+# ctrl + shift - 8 : yabai -m space --move 8 && sketchybar -m --trigger space_change
+# ctrl + shift - 9 : yabai -m space --move 9 && sketchybar -m --trigger space_change
+# ctrl + shift - 0x32 : yabai -m space --move last && sketchybar -m --trigger space_change
+#
 
 # send window to specific space and follow focus  works
-shift + alt + cmd + ctrl - 1 : yabai -m window --space 1 && yabai -m space --focus 1 && yabai -m window --focus mouse && sketchybar -m --trigger space_change 
-shift + alt + cmd + ctrl - 2 : yabai -m window --space 2 && yabai -m space --focus 2 && yabai -m window --focus mouse && sketchybar -m --trigger space_change
-shift + alt + cmd + ctrl - 3 : yabai -m window --space 3 && yabai -m space --focus 3 && yabai -m window --focus mouse && sketchybar -m --trigger space_change
-shift + alt + cmd + ctrl - 4 : yabai -m window --space 4 && yabai -m space --focus 4 && yabai -m window --focus mouse && sketchybar -m --trigger space_change
-shift + alt + cmd + ctrl - 5 : yabai -m window --space 5 && yabai -m space --focus 5 && yabai -m window --focus mouse && sketchybar -m --trigger space_change
-shift + alt + cmd + ctrl - 6 : yabai -m window --space 6 && yabai -m space --focus 6 && yabai -m window --focus mouse && sketchybar -m --trigger space_change
-shift + alt + cmd + ctrl - 7 : yabai -m window --space 7 && yabai -m space --focus 7 && yabai -m window --focus mouse && sketchybar -m --trigger space_change
-shift + alt + cmd + ctrl - 8 : yabai -m window --space 8 && yabai -m space --focus 8 && yabai -m window --focus mouse && sketchybar -m --trigger space_change
-shift + alt + cmd + ctrl - 9 : yabai -m window --space 9 && yabai -m space --focus 9 && yabai -m window --focus mouse && sketchybar -m --trigger space_change
-shift + alt + cmd + ctrl - 0 : yabai -m window --space last && yabai -m space --focus last && yabai -m window --focus mouse && sketchybar -m --trigger space_change
-
+shift + alt + cmd + ctrl - 1 : yabai -m window --space 1 && yabai -m space --focus 1 && sketchybar -m --trigger space_change #&& skhd -k "opt - 1"
+shift + alt + cmd + ctrl - 2 : yabai -m window --space 2 && yabai -m space --focus 2 && sketchybar -m --trigger space_change # && skhd -k "opt - 2"
+shift + alt + cmd + ctrl - 3 : yabai -m window --space 3 && yabai -m space --focus 3 && sketchybar -m --trigger space_change # && skhd -k "opt - 3"
+shift + alt + cmd + ctrl - 4 : yabai -m window --space 4 && yabai -m space --focus 4 && sketchybar -m --trigger space_change #&& skhd -k "opt - 4"
+shift + alt + cmd + ctrl - 5 : yabai -m window --space 5 && yabai -m space --focus 5 && sketchybar -m --trigger space_change # && skhd -k "opt - 5"
+shift + alt + cmd + ctrl - 6 : yabai -m window --space 6 && yabai -m space --focus 6 && sketchybar -m --trigger space_change # && skhd -k "opt - 6"
+shift + alt + cmd + ctrl - 7 : yabai -m window --space 7 && yabai -m space --focus 7 && sketchybar -m --trigger space_change # && skhd -k "opt - 7"
+shift + alt + cmd + ctrl - 8 : yabai -m window --space 8 && yabai -m space --focus 8 && sketchybar -m --trigger space_change # && skhd -k "opt - 8"
+shift + alt + cmd + ctrl - 9 : yabai -m window --space 9 && yabai -m space --focus 9 && sketchybar -m --trigger space_change # && skhd -k "opt - 9"
+# shift + alt + cmd + ctrl - 0 : yabai -m window --space 10 && yabai -m space --focus 10 && sketchybar -m --trigger space_change
+#
 # move window to space # w/o focus
 shift + cmd - 1 : yabai -m window --space 1;
 shift + cmd - 2 : yabai -m window --space 2;
@@ -143,44 +153,18 @@ shift + cmd - 6 : yabai -m window --space 6;
 shift + cmd - 7 : yabai -m window --space 7;
 shift + cmd - 8 : yabai -m window --space 8;
 shift + cmd - 9 : yabai -m window --space 9;
-shift + cmd - 0 : yabai -m window --space last;
-#
-###############
-# -- APPS -- #
-###############
-#
-##blazingly fast
-shift + alt + cmd + ctrl - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
-cmd - b : /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser
-#
+# shift + cmd - 0 : yabai -m window --space 10;
 
-# move window and split - similar to the above slight difference but not needed
-# ctrl + alt - j : yabai -m window --warp south
-# ctrl + alt - k : yabai -m window --warp north
-# ctrl + alt - h : yabai -m window --warp west
-# ctrl + alt - l : yabai -m window --warp east
+# -- Starting/Stopping/Restarting Yabai --
 
-# -- fast focus cycle
-# cmd + ctrl - right : (yabai -m space --focus next || yabai -m space --focus first) || skhd -k "cmd - right"
-#
-# # create desktop and follow focus - uses jq for parsing json (brew install jq)
-# ctrl + cmd - t : yabai -m space --create && \
-#                 index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
-#                 yabai -m space --focus "${index}" && \
-#                 sketchybar -m --trigger space_change
-
-# # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
-# ctrl + shift - t : yabai -m space --create && \
-#                   index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
-#                   yabai -m window --space "${index}" && \
-#                   yabai -m space --focus "${index}" && \
-#                   sketchybar -m --trigger space_change
-#
-# cycle space management type - doesn't work
-# ctrl + alt + shift - backspace : source ~/.config/scripts/.space_change && sketchybar -m --trigger mode_change
-
+# WAIT ON SONOMA
 # stop/start/restart yabai
 # ctrl + alt - q : yabai --stop-service && skhd --stop-service
 # ctrl + alt - s : yabai --start-service && skhd --start-service
 # ctrl + alt - r : yabai --restart-service && skhd --restart-service
 
+#sketchybar - NEEDED 
+# lalt - space : yabai -m window --toggle float; sketchybar --trigger window_focus
+# shift + lalt - f : yabai -m window --toggle zoom-fullscreen; sketchybar --trigger window_focus
+# lalt - f : yabai -m window --toggle zoom-parent; sketchybar --trigger window_focus
+# shift + lalt - 1 : yabai -m window --space 1 && sketchybar --trigger windows_on_spaces
