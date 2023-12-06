@@ -39,6 +39,12 @@ alias txnds "tmux new -d -s"
 abbr lzd "lazydocker"
 abbr lzg "lazygit"
 abbr cat "bat"
+abbr search "findme"
+abbr stow "stow --target $HOME"
+abbr gpg "7DAAE552563BD34F"
+abbr kill-spaces "rm ~/Library/Preferences/com.apple.spaces.plist"
+
+# ls aliases
 alias l "eza -la --icons --git"
 alias ls "eza -la --icons --git"
 alias lT "eza -lT --icons --git"
@@ -47,10 +53,6 @@ alias lf "eza -lF --color=always | grep -v /"
 alias lh "eza -dl .* --group-directories-first"
 alias ll "eza -al --group-directories-first"
 alias lt "eza -al --sort=modified"
-abbr search "findme"
-abbr stow "stow --target $HOME"
-abbr gpg "7DAAE552563BD34F"
-abbr kill-spaces "rm ~/Library/Preferences/com.apple.spaces.plist"
 
 #Brew
 abbr bi "brew install"
