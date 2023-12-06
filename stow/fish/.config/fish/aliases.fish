@@ -2,7 +2,8 @@
 #########################
 # BASIC ABBREVIATIONS #
 #########################
-
+export PGUSER=postgres
+export PGDATABASE=postgres
 abbr .. "cd ../"
 abbr .2 "cd ../.."
 abbr .3 "cd ../../.."
@@ -96,7 +97,8 @@ abbr jup "jupyter notebook"
 abbr vs "code-insiders ./"
 abbr dw "dotnet watch run"
 abbr db "dotnet build"
-abbr dr "dotnet restore"
+abbr drs "dotnet restore"
+abbr dr "dotnet run"
 abbr zoostart "~/kafka34/bin/zookeeper-server-start.sh ~/kafka34/config/zookeeper.properties"
 abbr kafkastart "~/kafka34/bin/kafka-server-start.sh ~/kafka34/config/server.properties"
 abbr sy "yabai --start-service; and skhd --start-service"
