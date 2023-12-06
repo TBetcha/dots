@@ -36,14 +36,17 @@ alias txns "tmux new -s"
 alias txnds "tmux new -d -s" 
 
 #Programs
-abbr ld "lazydocker"
-abbr lg "lazygit"
+abbr lzd "lazydocker"
+abbr lzg "lazygit"
 abbr cat "bat"
-abbr l "lsd -al . --git"
-abbr ls "lsd -al . --git"
-abbr lt "lsd --tree"
-abbr ll "lsd --tree --long --git"
-abbr la "lsd --tree --long --git -a"
+alias l "eza -la --icons --git"
+alias ls "eza -la --icons --git"
+alias lT "eza -lT --icons --git"
+alias ld "eza -lD"
+alias lf "eza -lF --color=always | grep -v /"
+alias lh "eza -dl .* --group-directories-first"
+alias ll "eza -al --group-directories-first"
+alias lt "eza -al --sort=modified"
 abbr search "findme"
 abbr stow "stow --target $HOME"
 abbr gpg "7DAAE552563BD34F"
@@ -151,7 +154,7 @@ abbr ifaa "cd ~/code/ifaadfw/Server"
 #############
 
 function cd
-    builtin cd $argv; and lsd -al .
+    builtin cd $argv; and ls
 end
 
 # Pretty prints the disk space of the given directory
