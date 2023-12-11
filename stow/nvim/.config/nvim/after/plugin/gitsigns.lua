@@ -22,13 +22,13 @@ require('gitsigns').setup{
     end, {expr=true})
 
     -- Actions
-    map('n', '<leader>gst', gs.stage_hunk)
-    map('n', '<leader>grs', gs.reset_hunk)
-    map('v', '<leader>gst', function() gs.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
-    map('v', '<leader>grs', function() gs.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+    map('n', '<leader>gsh', gs.stage_hunk)
+    map('n', '<leader>grh', gs.reset_hunk)
+    map('v', '<leader>gsh', function() gs.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+    map('v', '<leader>grh', function() gs.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
     map('n', '<leader>gsb', gs.stage_buffer)
     map('n', '<leader>gun', gs.undo_stage_hunk)
-    map('n', '<leader>gre', gs.reset_buffer)
+    map('n', '<leader>grb', gs.reset_buffer)
     map('n', '<leader>ph', gs.preview_hunk)
     map('n', '<leader>gbl', function() gs.blame_line{full=true} end)
     map('n', '<leader>gb', gs.toggle_current_line_blame)

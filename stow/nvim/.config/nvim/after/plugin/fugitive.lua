@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+vim.keymap.set("n", "<leader>gst", vim.cmd.Git)
 
 local Tbetcha_Fugitive = vim.api.nvim_create_augroup("Tbetcha_Fugitive", {})
 
