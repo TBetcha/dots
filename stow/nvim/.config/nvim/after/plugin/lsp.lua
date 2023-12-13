@@ -218,7 +218,7 @@ lsp.on_attach(function(client, bufnr)
     keymap.set("n", "<leader>o", "<cmd>Lspsaga outline Toggle<CR>", opts)       -- see outline on right hand side
     keymap.set("n", "gtd", function() vim.lsp.buf.type_definition() end, opts)
     keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
-    keymap.set("i", "<C-s>", function() vim.lsp.buf.signature_help() end, opts)
+    keymap.set("i", "<leader>sh", function() vim.lsp.buf.signature_help() end, opts)
     keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
     keymap.set("n", "<leader>of", function() vim.diagnostic.open_float() end, opts)
     keymap.set("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>")
