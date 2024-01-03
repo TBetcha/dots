@@ -160,7 +160,7 @@ require("lazy").setup({
   -- "romgrk/barbar.nvim"
   -- --------------------------
   -- file explorer
-  -- "nvim-tree/nvim-tree.lua"
+  "nvim-tree/nvim-tree.lua",
   -- scala lsp
   -- "scalameta/nvim-metals"
   -- debugger

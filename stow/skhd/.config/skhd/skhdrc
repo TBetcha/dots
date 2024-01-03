@@ -144,15 +144,15 @@ shift + alt + cmd + ctrl - 9 : yabai -m window --space 9 && yabai -m space --foc
 # shift + alt + cmd + ctrl - 0 : yabai -m window --space 10 && yabai -m space --focus 10 && sketchybar -m --trigger space_change
 #
 # move window to space # w/o focus
-shift + cmd - 1 : yabai -m window --space 1;
-shift + cmd - 2 : yabai -m window --space 2;
-shift + cmd - 3 : yabai -m window --space 3;
-shift + cmd - 4 : yabai -m window --space 4;
-shift + cmd - 5 : yabai -m window --space 5;
-shift + cmd - 6 : yabai -m window --space 6;
-shift + cmd - 7 : yabai -m window --space 7;
-shift + cmd - 8 : yabai -m window --space 8;
-shift + cmd - 9 : yabai -m window --space 9;
+alt - 1 : yabai -m window --space 1;
+alt - 2 : yabai -m window --space 2;
+alt - 3 : yabai -m window --space 3;
+alt - 4 : yabai -m window --space 4;
+alt - 5 : yabai -m window --space 5;
+alt - 6 : yabai -m window --space 6;
+alt - 7 : yabai -m window --space 7;
+alt - 8 : yabai -m window --space 8;
+alt - 9 : yabai -m window --space 9;
 # shift + cmd - 0 : yabai -m window --space 10;
 
 # -- Starting/Stopping/Restarting Yabai --

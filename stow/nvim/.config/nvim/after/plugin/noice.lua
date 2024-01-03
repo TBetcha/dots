@@ -28,6 +28,9 @@ noice.setup({
   },
   messages = {
       enabled = false
+  },
+  cmdline={
+  format = { cmdline = { pattern = "^:", icon = "󰘧", lang = "vim" } },
   }
 })
 

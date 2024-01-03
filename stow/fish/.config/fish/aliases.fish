@@ -133,6 +133,7 @@ alias myapi "cd ~/code/dmg/MyJobs/API/dmg.my-jobs-app.api"
 alias diapi "cd ~/code/dmg/DispatcherInvoicerOnboarding/API/dmg.dispatcher-invoicer-onboarding-app.api"
 alias pdapi "cd ~/code/dmg/ProviderDashboard/API/dmg.provider-dashboard-app.api"
 alias pdst "cd ~/code/dmg/ProviderDashboard/State/dmg.provider-dashboard-app.state"
+alias proto "cd ~/code/dmg/ProtoProjects/ProviderProto/dmg.providers.proto"
 
 #########################
 # PERSONAL PROJ ALIASES #
