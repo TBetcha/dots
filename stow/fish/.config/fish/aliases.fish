@@ -118,7 +118,7 @@ alias csapi "cd ~/code/dmg/CompanySettings/API/dmg.providerorg-profile-edit-app.
 alias csst "cd ~/code/dmg/CompanySettings/State/dmg.providerorg-profile-edit-app.state"
 alias opapi "cd ~/code/dmg/Opportunities/API/dmg.opportunity-app.api"
 alias opst "cd ~/code/dmg/Opportunities/State/dmg.opportunity-app.state"
-alias neapi "cd ~/code/dmg/NewProviderOnboarding/API/dmg.new-provider-onboarding-app.api"
+alias npapi "cd ~/code/dmg/NewProviderOnboarding/API/dmg.new-provider-onboarding-app.api"
 alias apapi "cd ~/code/dmg/ApprovalDashboard/API/dmg.approval-dashboard-app.api"
 alias apst "cd ~/code/dmg/ApprovalDashboard/State/dmg.approval-dashboard-app.state"
 alias apmat "cd ~/code/dmg/ApprovalDashboard/Materializer/dmg.approval-dashboard-app.materializer"
