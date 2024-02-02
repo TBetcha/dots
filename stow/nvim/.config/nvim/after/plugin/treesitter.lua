@@ -5,6 +5,7 @@ require 'nvim-treesitter.configs'.setup {
         "regex",
         "javascript",
         "typescript",
+        "c_sharp",
         "tsx",
         "yaml",
         "html",

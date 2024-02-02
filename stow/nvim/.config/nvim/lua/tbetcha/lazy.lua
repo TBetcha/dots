@@ -21,11 +21,13 @@ require("lazy").setup({
   -- {
   --   "EdenEast/nightfox.nvim",
   -- },
-  -- { "catppuccin/nvim", name = "catppuccin" },
-  {
-    "olimorris/onedarkpro.nvim",
-    priority = 1000, -- Ensure it loads first
+  { "catppuccin/nvim", name = "catppuccin",
+     priority = 1000, -- Ensure it loads first
   },
+  -- {
+  --   "olimorris/onedarkpro.nvim",
+  --   priority = 1000, -- Ensure it loads first
+  -- },
   -- "navarasu/onedark.nvim",
   -- LSP STUFF
   {
@@ -41,18 +43,13 @@ require("lazy").setup({
       { "hrsh7th/nvim-cmp" }, -- Required
       { "hrsh7th/cmp-nvim-lsp" }, -- Required
       { "L3MON4D3/LuaSnip" }, -- Required
+      -- source for text in buffer
+      { "hrsh7th/cmp-buffer" },
+      -- source for file system paths
+      { "hrsh7th/cmp-path" },
+      { "hrsh7th/cmp-cmdline" },
     },
   },
-  -- builtin lsp to easily configure language servers
-  "neovim/nvim-lspconfig",
-  -- for autocompletion
-  "hrsh7th/cmp-nvim-lsp",
-  -- autocompletion plugin
-  "hrsh7th/nvim-cmp",
-  -- source for text in buffer
-  "hrsh7th/cmp-buffer",
-  -- source for file system paths
-  "hrsh7th/cmp-path",
   -- copilot that doesn't suck
   {
     "zbirenbaum/copilot.lua",
@@ -91,8 +88,7 @@ require("lazy").setup({
   "jose-elias-alvarez/null-ls.nvim",
   -- bridges gap b/w mason & null-ls
   "jayp0521/mason-null-ls.nvim",
-  -- ts plugin
-  ("jose-elias-alvarez/typescript.nvim"),
+  "jose-elias-alvarez/typescript.nvim",
   --icons in lsp menu
   { "onsails/lspkind.nvim" },
   --enhanced lsp stuff that uses treesitter and not regex
