@@ -73,7 +73,7 @@ opt.ignorecase = true
 opt.smartcase = true
 
 -- faster completions
-opt.updatetime = 400
+opt.updatetime = 100
 
 -- Show command options on the bottom when pressing tab
 opt.wildmenu = true

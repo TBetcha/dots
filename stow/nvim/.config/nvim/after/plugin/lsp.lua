@@ -93,11 +93,8 @@ mason_lspconfig.setup({
       lspconfig.lua_ls.setup(lua_opts)
     end,
     omnisharp =  function()
-
         local pid = vim.fn.getpid()
-
         local omnisharp_bin = "/usr/local/bin/omnisharp-roslyn/OmniSharp"
-
         require'lspconfig'.omnisharp.setup{
             cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) },
         require('lspconfig')['omnisharp'].setup {

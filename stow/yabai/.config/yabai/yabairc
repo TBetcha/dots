@@ -14,6 +14,11 @@ sudo yabai --load-sa
 
 # default layout (can be bsp, stack or float)
 yabai -m config layout bsp
+# on or off (default: off)
+yabai -m config auto_balance on
+# Floating point value between 0 and 1 (default: 0.5)
+yabai -m config split_ratio 0.5
+
 
 # new window spawns to the right if vertical split, or bottom if horizontal split
 yabai -m config window_placement second_child
@@ -21,15 +26,16 @@ yabai -m config window_placement second_child
 # border
 yabai -m config window_border on
 yabai -m config window_shadow off
-yabai -m config window_opacity on
+yabai -m config window_opacity off
 yabai -m config active_window_opacity 1.0
 yabai -m config normal_window_opacity 0.80
 # yabai -m config active_window_border_color 0xFFFFFFFF
+yabai -m config normal_window_border_color 0xFFFFFFFF
 yabai -m config active_window_border_color 0xFF64DD16
 # yabai -m config active_window_border_color 0xFF1565C0
 
 # padding set to 12px
-yabai -m config top_padding 4
+yabai -m config top_padding 40
 yabai -m config bottom_padding 12
 yabai -m config left_padding 12
 yabai -m config right_padding 12
@@ -92,9 +98,9 @@ yabai -m rule --add app="Setapp" space=^"OS"
 yabai -m rule --add app="OpenVPN\ Connect$" opacity=0.5
 
 yabai -m space 7 --label media
-yabai -m rule --add app="Music" space=^"media" opacity=0.7
-yabai -m rule --add app="Overcast" space=^"media" opacity=0.7
-yabai -m rule --add app="Spotify" space=^"media" opacity=0.7
+yabai -m rule --add app="Music" space=^"media" opacity=0.8
+yabai -m rule --add app="Overcast" space=^"media" opacity=0.8
+yabai -m rule --add app="Spotify" space=^"media" opacity=0.8
 
 yabai -m space 6 --label reference
 yabai -m rule --add app="Pages" space=^"reference"
@@ -106,7 +112,7 @@ yabai -m rule --add app="PDF\ Reader\ Pro" space=^"reference"
 
 yabai -m space 5 --label devtools
 yabai -m rule --add app="Boop" space=^"devtools"
-yabai -m rule --add app="Postman" space=^"devtools"  opacity=0.85
+yabai -m rule --add app="Postman" space=^"devtools"
 yabai -m rule --add app="SnippetsLab" space=^"devtools"
 yabai -m rule --add app="Lens" space=^"devtools"
 
@@ -121,15 +127,15 @@ yabai -m rule --add app="Rider" space=^"development"
 
 yabai -m space 3 --label browser
 yabai -m rule --add app="Firefox" space=^"browser" opacity=0.8
-yabai -m rule --add app="Brave" space=^"browser"opacity=0.8
+yabai -m rule --add app="Brave" space=^"browser"opacity=0.5
 yabai -m rule --add app="Arc" space=^"browser" opacity=0.8
 yabai -m rule --add app="Google\ Chrome" space=^"browser" opacity=0.8
 yabai -m rule --add app="^Safari*" space=^"browser" opacity=0.8
 
 yabai -m space 2 --label communication
-yabai -m rule --add app="Messages" space=^"communication" opacity=0.7
+yabai -m rule --add app="Messages" space=^"communication" opacity=0.5
 yabai -m rule --add app="Spark" space=^"communication" opacity=0.7
-yabai -m rule --add app="Spark\ Desktop" space=^"communication" opacity=0.7
+yabai -m rule --add app="Spark\ Desktop" space=^"communication" opacity=0.6
 yabai -m rule --add app="Find\ My" space=^"communication"
 yabai -m rule --add app="Discord" space=^"communication" opacity=0.7
 yabai -m rule --add app="FaceTime" space=^"communication" opacity=0.7
@@ -142,7 +148,7 @@ yabai -m space 1 --label productivity
 yabai -m rule --add app="BusyCal" space=^"productivity" opacity=0.7
 yabai -m rule --add app="Todoist" space=^"productivity" opacity=0.7
 yabai -m rule --add app="Bear" space=^"productivity" opacity=0.7
-yabai -m rule --add app="Notion" space=^"productivity" opacity=0.85
+yabai -m rule --add app="Notion" space=^"productivity" opacity=0.65
 
 # Auto update yabai
 # YABAI_CERT=yabai-cert sh -c "$(curl -fsSL "https://git.io/update-yabai")" &

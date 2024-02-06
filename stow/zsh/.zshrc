@@ -22,20 +22,36 @@ export editor="nvim"
 # home dir
 export xdg_config_home=$home/.config
  
-export path=$home/bin:/usr/local/bin:$path
+# append path+=()
+# prepend path=()
 
-export path=$path:/usr/local/share/dotnet/dotnet
-export path=$path:~/.dotnet
-export dotnet_root=$home/.dotnet
-export path=$path:$dotnet_root:$dotnet_root/tools
+# export path=$path/bin
+path+=('/bin')
+path+=('/usr/local/bin')
+path+=('/usr/local/share/dotnet/dotnet')
+path+=('/.dotnet')
+path+=('$dotnet_root:$dotnet_root/tools')
+path+=('~/.config/scripts/bin_scripts')
+path+=('~/.config/scripts')
+path+=('opt/homebrew/bin')
+path+=('opt/homebrew/sbin')
+path+=('/users/tmb/kafka_2.13-3.4.0/bin')
 
-export path=$path:~/.config/scripts/bin_scripts
-export path=$path:~/.config/scripts
-
-export path=/opt/homebrew/bin:$path
-export path=/opt/homebrew/sbin:$path
-
-export path="$path:/users/tmb/kafka_2.13-3.4.0/bin"
+export PATH
+# export path=$path/usr/local/bin
+#
+# export path=$path:/usr/local/share/dotnet/dotnet
+# export path=$path:~/.dotnet
+# export dotnet_root=$home/.dotnet
+# export path=$path:$dotnet_root:$dotnet_root/tools
+#
+# export path=$path:~/.config/scripts/bin_scripts
+# export path=$path:~/.config/scripts
+#
+# export path=/opt/homebrew/bin:$path
+# export path=/opt/homebrew/sbin:$path
+#
+# export path="$path:/users/tmb/kafka_2.13-3.4.0/bin"
 
 export protoc=/opt/homebrew/bin/protoc
 export protoc_include=/opt/homebrew/include
@@ -308,16 +324,16 @@ function zle-keymap-select {
       fi
 }
 
-zle -n zle-keymap-select
+
+zle -N zle-keymap-select
 zle-line-init() {
-       zle -k viins # initiate `vi insert` as keymap (can be removed if `bindkey -v` has been set elsewhere)
+       zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
            echo -ne "\e[5 q"
 }
 
-zle -n zle-line-init
-echo -ne '\e[5 q' # use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # use beam shape cursor for each new prompt.
-
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
