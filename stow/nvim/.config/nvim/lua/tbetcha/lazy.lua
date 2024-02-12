@@ -18,16 +18,17 @@ require("lazy").setup({
   -- tmux nav
   "christoomey/vim-tmux-navigator",
   -- theme
-  -- {
-  --   "EdenEast/nightfox.nvim",
-  -- },
+  {
+    "EdenEast/nightfox.nvim",
+     priority = 1000, -- Ensure it loads first
+  },
   { "catppuccin/nvim", name = "catppuccin",
      priority = 1000, -- Ensure it loads first
   },
-  -- {
-  --   "olimorris/onedarkpro.nvim",
-  --   priority = 1000, -- Ensure it loads first
-  -- },
+  {
+    "olimorris/onedarkpro.nvim",
+    priority = 1000, -- Ensure it loads first
+  },
   -- "navarasu/onedark.nvim",
   -- LSP STUFF
   {
@@ -153,14 +154,14 @@ require("lazy").setup({
   -- git icons
   "lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
   -- bar to show buffers
-  -- "romgrk/barbar.nvim"
+  "romgrk/barbar.nvim",
   -- --------------------------
   -- file explorer
   "nvim-tree/nvim-tree.lua",
   -- scala lsp
   -- "scalameta/nvim-metals"
   -- debugger
-  { "mfussenegger/nvim-dap" },
+  -- { "mfussenegger/nvim-dap" },
   -- -------------------------------
   -- auto close parens and brackets
   "windwp/nvim-autopairs",
@@ -171,14 +172,6 @@ require("lazy").setup({
   -- highlight todos
   "folke/todo-comments.nvim",
   -- markdown preview
-  {
-    "iamcco/markdown-preview.nvim",
-    build = "cd app && npm install",
-    init = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
-    ft = { "markdown" },
-  },
   {
     "folke/noice.nvim",
     dependencies = {
