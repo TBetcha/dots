@@ -1,12 +1,11 @@
-
 local noice_status, noice = pcall(require, "noice")
 if not noice_status then
-    return
+  return
 end
 
 local notify_status, notify = pcall(require, "notify")
 if not notify_status then
-    return
+  return
 end
 
 noice.setup({
@@ -27,13 +26,15 @@ noice.setup({
     lsp_doc_border = true, -- add a border to hover docs and signature help
   },
   messages = {
-      enabled = false
+    enabled = false,
   },
-  cmdline={
-  format = { cmdline = { pattern = "^:", icon = "󰘧", lang = "vim" } },
-  }
+  cmdline = {
+    format = {
+      cmdline = { pattern = "^:", icon = "󰘧", lang = "vim" },
+    },
+  },
 })
 
 notify.setup({
-    background_colour = "#000000",
+  background_colour = "#000000",
 })

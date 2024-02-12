@@ -255,7 +255,8 @@ lsp.on_attach(function(client, bufnr)
   keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
   keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
   keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
-  keymap.set("n", "<leader>o", "<cmd>Lspsaga outline Toggle<CR>", opts) -- see outline on right hand side
+  keymap.set("n", "<leader>ot", "<cmd>Lspsaga outline Toggle<CR>", opts) -- see outline on right hand side
+  keymap.set({"n","t"}, "<leader>tw", "<cmd>Lspsaga term_toggle<CR>", opts) -- see outline on right hand side
   keymap.set("n", "gtd", function() vim.lsp.buf.type_definition() end, opts)
   keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
   keymap.set("i", "<leader>sig", function() vim.lsp.buf.signature_help() end, opts)

@@ -12,7 +12,7 @@ saga.setup({
     edit = "<CR>",
   },
   ui = {
-        -- kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+        kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
     colors = {
       normal_bg = "#022746",
     },
