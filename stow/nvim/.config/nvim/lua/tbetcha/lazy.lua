@@ -20,13 +20,15 @@ require("lazy").setup({
   -- theme
   {
     "EdenEast/nightfox.nvim",
-     priority = 1000, -- Ensure it loads first
-  },
-  { "catppuccin/nvim", name = "catppuccin",
-     priority = 1000, -- Ensure it loads first
+    priority = 1000, -- Ensure it loads first
   },
   {
     "olimorris/onedarkpro.nvim",
+    priority = 1000, -- Ensure it loads first
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
     priority = 1000, -- Ensure it loads first
   },
   -- "navarasu/onedark.nvim",
@@ -154,7 +156,7 @@ require("lazy").setup({
   -- git icons
   "lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
   -- bar to show buffers
-  "romgrk/barbar.nvim",
+  -- "romgrk/barbar.nvim",
   -- --------------------------
   -- file explorer
   "nvim-tree/nvim-tree.lua",

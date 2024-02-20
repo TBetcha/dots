@@ -8,6 +8,7 @@ if not notify_status then
   return
 end
 
+vim.keymap.set("n", "<leader>nd", "<cmd>Noice dismiss<cr>", { silent = true }, { desc = "[N]oice [D]ismiss" })
 noice.setup({
   lsp = {
     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**

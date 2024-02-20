@@ -46,28 +46,28 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 -- setup must be called before loading
 -- vim.cmd("colorscheme onedark")
 
-function ColorMyPencils(color)
-    color = color or "cattpuccin"
-    -- vim.cmd.colorscheme(color)
+-- function ColorMyPencils(color)
+--     color = color or "cattpuccin"
+--     -- vim.cmd.colorscheme(color)
+--
+--     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+--     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- end
 
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-end
+-- function LineNumberColors()
+--     vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#ABB2BF", bold = false })
+--     vim.api.nvim_set_hl(0, "LineNr", { fg = "#61AFEF", bold = true })
+--     vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#ABB2BF", bold = false })
+-- end
 
-function LineNumberColors()
-    vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#ABB2BF", bold = false })
-    vim.api.nvim_set_hl(0, "LineNr", { fg = "#61AFEF", bold = true })
-    vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#ABB2BF", bold = false })
-end
+-- function HarpoonColors()
+--     vim.cmd("highlight! HarpoonInactive guibg=NONE guifg=#ABB2BF")
+--     vim.cmd("highlight! HarpoonActive guibg=NONE guifg=#E06C75")
+--     vim.cmd("highlight! HarpoonNumberActive guibg=NONE guifg=#61AFEF")
+--     vim.cmd("highlight! HarpoonNumberInactive guibg=NONE guifg=#E5C07B")
+--     vim.cmd("highlight! TabLineFill guibg=NONE guifg=NONE")
+-- end
 
-function HarpoonColors()
-    vim.cmd("highlight! HarpoonInactive guibg=NONE guifg=#ABB2BF")
-    vim.cmd("highlight! HarpoonActive guibg=NONE guifg=#E06C75")
-    vim.cmd("highlight! HarpoonNumberActive guibg=NONE guifg=#61AFEF")
-    vim.cmd("highlight! HarpoonNumberInactive guibg=NONE guifg=#E5C07B")
-    vim.cmd("highlight! TabLineFill guibg=NONE guifg=NONE")
-end
-
-ColorMyPencils()
+-- ColorMyPencils("onedark")
 -- LineNumberColors()
 -- HarpoonColors()

@@ -12,12 +12,29 @@ saga.setup({
     edit = "<CR>",
   },
   ui = {
-        kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+    kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
     colors = {
       normal_bg = "#022746",
     },
   },
   winbar = {
-      color_mode = true,
-  }
+    color_mode = true,
+  },
+  diagnostic = {
+    max_height = 0.8,
+    keys = {
+      quit = { "q", "<ESC>" },
+    },
+    extend_relatedInformation = true,
+  },
+  finder = {
+    max_height = 0.6,
+    right_width = 0.5,
+    keys = {
+      vsplit = "v",
+    },
+  },
+  code_action = {
+    extend_gitsigns = true,
+  },
 })
