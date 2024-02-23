@@ -81,10 +81,10 @@ yabai -m rule --add app="^Weather$" manage=off
 yabai -m rule --add app="^balenaEtcher$" manage=off
 
 # I don't really hav anythign to put here yet added this to keep pattern
-yabai -m space 9 --label other
-yabai -m rule --add app="DisplayBuddy" space=^"other"
+# yabai -m space 9 --label other
+# yabai -m rule --add app="DisplayBuddy" space=^"other"
 
-yabai -m space 8 --label OS
+yabai -m space 9 --label OS
 yabai -m rule --add app="The\ Unarchiver" space=^"OS"
 yabai -m rule --add app="Home" space=^"OS"
 yabai -m rule --add app="BetterTouchTool" space=^"OS"
@@ -97,12 +97,12 @@ yabai -m rule --add app="App Store" space=^"OS"
 yabai -m rule --add app="Setapp" space=^"OS"
 yabai -m rule --add app="OpenVPN\ Connect$" opacity=0.5
 
-yabai -m space 7 --label media
+yabai -m space 8 --label media
 yabai -m rule --add app="Music" space=^"media" opacity=0.8
 yabai -m rule --add app="Overcast" space=^"media" opacity=0.8
 yabai -m rule --add app="Spotify" space=^"media" opacity=0.8
 
-yabai -m space 6 --label reference
+yabai -m space 7 --label reference
 yabai -m rule --add app="Pages" space=^"reference"
 yabai -m rule --add app="Numbers" space=^"reference"
 yabai -m rule --add app="Microsoft\ Word" space=^"reference"
@@ -110,20 +110,22 @@ yabai -m rule --add app="Microsoft\ PowerPoint" space=^"reference"
 yabai -m rule --add app="Microsoft\ Excel" space=^"reference"
 yabai -m rule --add app="PDF\ Reader\ Pro" space=^"reference"
 
+yabai -m space 6 --label tools
+yabai -m rule --add app="Boop" space=^"tools"
+yabai -m rule --add app="Postman" space=^"tools"
+yabai -m rule --add app="SnippetsLab" space=^"tools"
+yabai -m rule --add app="Lens" space=^"tools"
+
 yabai -m space 5 --label devtools
-yabai -m rule --add app="Boop" space=^"devtools"
-yabai -m rule --add app="Postman" space=^"devtools"
-yabai -m rule --add app="SnippetsLab" space=^"devtools"
-yabai -m rule --add app="Lens" space=^"devtools"
+yabai -m rule --add app="Rider" space=^"devtools"
+yabai -m rule --add app="Visual Studio Code - Insiders" space=^"devtools"
 
 yabai -m space 4 --label development
 yabai -m rule --add app="kitty" space=^"development" opacity=1.0
-yabai -m rule --add app="Visual Studio Code - Insiders" space=^"development"
 yabai -m rule --add app="Warp" space=^"development"
 yabai -m rule --add app="Wezterm" space=^"development"
 yabai -m rule --add app="iTerm" space=^"development"
 yabai -m rule --add app="Alacritty" space=^"development"
-yabai -m rule --add app="Rider" space=^"development"
 
 yabai -m space 3 --label browser
 yabai -m rule --add app="Firefox" space=^"browser" opacity=0.8

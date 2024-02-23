@@ -1,5 +1,5 @@
 # SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9")
-SPACE_ICONS=("PROD" "COMM" "WWW" "DEV" "DEV" "REF" "ENT" "OS" "OTH")
+SPACE_ICONS=("PROD" "COMM" "WWW" "CMD" "DEV" "DEV2" "REF" "ENT" "OS")
 
 for i in "${!SPACE_ICONS[@]}"
 do

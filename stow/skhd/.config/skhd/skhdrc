@@ -110,8 +110,8 @@ shift + alt - right : yabai -m window --display east; yabai -m display --focus e
 
 
 # fast focus desktop - wait on sonoma
-cmd - left : yabai -m space --focus prev && sketchybar -m --trigger space_change
-cmd - right : yabai -m space --focus next && sketchybar -m --trigger space_change
+alt - left : yabai -m space --focus prev && sketchybar -m --trigger space_change
+alt - right : yabai -m space --focus next && sketchybar -m --trigger space_change
 # cmd + ctrl - right : (yabai -m space --focus next || yabai -m space --focus first) || skhd -k "cmd - right"
 
 # move window to prev and next space - works
