@@ -7,8 +7,8 @@ cmd - h : yabai -m window --focus west
 cmd - l : yabai -m window --focus east
 
 #change focus between external displays (left and right)
-alt + cmd - left: yabai -m display --focus west
-alt + cmd - right: yabai -m display --focus east
+ctrl + cmd - left: yabai -m display --focus west
+ctrl + cmd - right: yabai -m display --focus east
 
 # -- Modifying the Layout --
 
@@ -105,8 +105,8 @@ shift + cmd - l : yabai -m window --swap east
 # ctrl + alt - l : yabai -m window --warp east
 #
 # move window to display left and right
-shift + alt - left : yabai -m window --display west; yabai -m display --focus west;
-shift + alt - right : yabai -m window --display east; yabai -m display --focus east;
+alt + cmd + ctrl - left : yabai -m window --display west; yabai -m display --focus west;
+alt + cmd + ctrl - right : yabai -m window --display east; yabai -m display --focus east;
 
 
 # fast focus desktop - wait on sonoma
