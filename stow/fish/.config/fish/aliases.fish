@@ -25,16 +25,6 @@ alias v "nvim"
 alias . "nvim ."
 alias vimdiff 'nvim -d'
 
-#Git
-##  NOTE: These are already set bc of git fish plugin but I need this to use them in nvim
-alias gp "git push"
-alias gl "git pull" 
-alias gfa "git fetch --all --prune"
-alias gco "git checkout"
-alias gcb "git checkout -b"
-alias gsh "git show"
-
-
 #Tmux
 alias tx "tmux"
 alias txl "tmux ls"
