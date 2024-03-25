@@ -53,8 +53,12 @@ map("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>")
 -- start to replace word I'm hovering over
 map("n", "<leader>sss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+map("n", "<leader>cop", "<cmd>copen<CR>zz")
+map("n", "<leader>ccl", "<cmd>cclose<CR>zz")
 map("n", "<leader>cn", "<cmd>cnext<CR>zz")
 map("n", "<leader>cp", "<cmd>cprev<CR>zz")
+map("n", "<leader>lop", "<cmd>lopen<CR>zz")
+map("n", "<leader>lcl", "<cmd>lclose<CR>zz")
 map("n", "<leader>ln", "<cmd>lnext<CR>zz")
 map("n", "<leader>lp", "<cmd>lprev<CR>zz")
 

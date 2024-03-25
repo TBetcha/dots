@@ -47,6 +47,9 @@ vim.keymap.set("n", "<leader>tgi", builtin.lsp_implementations, {silent = true},
 vim.keymap.set("n", "<leader>tout", builtin.lsp_outgoing_calls, {silent = true},{ desc = "[T]elescope LSP [O]utgoing calls" })
 vim.keymap.set("n", "<leader>tin", builtin.lsp_incoming_calls, {silent = true},{ desc = "[[T]elescope LSP [I]ncoming calls" })
 vim.keymap.set("n", "<leader>mk", builtin.marks, {silent = true},{ desc = "[M]ar[K]s" })
+vim.keymap.set("n", "<leader>tloc", builtin.loclist, {silent = true},{ desc = "[T]elescope [Loc]list" })
+vim.keymap.set("n", "<leader>tqf", builtin.quickfix, {silent = true},{ desc = "[T]elescope [Q]uick[F]ix" })
+vim.keymap.set("n", "<leader>tqfh", builtin.quickfixhistory, {silent = true},{ desc = "[T]elescope [Q]uick[F]ix [H]istory" })
 vim.keymap.set("n", "<leader>tgc", "<cmd>Telescope git_commits<cr>",{silent = true}) -- list all git commits (use <cr> to checkout) ["tgc" for git commits]
 vim.keymap.set("n", "<leader>tgf", "<cmd>Telescope git_bcommits<cr>",{silent = true}) -- list git commits for current file/buffer (use <cr> to checkout) ["tgf" for git file commits]
 vim.keymap.set("n", "<leader>tgb", "<cmd>Telescope git_branches<cr>",{silent = true}) -- list git branches (use <cr> to checkout) ["tgb" for git branch]
