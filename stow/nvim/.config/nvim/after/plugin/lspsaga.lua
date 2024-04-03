@@ -39,5 +39,8 @@ saga.setup({
         keys = {
             quit = {'q', '<ESC>'}
         },
+  },
+  rename = {
+      auto_save = true
   }
 })
