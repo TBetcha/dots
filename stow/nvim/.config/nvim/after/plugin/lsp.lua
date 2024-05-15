@@ -90,7 +90,6 @@ mason_lspconfig.setup({
     "lua_ls",
     "emmet_ls",
     "omnisharp",
-    "sqlls",
   },
   handlers = {
     lsp.default_setup,
@@ -136,6 +135,7 @@ mason_null_ls.setup({
     "eslint_d", -- ts/js linter
     "fantomas", -- fsharp formatter
     "buf", -- protobuf formatter
+    "sql_formatter", -- protobuf formatter
   },
   -- auto-install configured formatters & linters (with null-ls)
   automatic_installation = true,

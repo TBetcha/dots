@@ -5,25 +5,21 @@
 [init]
 	defaultBranch = main
 [core]
+	editor = nvim
 	autocrlf = input
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
 [push]
 	autoSetupRemote = true
 [color]
 	ui = true
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
-[color "diff"]
-	meta = yellow
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
-[diff-so-fancy]
-	first-run = false
+[delta]
+    navigate = true #use n and N to move between diff sections
+    side-by-side = true
+[merge]
+    conflictStyle = diff3
 [diff]
-	tool = nvimdiff
+    colormoved = default
+[interactive]
+    diffFilter = delta --color-only
+[pull]
+	ff = only
