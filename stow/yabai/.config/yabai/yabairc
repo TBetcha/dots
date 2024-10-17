@@ -1,6 +1,5 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
-
 # __   __ _    ____    _    ___
 # \ \ / // \  | __ )  / \  |_ _|
 #  \ V // _ \ |  _ \ / _ \  | |
@@ -24,18 +23,18 @@ yabai -m config split_ratio 0.5
 yabai -m config window_placement second_child
 
 # border
-yabai -m config window_border on
+# yabai -m config window_border on
 yabai -m config window_shadow off
 yabai -m config window_opacity off
 yabai -m config active_window_opacity 1.0
 yabai -m config normal_window_opacity 0.80
 # yabai -m config active_window_border_color 0xFFFFFFFF
-yabai -m config normal_window_border_color 0xFFFFFFFF
-yabai -m config active_window_border_color 0xFF64DD16
+# yabai -m config normal_window_border_color 0xFFFFFFFF
+# yabai -m config active_window_border_color 0xFF64DD16
 # yabai -m config active_window_border_color 0xFF1565C0
 
 # padding set to 12px
-yabai -m config top_padding 4
+yabai -m config top_padding 34 
 yabai -m config bottom_padding 12
 yabai -m config left_padding 12
 yabai -m config right_padding 12
@@ -60,7 +59,7 @@ yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
 
 # when window is dropped in center of another window, swap them (on edges it will split it)
-yabai -m mouse_drop_action swap
+# yabai -m mouse_drop_action swap
 
 
 #####################
@@ -135,9 +134,9 @@ yabai -m rule --add app="Google\ Chrome" space=^"browser"
 yabai -m rule --add app="^Safari*" space=^"browser"
 
 yabai -m space 2 --label communication
-yabai -m rule --add app="Messages" space=^"communication" opacity=0.5
-yabai -m rule --add app="Spark" space=^"communication" opacity=0.7
-yabai -m rule --add app="Spark\ Desktop" space=^"communication" opacity=0.6
+yabai -m rule --add app="Messages" space=^"communication" opacity=0.8
+yabai -m rule --add app="Spark" space=^"communication" opacity=0.6
+yabai -m rule --add app="Spark\ Desktop" space=^"communication" opacity=0.8
 yabai -m rule --add app="Find\ My" space=^"communication"
 yabai -m rule --add app="Discord" space=^"communication" opacity=0.7
 yabai -m rule --add app="FaceTime" space=^"communication" opacity=0.7
@@ -154,5 +153,8 @@ yabai -m rule --add app="Notion" space=^"productivity" opacity=0.80
 
 # Auto update yabai
 # YABAI_CERT=yabai-cert sh -c "$(curl -fsSL "https://git.io/update-yabai")" &
-#
+# #
 # shasum -a 256 $(which yabai) &  sudo visudo -f /private/etc/sudoers.d/yabai
+
+# borders active_color=0xffe1e3e4 inactive_color=0xFFFFFFFF width=5.0 &
+borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &

@@ -33,6 +33,7 @@ opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true
 opt.smartindent = true
+opt.inccommand = "split"
 -- Format options meaning
 -- - "a" -- I'll take the wheel, no formatting for you
 -- - "t" -- Seriously, Don't auto format my code.

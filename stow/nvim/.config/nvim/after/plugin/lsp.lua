@@ -90,6 +90,7 @@ mason_lspconfig.setup({
     "lua_ls",
     "emmet_ls",
     "omnisharp",
+    "sqlls",
   },
   handlers = {
     lsp.default_setup,
@@ -100,7 +101,7 @@ mason_lspconfig.setup({
     omnisharp = function()
       local pid = vim.fn.getpid()
       local omnisharp_bin = "/usr/local/bin/omnisharp-roslyn/OmniSharp"
-      require("lspconfig").omnisharp.setup({
+      lspconfig.omnisharp.setup({
         cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
         require("lspconfig")["omnisharp"].setup({
           capabilities = cmp_nvim_lsp.default_capabilities(),
@@ -136,6 +137,9 @@ mason_null_ls.setup({
     "fantomas", -- fsharp formatter
     "buf", -- protobuf formatter
     "sql_formatter", -- protobuf formatter
+    "black",
+    "csharpier",
+    "omnisharp"
   },
   -- auto-install configured formatters & linters (with null-ls)
   automatic_installation = true,
@@ -261,8 +265,8 @@ lsp.on_attach(function(client, bufnr)
   -- jump into doc window with kk use gx to go to link
   keymap.set("n", "<leader>fa", "<cmd>Lspsaga finder tyd+ref+imp+def<CR>", opts) -- show definition, references
   keymap.set("n", "gdc", function() vim.lsp.buf.declaration() end, opts) -- got to declaration
-  keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end, opts) -- lsp go to definition
-  keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
+  keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts) -- lsp go to definition
+  keymap.set("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
   keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts) -- go to implementation
   keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
   keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
@@ -277,11 +281,11 @@ lsp.on_attach(function(client, bufnr)
   keymap.set({ "n", "t" }, "<leader>tw", "<cmd>Lspsaga term_toggle<CR>", opts) -- see outline on right hand side
   keymap.set("n", "gtd", function() vim.lsp.buf.type_definition() end, opts)
   keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
-  keymap.set("i", "<leader>sig", function() vim.lsp.buf.signature_help() end, opts)
+  -- keymap.set("i", "<leader>sig", function() vim.lsp.buf.signature_help() end, opts)
   keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
   keymap.set("n", "<leader>of", function() vim.diagnostic.open_float() end, opts)
   keymap.set("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>")
-  keymap.set("n", "<leader>gr", "<cmd>Telescope lsp_references<cr>", { buffer = true })
+  keymap.set("n", "<leader>trr", "<cmd>Telescope lsp_references<cr>", { buffer = true })
 
   -- typescript specific keymaps (e.g. rename file and update imports)
   if client.name == "tsserver" then
@@ -292,6 +296,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
 
 -- -- used to enable autocompletion (assign to every lsp server config)
 ---
@@ -316,3 +321,4 @@ lsp.setup()
 vim.diagnostic.config({
   virtual_text = true,
 })
+

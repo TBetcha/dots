@@ -57,10 +57,10 @@ cmp.setup({
 	}),
 	-- sources for autocompletion - order should matter here for sorting purposes order
 	sources = cmp.config.sources({
+        { name = "luasnip" }, -- snippets
+        { name = "copilot" }, -- new copilot
 		{ name = "nvim_lsp" }, -- lsp
-		{ name = "copilot" }, -- new copilot
 		{ name = "cmp_tabnine" }, --tabnine but not from tabnine
-		{ name = "luasnip" }, -- snippets
 		{ name = "buffer" }, -- text within current buffer
 		{ name = "path" }, -- file system paths
 		{ name = "treesitter" }, -- treesitter

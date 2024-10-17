@@ -73,7 +73,7 @@ require("nvim-tree").setup({
         debounce_delay = 50,
         severity = {
             max = vim.diagnostic.severity.ERROR,
-            min = vim.diagnostic.severity.HINT,
+            min = vim.diagnostic.severity.WARNING,
         },
         icons = {
             hint = "",

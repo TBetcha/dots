@@ -22,16 +22,16 @@ catppuccin.setup({
 	no_underline = false, -- Force no underline
 	styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
 		comments = { "italic" }, -- Change the style of comments
-		conditionals = { "bold" },
+		conditionals = { },
 		loops = {},
-		functions = {"italic", "underline"},
-		keywords = {"bold", "italic"},
+		functions = {"bold"},
+		keywords = { "italic"},
 		strings = {},
-		variables = {},
+		variables = {"bold"},
 		numbers = {},
-		booleans = {"bold"},
+		booleans = {},
 		properties = {},
-		types = {},
+		types = {"underline"},
 		operators = {},
 	},
 	color_overrides = {},
@@ -70,10 +70,10 @@ catppuccin.setup({
 			information = { "italic" },
 		},
 		underlines = {
-			errors = { "underline" },
-			hints = { "underline" },
-			warnings = { "underline" },
-			information = { "underline" },
+			errors = { "undercurl" },
+			hints = { "undercurl" },
+			warnings = { "undercurl" },
+			information = { "undercurl" },
 		},
 		inlay_hints = {
 			background = true,
