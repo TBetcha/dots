@@ -35,6 +35,7 @@ alias txds "tmux detach -s"
 alias txns "tmux new -s"
 alias txnds "tmux new -d -s" 
 
+ 
 #Programs
 abbr lzd "lazydocker"
 abbr lzg "lazygit"
@@ -43,6 +44,8 @@ abbr search "findme"
 abbr stow "stow --target $HOME"
 abbr gpg "7DAAE552563BD34F"
 abbr kill-spaces "rm ~/Library/Preferences/com.apple.spaces.plist"
+thefuck --alias fck | source 
+
 
 # ls aliases
 alias l "eza -la --icons --git"
@@ -56,6 +59,7 @@ alias lt "eza -al --sort=modified"
 
 #Brew
 abbr bi "brew install"
+abbr bun "brew uninstall"
 abbr bic "brew install --cask"
 abbr binf "brew info"
 abbr binfc "brew info --cask"

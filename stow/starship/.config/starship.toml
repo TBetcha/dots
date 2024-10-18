@@ -1,14 +1,11 @@
 format = """
-[](#89B4FA)\
 $username\
-[󰀵 ](fg:#11111b bg:#89B4FA)\
-[](bg:#CDD6F4 fg:#89B4FA)\
+$shell\
 $directory\
-[](fg:#cdd6f4 bg:#fab387)\
 $git_branch\
 $git_status\
-[](fg:#fab387 bg:#cba6f7)\
 $c\
+$dotnet\
 $elixir\
 $elm\
 $golang\
@@ -18,31 +15,30 @@ $julia\
 $nodejs\
 $nim\
 $rust\
-[](fg:#cba6f7 bg:#a6e3a1)\
+$scala\
 $docker_context\
-[](fg:#a6e3a1 bg:#89b4fa)\
 $time\
-[ ](fg:#89B4FA)\
+$status\
+$cmd_duration\ 
 """
+ # ~/.config/starship.toml# ~/.config/starship.toml
+
 
 # Disable the blank line at the start of the prompt
 # add_newline = false
-
-# You can also replace your username with a neat symbol like  to save some space
+ 
+# You can also replace your username with a neat symbol like &#61728; to save some space
 [username]
 show_always = true
-style_user = "fg:#11111b bg:#89B4FA"
-style_root = "fg:#11111b bg:#f38ba8"
 format = '[$user ]($style)'
-
+ 
 [directory]
-style = "fg:#11111b bg:#cdd6f4"
 format = "[ $path ]($style)"
 truncation_length = 3
-truncation_symbol = "…/"
-
+ 
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
+
 [directory.substitutions]
 "documents" = " "
 "Documents" = " "
@@ -55,87 +51,128 @@ truncation_symbol = "…/"
 "Code" = "󰘧"
 "code" = "󰘧"
 # Keep in mind that the order matters. For example:
-# "Important Documents" = "  "
+# "Important Documents" = " &#63256;&#61738; "
 # will not be replaced, because "Documents" was already substituted before.
 # So either put "Important Documents" before "Documents" or use the substituted version:
-# "Important  " = "  "
+# "Important &#63256; " = " &#63256;&#61738; "
+ 
+ # ~/.config/starship.toml
+
+ # ~/.config/starship.toml
+
+[status]
+symbol = '🔴'
+success_symbol = '🟢'
+format = '$symbol($style) '
+map_symbol = true
+disabled = false
+
+[git_status]
+conflicted = '🏳 '
+up_to_date = '✓ '
+untracked = ' '
+staged = '[\($count\)](green)'
+deleted = '🗑 '
+ahead = ' ⇡ ${count}'
+diverged = ' ⇡${ahead_count} ⇣${behind_count}'
+behind = '⇣ ${count}'
+modified = ' '
+
+# [git_status]
+# style = "fg:#FCA17D"
+# format = '[[($all_status$ahead_behind )](fg:#FCA17D)]($style)'
 
 [c]
 symbol = " "
-style = "fg:#11111b bg:#cba6f7"
-format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+style = "fg:#86BBD8"
+format = '[[ $symbol ($version) ](fg:#86BBD8)]($style)'
 
 [docker_context]
 symbol = " "
-style = "fg:#11111b bg:#a6e3a1"
-format = '[[ $symbol $context ](fg:#11111b bg:#a6e3a1)]($style) $path'
+style = "fg:#06969A"
+format = '[[ $symbol $context ](fg:#06969A)]($style) $path'
 
 [elixir]
 symbol = " "
-style = "fg:#11111b bg:#cba6f7"
-format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+style = "fg:#86BBD8"
+format = '[[ $symbol ($version) ](fg:#86BBD8)]($style)'
 
 [elm]
 symbol = " "
-style = "fg:#11111b bg:#cba6f7"
-format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+style = "fg:#86BBD8"
+format = '[[ $symbol ($version) ](fg:#86BBD8)]($style)'
 
 [git_branch]
 symbol = ""
-style = "fg:#11111b bg:#fab387"
-format = '[[ $symbol $branch ](fg:#11111b bg:#fab387)]($style)'
-
-[git_status]
-style = "fg:#11111b bg:#fab387"
-format = '[[($all_status$ahead_behind )](fg:#11111b bg:#fab387)]($style)'
+style = "fg:#FCA17D"
+format = '[[ $symbol $branch ](fg:#FCA17D)]($style)'
 
 [golang]
 symbol = " "
-style = "fg:#11111b bg:##cba6f7"
-#format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
-format = '[[ $symbol](fg:#11111b bg:#cba6f7)]($style)'
+style = "fg:#86BBD8"
+format = '[[ $symbol ($version) ](fg:#86BBD8)]($style)'
+
 [haskell]
 symbol = " "
-style = "fg:#11111b bg:#cba6f7"
-format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+style = "fg:#86BBD8"
+format = '[[ $symbol ($version) ](fg:#86BBD8)]($style)'
 
 [java]
 symbol = " "
-style = "fg:#11111b bg:#cba6f7"
-format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+style = "fg:#86BBD8"
+format = '[[ $symbol ($version) ](fg:#86BBD8)]($style)'
 
 [julia]
 symbol = " "
-style = "fg:#11111b bg:#cba6f7"
-format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+style = "fg:#86BBD8"
+format = '[[ $symbol ($version) ](fg:#86BBD8)]($style)'
 
 [nodejs]
 symbol = ""
-style = "fg:#11111b bg:#cba6f7"
-format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+style = "fg:#86BBD8"
+format = '[[ $symbol ($version) ](fg:#86BBD8)]($style)'
 
 [nim]
 symbol = " "
-style = "fg:#11111b bg:#cba6f7"
-format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+style = "fg:#86BBD8"
+format = '[[ $symbol ($version) ](fg:#86BBD8)]($style)'
 
-[rust]
-symbol = ""
-style = "fg:#11111b bg:#cba6f7"
-format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
 
 [dotnet]
 symbol = ""
-style = "fg:#11111b bg:#cba6f7"
-format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+style = "fg:#86BBD8"
+format = '[[ $symbol ($version) ](fg:#86BBD8)]($style)'
 
 [scala]
 symbol = ""
-style = "fg:#11111b bg:#cba6f7"
-format = '[[ $symbol ($version) ](fg:#11111b bg:#cba6f7)]($style)'
+style = "fg:#86BBD8"
+format = '[[ $symbol ($version) ](fg:#86BBD8)]($style)'
+
+# [time]
+# disabled = false
+# time_format = "%R" # Hour:Minute Format
+# style = "fg:#33658A"
+# format = '[[ &#129293; $time ](fg:#33658A)]($style)'
+
+# ~/.config/starship.toml
+
+# ~/.config/starship.toml
+
+[cmd_duration]
+min_time = 500
+format = 'took [$duration ](bold yellow)'
+
+[shell]
+fish_indicator = '󰈺'
+powershell_indicator = '_'
+bash_indicator = '$_'
+unknown_indicator = 'mystery shell'
+style = 'cyan bold'
+disabled = false
 
 [time]
 disabled = false
-time_format = "%R" # Hour:Minute Format
-style = "fg:#11111b bg:#89b4fa"
-format = '[[ $time ](fg:#11111b bg:#89b4fa)]($style)'
+format = '[$time]($style) '
+time_format = '%T'
+utc_time_offset = '-4'
+

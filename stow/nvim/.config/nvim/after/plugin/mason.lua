@@ -24,7 +24,7 @@ mason_lspconfig.setup({
 	ensure_installed = {
 		"rust_analyzer",
         "fsautocomplete",
-		"tsserver",
+		"ts_ls",
 		"html",
 		"cssls",
 		"tailwindcss",

@@ -415,17 +415,17 @@ require("lazy").setup({
   -- highlight todos
   "folke/todo-comments.nvim",
   -- markdown preview
-  -- {
-  --   "folke/noice.nvim",
-  --   dependencies = {
-  --     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-  --     { "MunifTanjim/nui.nvim" },
-  --     -- OPTIONAL:
-  --     --   `nvim-notify` is only needed, if you want to  the notification view.
-  --     --   If not available, we  `mini` as the fallback
-  --     { "rcarriga/nvim-notify" },
-  --   },
-  -- },
+  {
+    "folke/noice.nvim",
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      { "MunifTanjim/nui.nvim" },
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to  the notification view.
+      --   If not available, we  `mini` as the fallback
+      { "rcarriga/nvim-notify" },
+    },
+  },
   {
     "NvChad/nvim-colorizer.lua",
     config = function()
@@ -688,5 +688,15 @@ require("lazy").setup({
       end, { silent = true, noremap = true, desc = "select signature" })
     end,
   },
+ {
+  "d7omdev/nuget.nvim",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-telescope/telescope.nvim",
+  },
+  config = function()
+    require("nuget").setup()
+  end,
+},
 })
 require("lazy").setup(plugins, {})
