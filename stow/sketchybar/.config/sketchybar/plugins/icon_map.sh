@@ -35,7 +35,7 @@ function icon_map() {
   "Affinity Publisher 2")
     icon_result=":affinity_publisher_2:"
     ;;
-  "Calendar" | "日历" | "Fantastical" | "Cron" | "Amie")
+  "Calendar" | "日历" | "BusyCal" | "Fantastical" | "Cron" | "Amie")
     icon_result=":calendar:"
     ;;
   "Figma")
@@ -362,7 +362,7 @@ function icon_map() {
   "Affinity Publisher")
     icon_result=":affinity_publisher:"
     ;;
-  "Spark Desktop")
+  "Spark Desktop" | "Spark")
     icon_result=":spark:"
     ;;
   "Zeplin")
@@ -474,7 +474,7 @@ function icon_map() {
     icon_result=":firefox:"
     ;;
   "WezTerm")
-    icon_result=":wezterm:"
+    icon_result=":terminal:"
     ;;
   *)
     icon_result=":default:"
