@@ -155,6 +155,9 @@ ctrl - 8 : yabai -m window --space 8;
 ctrl - 9 : yabai -m window --space 9;
 # shift + cmd - 0 : yabai -m window --space 10;
 
+# Apps
+# shift + alt + cmd + ctrl - enter : run-external "open" "-a" "/Applications/Ghostty.app"
+
 # -- Starting/Stopping/Restarting Yabai --
 
 # WAIT ON SONOMA

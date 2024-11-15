@@ -35,6 +35,7 @@ yabai -m config normal_window_opacity 0.80
 
 # padding set to 12px
 yabai -m config top_padding 48
+# yabai -m config top_padding 12
 yabai -m config bottom_padding 12
 yabai -m config left_padding 12
 yabai -m config right_padding 12
@@ -83,46 +84,43 @@ yabai -m rule --add app="^balenaEtcher$" manage=off
 # yabai -m space 9 --label other
 # yabai -m rule --add app="DisplayBuddy" space=^"other"
 
-yabai -m space 9 --label OS
-yabai -m rule --add app="The\ Unarchiver" space=^"OS"
-yabai -m rule --add app="Home" space=^"OS"
-yabai -m rule --add app="BetterTouchTool" space=^"OS"
-yabai -m rule --add app="Karabiner-EventsViewer" space=^"OS"
-yabai -m rule --add app="Karabiner-Elements" space=^"OS"
-yabai -m rule --add app="Alfred\ Preferences" space=^"OS"
-yabai -m rule --add app="CleanMyMac \X" space=^"OS"
-yabai -m rule --add app="Photos" space=^"OS"
-yabai -m rule --add app="App Store" space=^"OS"
-yabai -m rule --add app="Setapp" space=^"OS"
-yabai -m rule --add app="OpenVPN\ Connect$" opacity=0.5
-
-yabai -m space 8 --label media
-yabai -m rule --add app="Music" space=^"media" opacity=0.8
-yabai -m rule --add app="Overcast" space=^"media" opacity=0.8
-yabai -m rule --add app="Spotify" space=^"media" opacity=0.8
 
 yabai -m space 7 --label reference
-yabai -m rule --add app="Pages" space=^"reference"
-yabai -m rule --add app="Numbers" space=^"reference"
-yabai -m rule --add app="Microsoft\ Word" space=^"reference"
-yabai -m rule --add app="Microsoft\ PowerPoint" space=^"reference"
-yabai -m rule --add app="Microsoft\ Excel" space=^"reference"
-yabai -m rule --add app="PDF\ Reader\ Pro" space=^"reference"
+yabai -m rule --add app="Music" space=^"reference" opacity=0.8
+yabai -m rule --add app="Overcast" space=^"reference" opacity=0.8
+yabai -m rule --add app="Spotify" space=^"reference" opacity=0.8
+yabai -m rule --add app="The\ Unarchiver" space=^"reference"
+yabai -m rule --add app="Home" space=^"reference"
+yabai -m rule --add app="BetterTouchTool" space=^"reference"
+yabai -m rule --add app="Karabiner-EventsViewer" space=^"reference"
+yabai -m rule --add app="Karabiner-Elements" space=^"reference"
+yabai -m rule --add app="Alfred\ Preferences" space=^"reference"
+yabai -m rule --add app="CleanMyMac \X" space=^"reference"
+yabai -m rule --add app="Photos" space=^"reference"
+yabai -m rule --add app="App Store" space=^"reference"
+yabai -m rule --add app="Setapp" space=^"reference"
+yabai -m rule --add app="OpenVPN\ Connect$" space=^"reference" opacity=0.5
 
 yabai -m space 6 --label tools
-yabai -m rule --add app="Boop" space=^"tools"
-yabai -m rule --add app="Postman" space=^"tools"
-yabai -m rule --add app="SnippetsLab" space=^"tools"
-yabai -m rule --add app="Lens" space=^"tools"
+yabai -m rule --add app="Pages" space=^"tools"
+yabai -m rule --add app="Numbers" space=^"tools"
+yabai -m rule --add app="Microsoft\ Word" space=^"tools"
+yabai -m rule --add app="Microsoft\ PowerPoint" space=^"tools"
+yabai -m rule --add app="Microsoft\ Excel" space=^"tools"
+yabai -m rule --add app="PDF\ Reader\ Pro" space=^"tools"
 
 yabai -m space 5 --label devtools
 yabai -m rule --add app="Rider" space=^"devtools"
 yabai -m rule --add app="Visual Studio Code - Insiders" space=^"devtools"
+yabai -m rule --add app="Boop" space=^"devtools"
+yabai -m rule --add app="Postman" space=^"devtools"
+yabai -m rule --add app="SnippetsLab" space=^"devtools"
+yabai -m rule --add app="Lens" space=^"devtools"
 
 yabai -m space 4 --label development
 yabai -m rule --add app="kitty" space=^"development" opacity=1.0
 yabai -m rule --add app="Warp" space=^"development"
-yabai -m rule --add app="Wezterm" space=^"development"
+yabai -m rule --add app="Wezterm" space=^"development" opacity=0.8
 yabai -m rule --add app="iTerm" space=^"development"
 yabai -m rule --add app="Alacritty" space=^"development"
 
@@ -157,4 +155,4 @@ yabai -m rule --add app="Notion" space=^"productivity" opacity=0.80
 # shasum -a 256 $(which yabai) &  sudo visudo -f /private/etc/sudoers.d/yabai
 
 # borders active_color=0xffe1e3e4 inactive_color=0xFFFFFFFF width=5.0 &
-borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &
+# borders active_color=0xff9ccc65 inactive_color=0xffe1e3e4 width=6.0 style=round &
