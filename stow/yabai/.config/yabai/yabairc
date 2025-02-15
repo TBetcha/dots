@@ -1,4 +1,4 @@
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+rabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 # __   __ _    ____    _    ___
 # \ \ / // \  | __ )  / \  |_ _|
@@ -34,8 +34,8 @@ yabai -m config normal_window_opacity 0.80
 # yabai -m config active_window_border_color 0xFF1565C0
 
 # padding set to 12px
-yabai -m config top_padding 48
-# yabai -m config top_padding 12
+# yabai -m config top_padding 48
+yabai -m config top_padding 12
 yabai -m config bottom_padding 12
 yabai -m config left_padding 12
 yabai -m config right_padding 12

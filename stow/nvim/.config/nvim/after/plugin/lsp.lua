@@ -91,6 +91,7 @@ mason_lspconfig.setup({
     "emmet_ls",
     "omnisharp",
     "sqlls",
+    "ts_ls"
   },
   handlers = {
     lsp.default_setup,

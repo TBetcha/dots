@@ -89,6 +89,8 @@ map("n", "<leader>to", "<cmd>:tabnew<CR><CR>") -- open new tab
 map("n", "<leader>tx", "<cmd>:tabclose<CR>") -- close current tab
 map("n", "<leader>tn", "<cmd>:tabn<CR><CR>") --  go to next tab
 map("n", "<leader>tp", "<cmd>:tabp<CR><CR>") --  go to previous tab
+map("n", "t]", "<cmd>:tabn<CR><CR>") --  go to next tab
+map("n", "t[", "<cmd>:tabp<CR><CR>") --  go to previous tab
 
 -- buffers
 map("n", "<leader>bo", "<cmd>:new<CR><CR>") -- open new buffer
@@ -96,8 +98,8 @@ map("n", "<leader>q", "<cmd>:bd<CR><CR>") -- close current buffer
 map("n", "<leader>Q", "<cmd>:bd!<CR><CR>") -- close current buffer
 map("n", "<S-l>", "<cmd>:bn<CR><CR>") --  go to next buffer
 map("n", "<S-h>", "<cmd>:bp<CR><CR>") --  go to previous buffer
--- map("n", "<leader>,", "<cmd>:bp <CR>") --  go to previous buffer
--- map("n", "<leader>.", "<cmd>:bn <CR>") --  go to next buffer
+map("n", "[b", "<cmd>:bp <CR>") --  go to previous buffer
+map("n", "]b", "<cmd>:bn <CR>") --  go to next buffer
 map("n", "<leader>w", "<cmd>bp|bd #<CR>") -- close buffer; retain split
 
 -- map <Esc> to exit terminal-mode: >vim

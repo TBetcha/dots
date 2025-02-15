@@ -476,6 +476,9 @@ function icon_map() {
   "WezTerm")
     icon_result=":terminal:"
     ;;
+  "Ghostty")
+    icon_result=":terminal:"
+    ;;
   *)
     icon_result=":default:"
     ;;
