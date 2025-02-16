@@ -1,9 +1,5 @@
 # -- Changing Window Focus --
 
-# by app
-alt - b : open -a 'Brave Browser'
-alt - t : open -a 'kitty'
-
 # change window focus within space
 cmd - j : yabai -m window --focus south
 cmd - k : yabai -m window --focus north
@@ -17,7 +13,7 @@ ctrl + cmd - right: yabai -m display --focus east
 # -- Modifying the Layout --
 
 # cycle space management type - doesn't work
-ctrl + alt + shift - backspace : source ~/.config/scripts/.space_change && sketchybar -m --trigger mode_change
+# ctrl + alt + shift - backspace : source ~/.config/scripts/.space_change && sketchybar -m --trigger mode_change
 
 # rotate layout clockwise
 shift + alt + cmd + ctrl - r : yabai -m space --rotate 270
@@ -30,7 +26,7 @@ shift + alt + cmd + ctrl - y : yabai -m space --mirror y-axis
 shift + alt + cmd + ctrl- x : yabai -m space --mirror x-axis
 
 # toggle window float
-shift + alt + cmd + ctrl - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+# shift + alt + cmd + ctrl - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # toggle window split type '\'
 shift + alt + cmd + ctrl - 0x2A: yabai -m window --toggle split && sketchybar -m --trigger mode_change
@@ -119,8 +115,8 @@ alt - right : yabai -m space --focus next && sketchybar -m --trigger space_chang
 # cmd + ctrl - right : (yabai -m space --focus next || yabai -m space --focus first) || skhd -k "cmd - right"
 
 # move window to prev and next space - works
-shift + alt + cmd + ctrl - p : yabai -m window --space prev && yabai -m space --focus prev
-shift + alt + cmd + ctrl - n : yabai -m window --space next && yabai -m space --focus next
+# shift + alt + cmd + ctrl - p : yabai -m window --space prev && yabai -m space --focus prev
+# shift + alt + cmd + ctrl - n : yabai -m window --space next && yabai -m space --focus next
 #
 # swap space with give space SKETCH  works
 # ctrl + shift - 1 : yabai -m space --move 1 && sketchybar -m --trigger space_change
