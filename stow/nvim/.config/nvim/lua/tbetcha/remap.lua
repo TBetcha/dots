@@ -55,12 +55,12 @@ map("n", "<leader>sss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 map("n", "<leader>cop", "<cmd>copen<CR>zz")
 map("n", "<leader>ccl", "<cmd>cclose<CR>zz")
-map("n", "<leader>cn", "<cmd>cnext<CR>zz")
-map("n", "<leader>cp", "<cmd>cprev<CR>zz")
+map("n", "q]", "<cmd>cnext<CR>zz")
+map("n", "q[", "<cmd>cprev<CR>zz")
 map("n", "<leader>lop", "<cmd>lopen<CR>zz")
 map("n", "<leader>lcl", "<cmd>lclose<CR>zz")
-map("n", "<leader>ln", "<cmd>lnext<CR>zz")
-map("n", "<leader>lp", "<cmd>lprev<CR>zz")
+map("n", "l]", "<cmd>lnext<CR>zz")
+map("n", "l[", "<cmd>lprev<CR>zz")
 
 -- To use `Ctrl+{h,j,k,l}` to navigate windows this part only needed when tmux sucks
 -- map("n", "<C-h>", "<C-w>h")
