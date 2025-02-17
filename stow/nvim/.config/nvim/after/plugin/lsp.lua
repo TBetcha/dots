@@ -265,7 +265,7 @@ lsp.on_attach(function(client, bufnr)
 
   -- jump into doc window with kk use gx to go to link
   keymap.set("n", "<leader>fa", "<cmd>Lspsaga finder tyd+ref+imp+def<CR>", opts) -- show definition, references
-  keymap.set("n", "gdc", function() vim.lsp.buf.declaration() end, opts) -- got to declaration
+  keymap.set("n", "gc", function() vim.lsp.buf.declaration() end, opts) -- got to declaration
   keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts) -- lsp go to definition
   keymap.set("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
   keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts) -- go to implementation
@@ -300,27 +300,6 @@ end)
 
 lsp.setup()
 
-
--- -- used to enable autocompletion (assign to every lsp server config)
----
--- -- Create the configuration for metals
--- ---
--- local metals_lsp = lsp.build_options('metals', {})
--- local metals_config = require('metals').bare_config()
---
--- metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
--- ---
--- -- Autocmd that will actually be in charging of starting metals
--- ---
--- local metals_augroup = vim.api.nvim_create_augroup('nvim-metals', {clear = true})
--- vim.api.nvim_create_autocmd('FileType', {
---   group = metals_augroup,
---   pattern = {'scala', 'sbt', 'java'},
---   callback = function()
---     require('metals').initialize_or_attach(metals_config)
---   end
--- })
---
 vim.diagnostic.config({
   virtual_text = true,
 })

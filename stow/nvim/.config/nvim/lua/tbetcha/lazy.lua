@@ -458,12 +458,12 @@ require("lazy").setup({
   --   vim.keymap.set("n", "<leader>ra", ":IncRename "),
   -- },
   {
-  "smjonas/inc-rename.nvim",
-  config = function()
-    require("inc_rename").setup()
-  end,
+    "smjonas/inc-rename.nvim",
+    config = function()
+      require("inc_rename").setup()
+    end,
     vim.keymap.set("n", "<leader>ra", ":IncRename "),
-},
+  },
   ---------------------------------------
   --------------- EASE OF USE  ----------
   ---------------------------------------
@@ -688,15 +688,16 @@ require("lazy").setup({
       end, { silent = true, noremap = true, desc = "select signature" })
     end,
   },
- {
-  "d7omdev/nuget.nvim",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-telescope/telescope.nvim",
+  {
+    "d7omdev/nuget.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    config = function()
+      require("nuget").setup()
+    end,
   },
-  config = function()
-    require("nuget").setup()
-  end,
-},
+   'nvim-telescope/telescope-ui-select.nvim',
 })
 require("lazy").setup(plugins, {})
