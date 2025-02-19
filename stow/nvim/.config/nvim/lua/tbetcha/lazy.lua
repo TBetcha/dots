@@ -390,7 +390,10 @@ require("lazy").setup({
     dependencies = "nvim-treesitter/nvim-treesitter",
   },
   --fast switching of buffers
-  "theprimeagen/harpoon",
+  {
+    "theprimeagen/harpoon",
+    branch = "harpoon2",
+  },
   -- long lived undos
   "mbbill/undotree",
   -- git integration
@@ -405,7 +408,7 @@ require("lazy").setup({
   -- "romgrk/barbar.nvim",
   -- --------------------------
   -- file explorer
-  "nvim-tree/nvim-tree.lua",
+  -- "nvim-tree/nvim-tree.lua",
   -- auto close parens and brackets
   "windwp/nvim-autopairs",
   -- maximize window and restore to orig size
@@ -698,6 +701,13 @@ require("lazy").setup({
       require("nuget").setup()
     end,
   },
-   'nvim-telescope/telescope-ui-select.nvim',
+  {
+    "stevearc/oil.nvim",
+    config = function()
+      local oil = require("oil")
+      oil.setup()
+      vim.keymap.set("n", "-", oil.toggle_float, {})
+    end,
+  },
 })
 require("lazy").setup(plugins, {})
