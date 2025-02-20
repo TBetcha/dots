@@ -705,7 +705,15 @@ require("lazy").setup({
     "stevearc/oil.nvim",
     config = function()
       local oil = require("oil")
-      oil.setup()
+      oil.setup({
+          win_opts = {
+              signcolumn="yes",
+          },
+          delete_to_trash = true,
+          view_options = {
+              show_hidden = true
+          }
+      })
       vim.keymap.set("n", "-", oil.toggle_float, {})
     end,
   },
