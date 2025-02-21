@@ -86,35 +86,6 @@ require("lazy").setup({
     lazy = false,
   },
   {
-    "lvim-tech/lvim-colorscheme",
-    priority = 1000,
-    lazy = false,
-  },
-  {
-    "lancewilhelm/horizon-extended.nvim",
-    priority = 1000,
-    lazy = false,
-    config = function()
-      require("horizon-extended").setup({
-        transparent = true,
-        styles = {
-          booleans = { italic = false, bold = false },
-          comments = { italic = true, bold = false },
-          conditionals = { italic = true, bold = false },
-          delimiters = { italic = false, bold = false },
-          functions = { italic = false, bold = true },
-          keywords = { italic = true, bold = false },
-          loops = { italic = false, bold = false },
-          operators = { italic = false, bold = false },
-          properties = { italic = false, bold = false },
-          strings = { italic = false, bold = false },
-          types = { italic = false, bold = true },
-          variables = { italic = false, bold = false },
-        },
-      })
-    end,
-  },
-  {
     "rose-pine/neovim",
     name = "rose-pine",
     priority = 1000,
@@ -183,28 +154,6 @@ require("lazy").setup({
     end,
   },
   -- Using lazy.nvim
-  {
-    "cdmill/neomodern.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("neomodern").setup({
-        transparent = false,
-        code_style = {
-          comments = "italic",
-          conditionals = "none",
-          functions = "bold",
-          keywords = "italic",
-          headings = "bold", -- markdown headings
-          operators = "none",
-          keyword_return = "bold",
-          strings = "none",
-          variables = "underline",
-        },
-      })
-      require("neomodern").load()
-    end,
-  },
   {
     "ribru17/bamboo.nvim",
     lazy = false,
@@ -706,13 +655,16 @@ require("lazy").setup({
     config = function()
       local oil = require("oil")
       oil.setup({
-          win_opts = {
-              signcolumn="yes",
-          },
-          delete_to_trash = true,
-          view_options = {
-              show_hidden = true
-          }
+        win_opts = {
+          signcolumn = "yes",
+        },
+        delete_to_trash = true,
+        view_options = {
+          show_hidden = true,
+          is_always_hidden = function(name, bufnr)
+            return name == '..' or name == '.git'
+          end,
+        },
       })
       vim.keymap.set("n", "-", oil.toggle_float, {})
     end,

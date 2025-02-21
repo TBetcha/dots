@@ -67,6 +67,7 @@ abbr binfc "brew info --cask"
 
 #Git
 alias g  "git"
+alias gu "git reset --soft HEAD"
 alias gssh "ssh-add --apple-use-keychain ~/.ssh/id_ed25519"
 alias gem "git commit --allow-empty -m 'empty'"
 # alias glog "git log --graph --pretty=\"%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen%cr %C(bold blue)%an%Creset\""
@@ -90,6 +91,7 @@ abbr sc. "$EDITOR ~/.dotfiles/stow/scripts/.config/scripts/"
 
 #Processes
 abbr nst "npm start"
+abbr nrd "npm run dev"
 abbr nrs "npm run serve"
 abbr nrsr "npm run server"
 abbr nrst "npm run start"

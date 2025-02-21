@@ -31,7 +31,7 @@ require('nightfox').setup({
       numbers = "NONE",
       operators = "NONE",
       strings = "NONE",
-      types = "underline",
+      types = "NONE",
       variables = "NONE",
     },
     inverse = {             -- Inverse highlight for different types

@@ -86,6 +86,7 @@ local vimgrep_arguments = {
 -- -- I don't want to search in the `.git` directory.
 table.insert(vimgrep_arguments, "--glob")
 table.insert(vimgrep_arguments, "!**/.git/*")
+table.insert(vimgrep_arguments, ".*%.git.*")
 --
 local center_list = require("telescope.themes").get_dropdown({
   winblend = 10,
@@ -129,6 +130,7 @@ telescope.setup({
       hidden = true,
       prompt_prefix = " 🔍 ",
       layout_strategy = "horizontal",
+      file_ignore_patterns = { "%.git/.*", "%.cache/.*", "%.vscode/.*", "%.idea/.*", "%.DS_Store" },
     },
     buffers = {
       prompt_prefix = " ⚡ ",
