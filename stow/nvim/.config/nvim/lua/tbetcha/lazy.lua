@@ -167,9 +167,9 @@ require("lazy").setup({
           keywords = { italic = true },
           functions = { bold = true },
           namespaces = { italic = true },
-          parameters = {},
+          parameters = { underline = true },
           strings = {},
-          variables = { underline = true },
+          variables = {},
         },
       })
       require("bamboo").load()
@@ -341,7 +341,6 @@ require("lazy").setup({
   --fast switching of buffers
   {
     "theprimeagen/harpoon",
-    branch = "harpoon2",
   },
   -- long lived undos
   "mbbill/undotree",
@@ -631,13 +630,13 @@ require("lazy").setup({
           end,
         })
       )
-      vim.keymap.set({ "n" }, "<C-x>", function()
+      vim.keymap.set({ "n" }, "<leader>k", function()
         require("lsp_signature").toggle_float_win()
       end, { silent = true, noremap = true, desc = "toggle signature" })
 
-      vim.keymap.set({ "n" }, "<leader>k", function()
+      vim.keymap.set({ "n" }, "<M-s>", function()
         require("lsp_signature").select_signature_key()
-      end, { silent = true, noremap = true, desc = "select signature" })
+      end, { silent = true, noremap = true, desc = "toggle signature" })
     end,
   },
   {
@@ -662,12 +661,22 @@ require("lazy").setup({
         view_options = {
           show_hidden = true,
           is_always_hidden = function(name, bufnr)
-            return name == '..' or name == '.git'
+            return name == ".." or name == ".git"
           end,
         },
       })
       vim.keymap.set("n", "-", oil.toggle_float, {})
     end,
   },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+}
 })
 require("lazy").setup(plugins, {})

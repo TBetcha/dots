@@ -3,7 +3,7 @@
 # #####################################################
 #
 # fig pre block. keep at the top of this file.zsh
-[[ -f "$home/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$home/.fig/shell/zshrc.pre.zsh"
+# [[ -f "$home/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$home/.fig/shell/zshrc.pre.zsh"
 # enable powerlevel10k instant prompt. should stay close to the top of ~/.zshrc.
 # initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -123,7 +123,7 @@ disable_auto_title="true"
 # custom plugins may be added to $zsh_custom/plugins/
 # example format: plugins=(rails git textmate ruby lighthouse)
 # add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose battery colorize dirhistory direnv macos fzf sudo fzf-zsh-plugin k fd vi-mode)
+plugins=(git docker docker-compose battery colorize dirhistory direnv macos fzf sudo fzf-zsh-plugin k vi-mode)
 
 source $zsh/oh-my-zsh.sh
 
@@ -336,6 +336,10 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 
+## fzf 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh) 
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -348,4 +352,4 @@ eval "$(zoxide init zsh)"
 source /users/tmb/.config/broot/launcher/bash/br
 
 # fig post block. keep at the bottom of this file.
-[[ -f "$home/.fig/shell/zshrc.post.zsh" ]] && builtin source "$home/.fig/shell/zshrc.post.zsh"
+# [[ -f "$home/.fig/shell/zshrc.post.zsh" ]] && builtin source "$home/.fig/shell/zshrc.post.zsh"
