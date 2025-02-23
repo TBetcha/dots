@@ -55,12 +55,12 @@ map("n", "<leader>sss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 map("n", "<leader>cop", "<cmd>copen<CR>zz")
 map("n", "<leader>ccl", "<cmd>cclose<CR>zz")
-map("n", "q]", "<cmd>cnext<CR>zz")
-map("n", "q[", "<cmd>cprev<CR>zz")
+map("n", "]q", "<cmd>cnext<CR>zz")
+map("n", "[q", "<cmd>cprev<CR>zz")
 map("n", "<leader>lop", "<cmd>lopen<CR>zz")
 map("n", "<leader>lcl", "<cmd>lclose<CR>zz")
-map("n", "l]", "<cmd>lnext<CR>zz")
-map("n", "l[", "<cmd>lprev<CR>zz")
+map("n", "]l", "<cmd>lnext<CR>zz")
+map("n", "[l", "<cmd>lprev<CR>zz")
 
 -- To use `Ctrl+{h,j,k,l}` to navigate windows this part only needed when tmux sucks
 -- map("n", "<C-h>", "<C-w>h")
@@ -89,8 +89,8 @@ map("n", "<leader>to", "<cmd>:tabnew<CR><CR>") -- open new tab
 map("n", "<leader>tx", "<cmd>:tabclose<CR>") -- close current tab
 map("n", "<leader>tn", "<cmd>:tabn<CR><CR>") --  go to next tab
 map("n", "<leader>tp", "<cmd>:tabp<CR><CR>") --  go to previous tab
-map("n", "t]", "<cmd>:tabn<CR><CR>") --  go to next tab
-map("n", "t[", "<cmd>:tabp<CR><CR>") --  go to previous tab
+map("n", "]t", "<cmd>:tabn<CR><CR>") --  go to next tab
+map("n", "[t", "<cmd>:tabp<CR><CR>") --  go to previous tab
 
 -- buffers
 map("n", "<leader>bo", "<cmd>:new<CR><CR>") -- open new buffer
