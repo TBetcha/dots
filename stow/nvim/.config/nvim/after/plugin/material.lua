@@ -3,13 +3,25 @@ if not material_status then
   return
 end
 
-material.setup({
+local material_colors_status, colors = pcall(require, "material.colors")
+if not material_colors_status then
+  return
+end
 
+material.setup({
+custom_highlights = {
+        LineNr = { fg = '#bb58ba' },
+        CursorLine = { fg = colors.editor.constrast , underline = true },
+      },
+ high_visibility = {
+        lighter = false, -- Enable higher contrast text for lighter style
+        darker = true -- Enable higher contrast text for darker style
+    },
   contrast = {
     --     terminal = false, -- Enable contrast for the built-in terminal
     --     sidebars = false, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
-    floating_windows = false, -- Enable contrast for floating windows
-    cursor_line = false, -- Enable darker background for the cursor line
+    floating_windows = true, -- Enable contrast for floating windows
+    cursor_line = true, -- Enable darker background for the cursor line
     lsp_virtual_text = true, -- Enable contrasted background for lsp virtual text
     --     non_current_windows = false, -- Enable contrasted background for non-current windows
     --     filetypes = {}, -- Specify which filetypes get the contrasted (darker) background

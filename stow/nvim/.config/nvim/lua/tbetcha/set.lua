@@ -9,7 +9,7 @@ local opt = vim.opt
 opt.termguicolors = true
 opt.nu = true
 opt.relativenumber = true
-opt.colorcolumn = "100"
+opt.colorcolumn = "80"
 opt.scrolloff = 10
 opt.sidescrolloff = 10
 opt.signcolumn = "yes"
@@ -28,9 +28,9 @@ opt.foldmethod = "marker"
 opt.cursorline = true
 
 -- use spaces instead of tabs, set 4 spaces on indent, smart indent
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
 opt.expandtab = true
 opt.smartindent = true
 opt.inccommand = "split"

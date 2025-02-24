@@ -30,7 +30,7 @@ if not zoxide_status then
 end
 
 vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { silent = true })
-vim.keymap.set("n", "<leader>fb", builtin.buffers, { silent = true })
+vim.keymap.set("n", "<leader>bb", builtin.buffers, { silent = true })
 vim.keymap.set("n", "<leader>gf", builtin.git_files, { silent = true })
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { silent = true })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { silent = true })

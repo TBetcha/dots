@@ -266,8 +266,8 @@ lsp.on_attach(function(client, bufnr)
   -- jump into doc window with kk use gx to go to link
   keymap.set("n", "<leader>fa", "<cmd>Lspsaga finder tyd+ref+imp+def<CR>", opts) -- show definition, references
   keymap.set("n", "gc", function() vim.lsp.buf.declaration() end, opts) -- got to declaration
-  keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts) -- lsp go to definition
-  keymap.set("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
+  keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end, opts) -- lsp go to definition
+  keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
   keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts) -- go to implementation
   keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
   keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
