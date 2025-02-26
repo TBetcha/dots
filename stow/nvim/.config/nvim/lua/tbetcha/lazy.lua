@@ -393,6 +393,7 @@ require("lazy").setup({
   "kevinhwang91/nvim-bqf",
   "RRethy/vim-illuminate",
   "b0o/incline.nvim",
+  "kamykn/spelunker.vim",
   {
     "pwntester/octo.nvim",
     config = function()
@@ -658,6 +659,7 @@ require("lazy").setup({
           signcolumn = "yes",
         },
         delete_to_trash = true,
+        skip_confirm_for_simple_edits = true,
         view_options = {
           show_hidden = true,
           is_always_hidden = function(name, bufnr)
@@ -673,10 +675,10 @@ require("lazy").setup({
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
     config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
-    end
-}
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end,
+  },
 })
 require("lazy").setup(plugins, {})

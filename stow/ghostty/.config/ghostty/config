@@ -45,6 +45,6 @@ background-blur = true
 window-theme = dark
 theme = catppuccin-mocha
 macos-window-shadow = true
-macos-icon = retro
+macos-icon = chalkboard
 bold-is-bright = true
 copy-on-select = true
