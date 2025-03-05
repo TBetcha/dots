@@ -67,6 +67,7 @@ end
 
 #dotent brew suggest to show this version first - change based on what dotnet version I want to use
 set -x DOTNET_ROOT $HOME/.dotnet
+# set -x DOTNET_ROOT /usr/local/share/dotnet
 set -x PROTOC /opt/homebrew/bin/protoc
 set -x PROTOC_INCLUDE /opt/homebrew/include
 # set -x BW_CLIENTSECRET "YEDWxmFQVZ2JK4XhQRn8NUjDOiBPxx"

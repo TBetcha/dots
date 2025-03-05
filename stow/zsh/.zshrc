@@ -254,6 +254,7 @@ alias scripts="$editor ~/.dotfiles/stow/scripts/.config/scripts/"
 
 #processes
 alias nst="npm start"
+alias nrd="npm run dev"
 alias nserve="npm run serve"
 alias nserver="npm run server"
 alias nstart="npm run start"
