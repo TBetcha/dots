@@ -3,6 +3,7 @@ return {
   dependencies = {
     "nvim-web-devicons",
   },
+  event = "VeryLazy",
   config = function()
     require("incline").setup({
       window = {
@@ -29,6 +30,4 @@ return {
       end,
     })
   end,
-  -- Optional: Lazy load Incline
-  event = "VeryLazy",
 }

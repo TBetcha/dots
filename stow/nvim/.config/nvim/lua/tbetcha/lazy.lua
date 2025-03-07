@@ -294,13 +294,8 @@ require("lazy").setup({
 
   --END OF LSP STUFF
 
-  -- line at bottom of nvim window
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
-  },
   -- reload that other plugins rely on
-  { "nvim-lua/plenary.nvim" },
+  -- { "nvim-lua/plenary.nvim" },
   -- telescope
   { "nvim-telescope/telescope.nvim", version = "0.1.4" },
   -- fzf searching for telescope
@@ -333,9 +328,8 @@ require("lazy").setup({
   -- surround motions
   "tpope/vim-surround",
   -- icons
-  "nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
+  -- "nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
   -- git icons
-  "lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
   -- bar to show buffers
   -- "romgrk/barbar.nvim",
   -- --------------------------
@@ -344,32 +338,17 @@ require("lazy").setup({
   -- auto close parens and brackets
   "windwp/nvim-autopairs",
   -- maximize window and restore to orig size
-  "szw/vim-maximizer",
-  -- show indent guide
-  "lukas-reineke/indent-blankline.nvim",
-  -- highlight todos
-  "folke/todo-comments.nvim",
+  -- "szw/vim-maximizer",
+  -- -- show indent guide
+  -- "lukas-reineke/indent-blankline.nvim",
   -- markdown preview
-  {
-    "folke/noice.nvim",
-    dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-      { "MunifTanjim/nui.nvim" },
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to  the notification view.
-      --   If not available, we  `mini` as the fallback
-      { "rcarriga/nvim-notify" },
-    },
-  },
   "kristijanhusak/vim-dadbod-ui",
   "tpope/vim-dadbod",
   "kristijanhusak/vim-dadbod-completion",
   "windwp/nvim-ts-autotag",
   "MunifTanjim/prettier.nvim",
-  "kevinhwang91/nvim-bqf",
   "RRethy/vim-illuminate",
   "kamykn/spelunker.vim",
-  "chentoast/marks.nvim",
   change_detection = {
     notify = false,
   },
