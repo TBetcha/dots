@@ -83,15 +83,14 @@ mason_lspconfig.setup({
   ensure_installed = {
     "rust_analyzer",
     "fsautocomplete",
-    "tsserver",
     "html",
     "cssls",
+    "ts_ls",
     "tailwindcss",
     "lua_ls",
     "emmet_ls",
     "omnisharp",
     "sqlls",
-    "ts_ls"
   },
   handlers = {
     lsp.default_setup,
