@@ -99,8 +99,6 @@ require("lazy").setup({
       { "hrsh7th/cmp-cmdline" },
     },
   },
-  -- tabnine completion source
-  { "tzachar/cmp-tabnine", build = "./install.sh" },
   --  tree sitter nodes for completionspack
   { "ray-x/cmp-treesitter" },
   -- snippet engine
@@ -168,16 +166,12 @@ require("lazy").setup({
   -- file explorer
   -- "nvim-tree/nvim-tree.lua",
   -- auto close parens and brackets
-  "windwp/nvim-autopairs",
   -- maximize window and restore to orig size
   -- "szw/vim-maximizer",
-  -- -- show indent guide
-  -- "lukas-reineke/indent-blankline.nvim",
   -- markdown preview
   "kristijanhusak/vim-dadbod-ui",
   "tpope/vim-dadbod",
   "kristijanhusak/vim-dadbod-completion",
-  "windwp/nvim-ts-autotag",
   "MunifTanjim/prettier.nvim",
   "RRethy/vim-illuminate",
   "kamykn/spelunker.vim",
