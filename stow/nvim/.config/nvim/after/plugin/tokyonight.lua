@@ -56,14 +56,31 @@ tokyonight.setup({
     hl.TelescopePreviewTitle = { bg = c.bg_dark, fg = c.bg_dark }
     hl.TelescopeResultsTitle = { bg = c.bg_dark, fg = c.bg_dark }
   end,
-})
--- Lua
-lualine.setup({
-  options = {
-    -- ... your lualine config
-    theme = "tokyonight",
-    -- ... your lualine config
+
+plugins =
+  {
+    -- telescope = true,
+    cmp = true,
+    copilot = true,
+    dap = true,
+    gitsigns = true,
+    illuminate = true,
+    lazy = true,
+    lspsaga = true,
+    noice = true,
+    notify = true,
+    -- nvim-tree=true,
+    octo = true,
+    trouble = true,
   },
 })
+  -- Lua
+  lualine.setup({
+    options = {
+      -- ... your lualine config
+      theme = "tokyonight",
+      -- ... your lualine config
+    },
+  })
 
 vim.cmd("colorscheme tokyonight")

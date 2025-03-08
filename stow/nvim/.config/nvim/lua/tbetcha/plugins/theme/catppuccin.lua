@@ -95,7 +95,7 @@ return {
     --     vim.cmd('highlight! TabLineFill guibg=NONE guifg=NONE')
     -- end
     -- setup must be called before loading
-    vim.cmd.colorscheme("catppuccin")
+    -- vim.cmd.colorscheme("catppuccin")
   end,
   -- ColorMyPencils("catppuccin")
   -- LineNumberColors()
