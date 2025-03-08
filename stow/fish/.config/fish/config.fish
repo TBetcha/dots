@@ -4,7 +4,7 @@
 ## GENERAL SETTINGS ##
 ######################
 
-set -U fish_greeting ""
+set -U fish_greeting 
 set -g fish_autosuggestion_enabled 1
 
 # VIM Stuff
@@ -67,7 +67,7 @@ end
 
 #dotent brew suggest to show this version first - change based on what dotnet version I want to use
 set -x DOTNET_ROOT $HOME/.dotnet
-# set -x DOTNET_ROOT /usr/local/share/dotnet
+ #set -x DOTNET_ROOT /usr/local/share/dotnet
 set -x PROTOC /opt/homebrew/bin/protoc
 set -x PROTOC_INCLUDE /opt/homebrew/include
 # set -x BW_CLIENTSECRET "YEDWxmFQVZ2JK4XhQRn8NUjDOiBPxx"
@@ -112,7 +112,8 @@ function font
 end
 
 # ASCII Art
-function start_shell 
+function fish_greeting
+
     ECHO "Tbetcha" | figlet | ~/.config/scripts/color_it.sh 75
 end
 

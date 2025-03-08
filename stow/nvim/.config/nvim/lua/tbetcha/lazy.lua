@@ -19,6 +19,7 @@ require("lazy").setup({
   { import = "tbetcha.plugins" },
   { import = "tbetcha.plugins.lsp" },
   { import = "tbetcha.plugins.ui" },
+  { import = "tbetcha.plugins.theme" },
   -- tmux nav
   "christoomey/vim-tmux-navigator",
 
@@ -26,16 +27,6 @@ require("lazy").setup({
   --------------- THEMES  ---------------
   ---------------------------------------
 
-  {
-    "EdenEast/nightfox.nvim",
-    priority = 1000, -- Ensure it loads first
-    lazy = false,
-  },
-  {
-    "olimorris/onedarkpro.nvim",
-    priority = 1000, -- Ensure it loads first
-    lazy = false,
-  },
   {
     "bluz71/vim-nightfly-colors",
     name = "nightfly",
@@ -75,11 +66,6 @@ require("lazy").setup({
     priority = 1000,
   },
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000, -- Ensure it loads first
-  },
-  {
     "Mofiqul/dracula.nvim",
     priority = 1000,
     lazy = false,
@@ -89,160 +75,6 @@ require("lazy").setup({
     priority = 1000,
     lazy = false,
   },
-  {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    priority = 1000,
-    lazy = false,
-    config = function()
-      require("rose-pine").setup({
-        variant = "moon", -- auto, main, moon, or dawn
-        dark_variant = "moon", -- main, moon, or dawn
-        styles = {
-          bold = true,
-          italic = true,
-          transparency = true,
-        },
-      })
-    end,
-  },
-  {
-    "loctvl842/monokai-pro.nvim",
-    priority = 1000,
-    lazy = false,
-    config = function()
-      require("monokai-pro").setup({
-        background_clear = { "float_win" },
-        transparent_background = true,
-        terminal_colors = true,
-        devicons = true, -- highlight the icons of `nvim-web-devicons`
-        styles = {
-          comment = { italic = true },
-          keyword = { underline = true }, -- any other keyword
-          type = { bold = true }, -- (preferred) int, long, char, etc
-          storageclass = { italic = false }, -- static, register, volatile, etc
-          structure = { italic = false }, -- struct, union, enum, etc
-          parameter = { italic = true }, -- parameter pass in function
-          annotation = { italic = true },
-          tag_attribute = { italic = true }, -- attribute of tag in reactjs
-        },
-        -- Your config here
-      })
-    end,
-  },
-  {
-    "neanias/everforest-nvim",
-    version = false,
-    lazy = false,
-    priority = 1000, -- make sure to load this before all the other start plugins
-    -- Optional; default configuration will be used if setup isn't called.
-    config = function()
-      require("everforest").setup({
-        -- Your config here
-      })
-    end,
-  },
-  -- lazy
-  {
-    "ray-x/aurora",
-    lazy = false,
-    priority = 1000, -- make sure to load this before all the other start plugins
-    init = function()
-      vim.g.aurora_italic = 1
-      vim.g.aurora_transparent = 1
-      vim.g.aurora_bold = 1
-    end,
-    config = function()
-      -- override defaults
-      vim.api.nvim_set_hl(0, "@number", { fg = "#e933e3" })
-    end,
-  },
-  -- Using lazy.nvim
-  {
-    "ribru17/bamboo.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("bamboo").setup({
-        transparent = true,
-        code_style = {
-          comments = { italic = true },
-          conditionals = {},
-          keywords = { italic = true },
-          functions = { bold = true },
-          namespaces = { italic = true },
-          parameters = { underline = true },
-          strings = {},
-          variables = {},
-        },
-      })
-      require("bamboo").load()
-    end,
-  },
-  {
-    "oxfist/night-owl.nvim",
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
-    config = function()
-      -- load the colorscheme here
-      require("night-owl").setup({
-        transparent_background = true,
-      })
-    end,
-  },
-  {
-    "comfysage/aki",
-    priority = 1000,
-    lazy = false,
-    config = function()
-      require("aki").setup({
-        transparent_background = true,
-      })
-    end,
-  },
-  {
-    "tiagovla/tokyodark.nvim",
-    opts = {
-      transparent_background = true,
-      styles = {
-        comments = { italic = true }, -- style for comments
-        keywords = { italic = true }, -- style for keywords
-        identifiers = { italic = true }, -- style for identifiers
-        functions = { bold = true }, -- style for functions
-        variables = { underline = true }, -- style for variables
-      },
-    },
-    config = function(_, opts)
-      require("tokyodark").setup(opts) -- calling setup is optional
-    end,
-  },
-  {
-    "rmehri01/onenord.nvim",
-    priority = 1000,
-    lazy = false,
-    config = function()
-      require("onenord").setup({
-        styles = {
-          comments = "italic",
-          strings = "none",
-          keywords = "italic",
-          functions = "bold",
-          variables = "none",
-          diagnostics = "underline",
-        },
-      })
-    end,
-  },
-  {
-    "ellisonleao/gruvbox.nvim",
-    priority = 1000,
-    config = function()
-      require("gruvbox").setup({
-        transparent_mode = true,
-      })
-    end,
-  },
-  -- "navarasu/onedark.nvim",
 
   ---------------------------------------
   -------------- LSP & ISH  -------------
