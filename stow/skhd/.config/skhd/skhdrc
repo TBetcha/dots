@@ -1,7 +1,7 @@
 # -- Changing Window Focus --
 
 # change window focus within space
-cmd - j : yabai -m window --focus south
+cmd  - j : yabai -m window --focus south
 cmd - k : yabai -m window --focus north
 cmd - h : yabai -m window --focus west
 cmd - l : yabai -m window --focus east
@@ -98,11 +98,6 @@ shift + cmd - h : yabai -m window --swap west
 shift + cmd - l : yabai -m window --swap east
 
 
-# move window and split
-# ctrl + alt - j : yabai -m window --warp south
-# ctrl + alt - k : yabai -m window --warp north
-# ctrl + alt - h : yabai -m window --warp west
-# ctrl + alt - l : yabai -m window --warp east
 #
 # move window to display left and right
 alt + cmd + ctrl - left : yabai -m window --display west; yabai -m display --focus west;
@@ -113,22 +108,6 @@ alt + cmd + ctrl - right : yabai -m window --display east; yabai -m display --fo
 alt - left : yabai -m space --focus prev && sketchybar -m --trigger space_change
 alt - right : yabai -m space --focus next && sketchybar -m --trigger space_change
 # cmd + ctrl - right : (yabai -m space --focus next || yabai -m space --focus first) || skhd -k "cmd - right"
-
-# move window to prev and next space - works
-# shift + alt + cmd + ctrl - p : yabai -m window --space prev && yabai -m space --focus prev
-# shift + alt + cmd + ctrl - n : yabai -m window --space next && yabai -m space --focus next
-#
-# swap space with give space SKETCH  works
-# ctrl + shift - 1 : yabai -m space --move 1 && sketchybar -m --trigger space_change
-# ctrl + shift - 2 : yabai -m space --move 2 && sketchybar -m --trigger space_change
-# ctrl + shift - 3 : yabai -m space --move 3 && sketchybar -m --trigger space_change
-# ctrl + shift - 4 : yabai -m space --move 4 && sketchybar -m --trigger space_change
-# ctrl + shift - 5 : yabai -m space --move 5 && sketchybar -m --trigger space_change
-# ctrl + shift - 6 : yabai -m space --move 6 && sketchybar -m --trigger space_change
-# ctrl + shift - 7 : yabai -m space --move 7 && sketchybar -m --trigger space_change
-# ctrl + shift - 8 : yabai -m space --move 8 && sketchybar -m --trigger space_change
-# ctrl + shift - 9 : yabai -m space --move 9 && sketchybar -m --trigger space_change
-# ctrl + shift - 0x32 : yabai -m space --move last && sketchybar -m --trigger space_change
 #
 
 # send window to specific space and follow focus  works

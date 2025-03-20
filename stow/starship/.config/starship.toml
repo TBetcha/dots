@@ -22,14 +22,19 @@ $docker_context
 # Disable the blank line at the start of the prompt
 # add_newline = false
  
+ command_timeout = 1000
 # You can also replace your username with a neat symbol like &#61728; to save some space
 [username]
 show_always = true
 format = '[$user ]($style)'
- 
+style = "bold mauve"
+
+
 [directory]
 format = "[ $path ]($style)"
 truncation_length = 3
+style = "bold lavender"
+
  
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
@@ -99,8 +104,8 @@ format = '[[ $symbol ($version) ](fg:#86BBD8)]($style)'
 
 [git_branch]
 symbol = ""
-style = "fg:#FCA17D"
-format = '[[ $symbol $branch ](fg:#FCA17D)]($style)'
+style = "peach"
+format = '[[ $symbol $branch ](fg:peach)]($style)'
 
 [golang]
 symbol = " "
