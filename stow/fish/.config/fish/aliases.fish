@@ -28,12 +28,12 @@ alias vimdiff 'nvim -d'
 #Tmux
 alias tx "tmux"
 alias txl "tmux ls"
-alias txk "tmux kill-server"
-alias txks "tmux kill-session -t"
-alias txas "tmux attach-session -t"
-alias txds "tmux detach -s"
-alias txns "tmux new -s"
-alias txnds "tmux new -d -s" 
+alias tksv "tmux kill-server"
+alias tkss "tmux kill-session -t"
+alias ta "tmux attach-session -t"
+alias td "tmux detach -s"
+alias ts "tmux new -s"
+alias tnds "tmux new -d -s" 
 
  
 #Programs

@@ -1,29 +1,30 @@
-# #####################################################
-# IF  I EVER GO BACK TO ZSH FIX ALIASES TO MATCH FISH #
-# #####################################################
-#
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # fig pre block. keep at the top of this file.zsh
 # [[ -f "$home/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$home/.fig/shell/zshrc.pre.zsh"
 # enable powerlevel10k instant prompt. should stay close to the top of ~/.zshrc.
 # initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
  
-if [[ -r "${xdg_cache_home:-$home/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
- source "${xdg_cache_home:-$home/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+## NOTE: UNCOMMENT FOR p10k
+# if [[ -r "${xdg_cache_home:-$home/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${xdg_cache_home:-$home/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
-#########
-# path #
-#########
+###############################################################################
+#################################### ENV ######################################
+###############################################################################
 
-# all the kids are doing it
 export editor="nvim"
 
 # home dir
 export xdg_config_home=$home/.config
  
-# append path+=()
-# prepend path=()
 
 # export path=$path/bin
 path+=('/bin')
@@ -38,45 +39,14 @@ path+=('opt/homebrew/sbin')
 path+=('/users/tmb/kafka_2.13-3.4.0/bin')
 
 export PATH
-# export path=$path/usr/local/bin
-#
-# export path=$path:/usr/local/share/dotnet/dotnet
-# export path=$path:~/.dotnet
-# export dotnet_root=$home/.dotnet
-# export path=$path:$dotnet_root:$dotnet_root/tools
-#
-# export path=$path:~/.config/scripts/bin_scripts
-# export path=$path:~/.config/scripts
-#
-# export path=/opt/homebrew/bin:$path
-# export path=/opt/homebrew/sbin:$path
-#
-# export path="$path:/users/tmb/kafka_2.13-3.4.0/bin"
-
 export protoc=/opt/homebrew/bin/protoc
 export protoc_include=/opt/homebrew/include
-
 export zsh="/users/tmb/.oh-my-zsh"
-
-
-
 export bat_theme="twodark"
-
-
-# all the kids are doing it
 export editor="nvim"
 
-# unused old exports
-#tmux 
-# export tmux=$home/.tmux.conf
-#export tmux_dir=$home/.tmux
-#export path=$path:~/.dotnet/tools
-#
-# change to use dotnet versions
-#export path="/opt/homebrew/opt/dotnet@7/bin:$path"
-# i configured to show
-#export path="$path:/opt/homebrew/opt/dotnet@7/bin" 
-#export path="$path:/opt/homebrew/opt/dotnet@6/bin"
+# export ZO_DATA_DIR = "'Users/tmb/Library/Application\\ Support/zoxide'"
+
 
 zsh_theme="amuse"
 
@@ -86,44 +56,25 @@ zsh_theme="amuse"
 # if set to an empty array, this variable will have no effect.
 # zsh_theme_random_candidates=( "robbyrussell" "agnoster" )
 
-# uncomment the following line to use case-sensitive completion.
 # case_sensitive="true"
-
 # uncomment the following line to use hyphen-insensitive completion.
 # case-sensitive completion must be off. _ and - will be interchangeable.
 # hyphen_insensitive="true"
-
 # disable_auto_update="true"
 # disable_update_prompt="true"
 # export update_zsh_days=13
 # disable_ls_colors="true"
-#
-disable_auto_title="true"
 # enable_correction="true"
 # disable_untracked_files_dirty="true"
-#
-# uncomment the following line if pasting urls and other text is messed up.
 # disable_magic_functions="true"
+disable_auto_title="true"
+completion_waiting_dots="true"
 
- completion_waiting_dots="true"
-
-# uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# you can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# hist_stamps="mm/dd/yyyy"
 
 # would you like to use another custom folder than $zsh/custom?
 # zsh_custom=/path/to/new-custom-folder
 
-# which plugins would you like to load?
-# standard plugins can be found in $zsh/plugins/
-# custom plugins may be added to $zsh_custom/plugins/
-# example format: plugins=(rails git textmate ruby lighthouse)
-# add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose battery colorize dirhistory direnv macos fzf sudo fzf-zsh-plugin k vi-mode)
+plugins=(battery brew colorize dirhistory direnv docker docker-compose fzf fzf-zsh-plugin git git-prompt git-extras macos sudo vi-mode wd zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)
 
 source $zsh/oh-my-zsh.sh
 
@@ -143,11 +94,16 @@ fi
 # compilation flags
 # export archflags="-arch x86_64"
 
-##############
-# functions #
-##############
+###############################################################################
+###################################### FUNCTIONS ##############################
+###############################################################################
 
 # pretty prints the disk space of the given directory
+
+# function cd() {
+#     builtin cd "$@" && eza -la --icons --git
+# }
+
 function ds() {
   if [ $# -eq 0 ]; then
     echo "usage: disk_space_usage <directory>"
@@ -192,55 +148,92 @@ function start_shell {
     echo "tbetcha" | figlet | ~/.config/scripts/color_it.sh 75
 }
 
- 
-#########################
-# operational aliases #
-#########################
+###############################################################################
+############################# OPERATIONAL ALIASES ############################
+##############################################################################
 
-# cd
+#################################### CD ######################################
 alias ..="cd ../"
 alias ...="cd ../../"
 alias ....="cd ../../../"
 
-#editor
+alias z="__zoxide_z"
+alias ..="cd ../"
+alias .2="cd ../.."
+alias .3="cd ../../.."
+alias .4="cd ../../../.."
+alias .5="cd ../../../../.."
+alias cx="chmod +x"
+alias c=clear
+
+##################################### EDITOR #################################
 alias vim="nvim"
 alias vi="nvim"
-alias n="nvim"
+alias n="nvim ."
 alias v="nvim"
 
-#tmux
+##################################### TMUX ##################################
 # alias tmux=tmux -f "/opt/homebrew/bin/tmux"
 alias tx="tmux"
-alias txk="tmux kill-server"
-alias txks="tmux kill-session -t"
-alias txas="tmux attach-session -t"
-alias txds="tmux detach -s"
-alias txns="tmux new -s"
-alias txnds="tmux new -d -s" 
+alias txl="tmux ls"
+alias tksv="tmux kill-server"
+alias tkss="tmux kill-session -t"
+alias ta="tmux attach-session -t"
+alias td="tmux detach -s"
+alias ts="tmux new -s"
+alias tnds="tmux new -d -s" 
 
-#programs
+################################## PROGRAMS ###################################
 alias lzd="lazydocker"
 alias lzg="lazygit"
-alias cat="ccat"
-alias ls="lsd -al ."
-alias lt="lsd --tree"
+alias cat="bat"
 alias search="findme"
 alias stow="stow --target $home"
+alias y="yazi"
 
-#git
+################################ LS ALIASES ###################################
+alias l="eza -la --icons --git"
+alias ls="eza -la --icons --git"
+alias lT="eza -lT --icons --git"
+alias ld="eza -lD"
+alias lf="eza -lF --color=always | grep -v /"
+alias lh="eza -dl .* --group-directories-first"
+alias ll="eza -al --group-directories-first"
+alias lt="eza -al --sort=modified"
+
+################################### DOTS ######################################
+
+alias usezsh="nvim ~/.dotfiles/stow/zsh/.zshrc"
+alias omz="~/.oh-my-zsh"
+alias dots="nvim ~/.dotfiles/stow"
+alias d.="cd ~/.dotfiles/stow"
+alias f.="$EDITOR ~/.dotfiles/stow/fish/.config/fish"
+alias k.="$EDITOR ~/.dotfiles/stow/kitty/.config/kitty/kitty.conf"
+alias y.="$EDITOR ~/.dotfiles/stow/yabai/.config/yabai/yabairc"
+alias s.="$EDITOR ~/.dotfiles/stow/skhd/.config/skhd/skhdrc"
+
+
+#Brew
+# alias bi="brew install"
+# alias bun="brew uninstall"
+# alias bic="brew install --cask"
+# alias binf="brew info
+# alias binfc="brew info --cask
+
+######################################### GIT ################################
 alias g="git"
-alias ga="git add"
-alias gs="git status"
-alias gc="git commit -m"
-alias gd="git diff"
-alias gps="git push"
-alias gpl="git pull"
+# alias ga="git add"
+# alias gs="git status"
+# alias gc="git commit -m"
+# alias gd="git diff"
+# alias gps="git push"
+# alias gpl="git pull"
 alias gcreds="ssh-add --apple-use-keychain ~/.ssh/id_ed25519"
 alias gempty="git commit --allow-empty -m 'empty'"
 alias gch="git checkout"
-alias glog='g log --graph --pretty='\''%c(yellow)%h%creset%c(auto)%d%creset %s %cgreen%cr %c(bold blue)%an%creset'\'''
-
-#dots
+alias glog='g log --graph --pretty='\''%C(bold blue)%h%C(reset) - %C(cyan)%ad%C(reset) %C(yellow)%d%C(reset) %C(normal)%s%C(reset)  %C(dim normal)[%an]%C(reset)'\'''
+# '%C(bold blue)%h%C(reset) - %C(cyan)%ad%C(reset) %C(yellow)%d%C(reset) %C(normal)%s%C(reset)  %C(dim normal)[%an]%C(reset)'
+######################################### DOTS ################################
 alias usezsh="nvim ~/.dotfiles/stow/zsh/.zshrc"
 alias omz="~/.oh-my-zsh"
 alias dots="nvim ~/.dotfiles/stow"
@@ -252,28 +245,35 @@ alias skhddot="$editor ~/.dotfiles/stow/skhd/.config/skhd/skhdrc"
 alias sketchdot="$editor ~/.dotfiles/stow/sketchybar/.config/sketchybar/"
 alias scripts="$editor ~/.dotfiles/stow/scripts/.config/scripts/"
 
-#processes
-alias nst="npm start"
-alias nrd="npm run dev"
-alias nserve="npm run serve"
-alias nserver="npm run server"
-alias nstart="npm run start"
+##################################### PROCESSES ################################
 alias jup="jupyter notebook"
 alias vs="code-insiders ./"
-alias watch="dotnet watch run"
 alias zoostart="~/kafka34/bin/zookeeper-server-start.sh ~/kafka34/config/zookeeper.properties"
 alias kafkastart="~/kafka34/bin/kafka-server-start.sh ~/kafka34/config/server.properties"
-alias styabai="yabai --start-service && skhd --start-service"
-alias reyabai="yabai --restart-service && skhd --restart-service"
-alias stopyabai="yabai --stop-service && skhd --stop-service"
+alias sy="yabai --start-service && skhd --start-service"
+alias ry="yabai --restart-service && skhd --restart-service"
+alias spy="yabai --stop-service && skhd --stop-service"
 alias skres="brew services restart sketchybar"
 alias skstart="brew services start sketchybar"
 alias skstop="brew services stop sketchybar"
 
 
-#################
-# dmg aliases #
-#################
+################################### DOTNET ####################################
+
+alias dw="dotnet watch run"
+alias db="dotnet build"
+alias drs="dotnet restore"
+alias dr="dotnet run"
+
+#################################### NODE #####################################
+
+alias nst="npm start"
+alias nrd="npm run dev"
+alias nrs="npm run serve"
+alias nrsr="npm run server"
+alias nrst="npm run start"
+
+###################################### DMG ALIASES ############################
 
 alias rocks="rm -rf bin/debug/net7.0/rocksdb/ && rm -rf rocksdb"
 alias dmg="cd ~/code/dmg"
@@ -299,43 +299,157 @@ alias mystate="cd ~/code/dmg/myjobs/state/dmg.my-jobs-app.state"
 alias myapi="cd ~/code/dmg/myjobs/api/dmg.my-jobs-app.api"
 alias diapi="cd ~/code/dmg/dispatcherinvoiceronboarding/api/dmg.dispatcher-invoicer-onboarding-app.api"
 
-###########################
-# personal proj aliases #
-###########################
+############################ PERSONAL PROJ ALIASES ############################
 
 alias ifaa="cd ~/code/ifaadfw/server"
 
-##############
-# vim stuff #
-##############
+###############################################################################
+################################## FZF ########################################
+###############################################################################
+
+function envfzf() {
+    # Ensure fzf is installed
+    if ! command -v fzf &> /dev/null; then
+        echo "fzf is not installed. Please install it first."
+        return 1
+    fi
+
+    # Use fzf to select an environment variable
+    local selected=$(env | fzf --prompt="Select an environment variable: " --height=40% --reverse)
+
+    # Check if a variable was selected
+    if [[ -n "$selected" ]]; then
+        local key=$(echo "$selected" | cut -d '=' -f1)
+        local value=$(echo "$selected" | cut -d '=' -f2-)
+
+        # Display the selected variable
+        echo "Selected: $key"
+        echo "$value"
+
+        # Prompt user to manually copy it using Ctrl+Shift+C
+        echo "🔹 Use Ctrl+Shift+C to copy the value!"
+    else
+        echo "No selection made."
+    fi
+}
+
+function _fzf_wrapper() {
+    # Make sure fzf uses the correct shell and sets the necessary environment variables
+    # For Bash, we typically don't need to use `SHELL` the way Fish does, so this is omitted
+
+    # If neither FZF_DEFAULT_OPTS nor FZF_DEFAULT_OPTS_FILE are set, set sane defaults
+    if [[ -z "$FZF_DEFAULT_OPTS" && -z "$FZF_DEFAULT_OPTS_FILE" ]]; then
+        # These options optimize fzf for git logs, history, and other common uses
+        export FZF_DEFAULT_OPTS='--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*"'
+    fi
+
+    # Run fzf with the provided arguments (e.g., from git log search)
+    fzf "$@"
+}
+
+function _fzf_search_git_log() {
+    # Check if the current directory is inside a git repository
+    if ! git rev-parse --git-dir >/dev/null 2>&1; then
+        echo '_fzf_search_git_log: Not in a git repository.' >&2
+        return 1
+    fi
+
+    # Set default log format if not already set
+    if [[ -z "$fzf_git_log_format" ]]; then
+        # %h gives you the abbreviated commit hash, which is useful for saving screen space
+        fzf_git_log_format='%C(bold blue)%h%C(reset) - %C(cyan)%ad%C(reset) %C(yellow)%d%C(reset) %C(normal)%s%C(reset)  %C(dim normal)[%an]%C(reset)'
+    fi
+
+    # Set the preview command for fzf
+    preview_cmd="git show --color=always --stat --patch {1}"
+
+    # Apply the fzf_diff_highlighter if it's set
+    if [[ -n "$fzf_diff_highlighter" ]]; then
+        preview_cmd="$preview_cmd | $fzf_diff_highlighter"
+    fi
+
+    # Get the selected log lines using fzf and git log
+    selected_log_lines=$(git log --no-show-signature --color=always --format="$fzf_git_log_format" --date=short | \
+        _fzf_wrapper --ansi \
+            --multi \
+            --scheme=history \
+            --prompt="Git Log> " \
+            --preview="$preview_cmd" \
+            --query="$(commandline --current-token)" \
+            $fzf_git_log_opts)
+
+    # Check if a commit was selected (status 0 means selection was made)
+    if [[ $? -eq 0 ]]; then
+        commit_hashes=()
+        for line in $selected_log_lines; do
+            # Extract the abbreviated commit hash and convert to full commit hash
+            abbreviated_commit_hash=$(echo "$line" | awk '{print $1}')
+            full_commit_hash=$(git rev-parse "$abbreviated_commit_hash")
+            commit_hashes+=("$full_commit_hash")
+        done
+
+        # Replace the current token with the selected commit hashes
+        commandline --current-token --replace "$(IFS=' '; echo "${commit_hashes[*]}")"
+    fi
+
+    # Repaint the commandline (similar to Fish's commandline --function repaint)
+    commandline --function repaint
+}
+
+
+
+
+
+
+function getGb() {
+  fzf-git-checkout
+}
+
+function getEnvs(){
+  envfzf
+}
+
+function getGitlog(){
+  fzf_search_git_log
+}
+
+zle -N getGb
+zle -N getEnvs
+zle -N getGitlog
+
+bindkey "^b" getGb
+bindkey "^v" getEnvs
+bindkey "^l" getGitlog
+
+###############################################################################
+################################## VIM STUFF ############################
+###############################################################################
 
 bindkey -v
 export keytimeout=1
 
-# change cursor shape for different vi modes.zsh
+
+# Change cursor shape in normal and insert mode (like Vim)
 function zle-keymap-select {
-      if [[ ${keymap} == vicmd ]] ||
-         [[ $1 = 'block' ]]; then
-        echo -ne '\e[1 q'
-      elif [[ ${keymap} == main ]] ||
-           [[ ${keymap} == viins ]] ||
-           [[ ${keymap} = '' ]] ||
-           [[ $1 = 'beam' ]]; then
-         echo -ne '\e[5 q'
-      fi
+  case $KEYMAP in
+    vicmd) echo -ne '\e[1 q' ;;  # Block cursor (normal mode)
+    viins|main) echo -ne '\e[5 q' ;;  # Beam cursor (insert mode)
+  esac
 }
-
-
 zle -N zle-keymap-select
-zle-line-init() {
-       zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-           echo -ne "\e[5 q"
+
+# Restore cursor shape on shell exit
+function zle-line-finish {
+  echo -ne '\e[0 q'
 }
+zle -N zle-line-finish
 
-zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+# Start in insert mode with beam cursor
+echo -ne '\e[5 q'
 
+###############################################################################
+###################################### SOURCING ###############################
+###############################################################################
 
 ## fzf 
 # Set up fzf key bindings and fuzzy completion
@@ -344,13 +458,14 @@ source <(fzf --zsh)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+eval $(thefuck --alias fck)
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
 
 # to customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 prompt+=' %{$fg[cyan]%}%d%{$reset_color%} '
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 source /users/tmb/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-eval "$(zoxide init zsh)"
 source /users/tmb/.config/broot/launcher/bash/br
-
 # fig post block. keep at the bottom of this file.
 # [[ -f "$home/.fig/shell/zshrc.post.zsh" ]] && builtin source "$home/.fig/shell/zshrc.post.zsh"

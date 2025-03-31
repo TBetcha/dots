@@ -79,26 +79,26 @@ require("lazy").setup({
   ---------------------------------------
   -------------- LSP & ISH  -------------
   ---------------------------------------
-  {
-    "VonHeikemen/lsp-zero.nvim",
-    branch = "v3.x",
-    dependencies = {
-      -- LSP Support
-      { "neovim/nvim-lspconfig" }, -- Required
-      { "williamboman/mason.nvim" }, -- Optional
-      { "williamboman/mason-lspconfig.nvim" }, -- Optional
-
-      -- Autocompletion
-      { "hrsh7th/nvim-cmp" }, -- Required
-      { "hrsh7th/cmp-nvim-lsp" }, -- Required
-      { "L3MON4D3/LuaSnip" }, -- Required
-      -- source for text in buffer
-      { "hrsh7th/cmp-buffer" },
-      -- source for file system paths
-      { "hrsh7th/cmp-path" },
-      { "hrsh7th/cmp-cmdline" },
-    },
-  },
+  -- {
+  --   "VonHeikemen/lsp-zero.nvim",
+  --   branch = "v3.x",
+  --   dependencies = {
+  --     -- LSP Support
+  --     { "neovim/nvim-lspconfig" }, -- Required
+  --     { "williamboman/mason.nvim" }, -- Optional
+  --     { "williamboman/mason-lspconfig.nvim" }, -- Optional
+  --
+  --     -- Autocompletion
+  --     { "hrsh7th/nvim-cmp" }, -- Required
+  --     { "hrsh7th/cmp-nvim-lsp" }, -- Required
+  --     { "L3MON4D3/LuaSnip" }, -- Required
+  --     -- source for text in buffer
+  --     { "hrsh7th/cmp-buffer" },
+  --     -- source for file system paths
+  --     { "hrsh7th/cmp-path" },
+  --     { "hrsh7th/cmp-cmdline" },
+  --   },
+  -- },
   --  tree sitter nodes for completionspack
   { "ray-x/cmp-treesitter" },
   -- snippet engine
@@ -108,13 +108,13 @@ require("lazy").setup({
   -- useful snippets
   "rafamadriz/friendly-snippets",
   -- managing & installing lsp servers, linters & formatters
-  "williamboman/mason.nvim",
-  -- bridges gap b/w mason & lspconfig
-  "williamboman/mason-lspconfig.nvim",
+  -- "williamboman/mason.nvim",
+  -- -- bridges gap b/w mason & lspconfig
+  -- "williamboman/mason-lspconfig.nvim",
   -- formatting
-  "jose-elias-alvarez/null-ls.nvim",
+  -- "jose-elias-alvarez/null-ls.nvim",
   -- bridges gap b/w mason & null-ls
-  "jayp0521/mason-null-ls.nvim",
+  -- "jayp0521/mason-null-ls.nvim",
   "jose-elias-alvarez/typescript.nvim",
   --icons in lsp menu
   { "onsails/lspkind.nvim" },
@@ -127,7 +127,7 @@ require("lazy").setup({
   -- reload that other plugins rely on
   -- { "nvim-lua/plenary.nvim" },
   -- telescope
-  { "nvim-telescope/telescope.nvim", version = "0.1.4" },
+  { "nvim-telescope/telescope.nvim",            version = "0.1.4" },
   -- fzf searching for telescope
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   -- zoxide telescope extension

@@ -113,7 +113,6 @@ end
 
 # ASCII Art
 function fish_greeting
-
     ECHO "Tbetcha" | figlet | ~/.config/scripts/color_it.sh 75
 end
 
