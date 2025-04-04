@@ -4,7 +4,7 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim", opts = {} },
+    { "folke/neodev.nvim",                   opts = {} },
   },
   config = function()
     -- import lspconfig plugin
@@ -29,74 +29,41 @@ return {
         local opts = { buffer = ev.buf, silent = true }
 
         -- set keybinds
-        keymap.set("n", "<leader>fa", "<cmd>Lspsaga finder tyd+ref+imp+def<CR>", opts) -- show definition, references
-        keymap.set("n", "gc", function()
-          vim.lsp.buf.declaration()
-        end, opts) -- got to declaration
-        keymap.set("n", "<leader>gd", function()
-          vim.lsp.buf.definition()
-        end, opts) -- lsp go to definition
-        keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
-        keymap.set("n", "gi", function()
-          vim.lsp.buf.implementation()
-        end, opts) -- go to implementation
-        keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
-        keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
-        keymap.set("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts) -- show  diagnostics for line
-        keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostics for cursor
-        -- keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
-        keymap.set("n", "[e", function()
-          require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
-        end) -- jump to previous diagnostic in buffer
-        keymap.set("n", "]e", function()
-          require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
-        end) -- jump to next diagnostic in buffer
-        keymap.set("n", "[d", function()
-          require("lspsaga.diagnostic"):goto_prev()
-        end) -- jump to previous diagnostic in buffer
-        keymap.set("n", "]d", function()
-          require("lspsaga.diagnostic"):goto_next()
-        end) -- jump to next diagnostic in buffer
-        -- keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
-        keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
-        keymap.set("n", "<leader>ot", "<cmd>Lspsaga outline Toggle<CR>", opts) -- see outline on right hand side
-        keymap.set({ "n", "t" }, "<leader>tw", "<cmd>Lspsaga term_toggle<CR>", opts) -- see outline on right hand side
-        keymap.set("n", "gtd", function()
-          vim.lsp.buf.type_definition()
-        end, opts)
-        keymap.set("n", "<leader>rr", function()
-          vim.lsp.buf.references()
-        end, opts)
+        keymap.set("n", "<leader>fa", "<cmd>Lspsaga finder tyd+ref+imp+def<CR>", opts)
+        keymap.set("n", "gc", function() vim.lsp.buf.declaration() end, opts) 
+        keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end, opts)
+        keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
+        keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
+        keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
+        keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
+        keymap.set("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+        keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
+        keymap.set("n", "[e",
+          function() require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR }) end)
+        keymap.set("n", "]e",
+          function() require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR }) end)
+        keymap.set("n", "[d", function() require("lspsaga.diagnostic"):goto_prev() end)
+        keymap.set("n", "]d", function() require("lspsaga.diagnostic"):goto_next() end)
+        keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+        keymap.set("n", "<leader>ot", "<cmd>Lspsaga outline Toggle<CR>", opts)
+        keymap.set({ "n", "t" }, "<leader>tw", "<cmd>Lspsaga term_toggle<CR>", opts)
+        keymap.set("n", "gtd", function() vim.lsp.buf.type_definition() end, opts)
+        keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
         -- keymap.set("i", "<leader>sig", function() vim.lsp.buf.signature_help() end, opts)
-        keymap.set("n", "<leader>ws", function()
-          vim.lsp.buf.workspace_symbol()
-        end, opts)
-        keymap.set("n", "<leader>of", function()
-          vim.diagnostic.open_float()
-        end, opts)
+        keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
+        keymap.set("n", "<leader>of", function() vim.diagnostic.open_float() end, opts)
         keymap.set("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>")
         keymap.set("n", "<leader>trr", "<cmd>Telescope lsp_references<cr>", { buffer = true })
       end,
     })
+
     vim.diagnostic.config({
       virtual_text = true,
-      code_actions = {
-        enable = true,
-        icons = {
-          hint = icons.diagnostics.Hint,
-          info = icons.diagnostics.Info,
-          warning = icons.diagnostics.Warn,
-          error = icons.diagnostics.Error,
-        },
-      },
     })
-    vim.lsp.codelens = { enable = true, resolve = true }
 
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
-    -- Change the Diagnostic symbols in the sign column (gutter)
-    -- (not in youtube nvim video)
     local signs = {
       Error = icons.diagnostics.Error,
       Warn = icons.diagnostics.Warn,
@@ -153,6 +120,14 @@ return {
           filetypes = { "fsharp" },
         })
       end,
+      -- -- configure F#
+      -- ["ionide"] = function()
+      --   lspconfig["ionide"].setup({
+      --   capabilities = capabilities,
+      --   filetypes = {"fsharp"},
+      -- })
+      --     vim.g["fsharp#lsp_codelens"] = 0
+      -- end,
       ["graphql"] = function()
         -- configure graphql language server
         lspconfig["graphql"].setup({

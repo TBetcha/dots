@@ -20,7 +20,7 @@ abbr !! sudo !!
 #Editor
 alias vim "nvim"
 alias vi "nvim"
-alias n "nvim"
+alias n "nvim ."
 alias v "nvim"
 alias . "nvim ."
 alias vimdiff 'nvim -d'

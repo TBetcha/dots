@@ -27,7 +27,7 @@ $docker_context
 [username]
 show_always = true
 format = '[$user ]($style)'
-style = "bold mauve"
+style_user = "bold mauve"
 
 
 [directory]

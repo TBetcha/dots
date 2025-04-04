@@ -1,5 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
+  "Ionide-vim": { "branch": "master", "commit": "c7e8973426431839e9d888a4aa8d6a41251ba16f" },
   "LuaSnip": { "branch": "master", "commit": "c9b9a22904c97d0eb69ccb9bab76037838326817" },
   "Spacegray.nvim": { "branch": "main", "commit": "6480ae722c907f9204b5bc8ac79e519384ede219" },
   "aki": { "branch": "mega", "commit": "a39e802855c2715811cca9c855e43252ee7a96ee" },
@@ -32,7 +33,6 @@
   "kanagawa.nvim": { "branch": "master", "commit": "cfd67b0e1eeaa04302b8c7eb072253d24bf22d84" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "lazygit.nvim": { "branch": "main", "commit": "b9eae3badab982e71abab96d3ee1d258f0c07961" },
-  "lsp-zero.nvim": { "branch": "v3.x", "commit": "ab2a3413646fedd77aa0eab4214a6473e62f6a64" },
   "lsp_signature.nvim": { "branch": "master", "commit": "02629e5bc38f6cb1a49bb43ff4a441f23335a933" },
   "lspkind.nvim": { "branch": "master", "commit": "d79a1c3299ad0ef94e255d045bed9fa26025dab6" },
   "lspsaga.nvim": { "branch": "main", "commit": "6063935cf68de9aa6dd79f8e1caf5df0a9385de3" },
