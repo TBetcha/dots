@@ -20,9 +20,10 @@
 /* Enable caps-lock LED */
 #define CAPS_LOCK_LED_INDEX 23
 // Configure the global tapping term (default: 200ms)
-#define TAPPING_TERM 200
+#define TAPPING_TERM 150
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
-#define QUICK_TAP_TERM 100
+#define QUICK_TAP_TERM 0
 #define QUICK_TAP_TERM_PER_KEY
-#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
+#define PERMISSIVE_HOLD_PER_KEY
+#define TAPPING_TERM_PER_KEY

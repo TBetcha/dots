@@ -51,17 +51,47 @@ enum custom_keycodes {
 #define HOME_L LALT_T(KC_L)
 #define HOME_SCLN RGUI_T(KC_SCLN)
 
+// Additional keycodes
+#define SFT_BK RSFT_T(KC_BSPC)
 
 uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case HOME_J:
-            return QUICK_TAP_TERM + 50;
+            return QUICK_TAP_TERM + 150;
         case HOME_K:
-            return QUICK_TAP_TERM + 50;
+            return QUICK_TAP_TERM + 150;
         case HOME_L:
-            return QUICK_TAP_TERM + 50;
+            return QUICK_TAP_TERM + 150;
         default:
             return QUICK_TAP_TERM;
+    }
+}
+
+bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(1, HOME_J):
+        case LT(1, HOME_F):
+            // Immediately select the hold action when another key is tapped.
+            return true;
+        default:
+            // Do not select the hold action when another key is tapped.
+            return false;
+    }
+}
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case HOME_A:
+        case HOME_S:
+        case HOME_D:
+        case HOME_F:
+        case HOME_J:
+        case HOME_K:
+        case HOME_L:
+        case HOME_SCLN:
+            return TAPPING_TERM + 100;
+        default:
+            return TAPPING_TERM;
     }
 }
 
@@ -80,14 +110,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
     case BRW_UP:
         if (record->event.pressed) {
-           SEND_STRING(SS_LCTL("pgup"));
+           SEND_STRING(SS_LCTL(SS_TAP(X_PGUP)));
         } else {
         }
         break;
 
     case BRW_DN:
         if (record->event.pressed) {
-           SEND_STRING(SS_LCTL("pgdn"));
+           SEND_STRING(SS_LCTL(SS_TAP(X_PGDN)));
         } else {
         }
         break;
@@ -126,7 +156,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         BRW_UP,   KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,      KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            KC_PGUP,
         BRW_DN,   KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,      KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,  KC_BSLS,            KC_PGDN,
         _______,  HY_ESC,   HOME_A,   HOME_S,   HOME_D,   HOME_F,   KC_G,      KC_H,     HOME_J,   HOME_K,   HOME_L,   HOME_SCLN,KC_QUOT,              KC_ENT,             KC_HOME,
-        _______,  KC_LSFT,            KC_Z,     KC_X,     KC_C,     KC_V,      KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,
+        _______,  KC_LSFT,            KC_Z,     KC_X,     KC_C,     KC_V,      KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              SFT_BK,  KC_UP,
         _______,  KC_LCTL,  KC_LOPT,  KC_LCMD,  MO(MAC_FN),         KC_SPC,                        KC_SPC,             KC_RCMD,  MO(MAC_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
 
     [MAC_FN] = LAYOUT_91_ansi(
