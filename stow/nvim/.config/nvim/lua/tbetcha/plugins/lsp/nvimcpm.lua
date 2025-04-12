@@ -4,7 +4,7 @@ return {
   dependencies = {
     "hrsh7th/cmp-buffer", -- source for text in buffer
     "hrsh7th/cmp-cmdline",
-    "hrsh7th/cmp-path", -- source for file system paths
+    "hrsh7th/cmp-path",   -- source for file system paths
     {
       "L3MON4D3/LuaSnip",
       -- follow latest release.
@@ -12,9 +12,9 @@ return {
       -- install jsregexp (optional!).
       build = "make install_jsregexp",
     },
-    "saadparwaiz1/cmp_luasnip", -- for autocompletion
+    "saadparwaiz1/cmp_luasnip",     -- for autocompletion
     "rafamadriz/friendly-snippets", -- useful snippets
-    "onsails/lspkind.nvim", -- vs-code like pictograms
+    "onsails/lspkind.nvim",         -- vs-code like pictograms
   },
   config = function()
     local cmp = require("cmp")
@@ -43,11 +43,21 @@ return {
     end
 
     cmp.setup({
+      window = {
+        completion = cmp.config.window.bordered({
+          border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+          winhighlight = "Normal:Pmenu,FloatBorder:CmpBorder,Search:None",
+        }),
+        documentation = cmp.config.window.bordered({
+          border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+          winhighlight = "Normal:CmpDocNormal,FloatBorder:CmpDocBorder",
+        }),
+      },
       mapping = cmp.mapping.preset.insert({
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-u>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-        ["<C-e>"] = cmp.mapping.abort(), -- close completion window
+        ["<C-e>"] = cmp.mapping.abort(),        -- close completion window
         ["<C-y>"] = cmp.mapping.confirm({ select = true }),
         ["<C-o"] = cmp.mapping.confirm({ select = true }),
         ["<Tab>"] = nil,
@@ -55,10 +65,10 @@ return {
       }),
       -- sources for autocompletion - order should matter here for sorting purposes order
       sources = cmp.config.sources({
-        { name = "luasnip" }, -- snippets
-        { name = "copilot" }, -- new copilot
+        { name = "luasnip" },     -- snippets
+        { name = "copilot" },     -- new copilot
         { name = "cmp_tabnine" }, --tabnine but not from tabnine
-        { name = "nvim_lsp" }, -- lsp
+        { name = "nvim_lsp" },    -- lsp
         cmp.setup.cmdline("/", {
           mapping = cmp.mapping.preset.cmdline(),
           sources = {

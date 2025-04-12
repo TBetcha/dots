@@ -1,4 +1,4 @@
-rabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 # __   __ _    ____    _    ___
 # \ \ / // \  | __ )  / \  |_ _|
@@ -139,7 +139,7 @@ yabai -m rule --add app="Spark\ Desktop" space=^"communication" opacity=0.8
 yabai -m rule --add app="Find\ My" space=^"communication"
 yabai -m rule --add app="Discord" space=^"communication" opacity=0.7
 yabai -m rule --add app="FaceTime" space=^"communication" opacity=0.7
-yabai -m rule --add app="Microsoft\ Teams" space=^"communication" 
+yabai -m rule --add app="Microsoft\ Teams" space=^"communication" opacity=0.7
 yabai -m rule --add app="zoom\.us" space=^"communication"
 yabai -m rule --add app="Slack" space=^"communication" opacity=0.7
 yabai -m rule --add app="MsTeams" space=^"communication" opacity=0.7
