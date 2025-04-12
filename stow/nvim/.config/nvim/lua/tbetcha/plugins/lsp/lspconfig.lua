@@ -32,6 +32,7 @@ return {
         keymap.set("n", "<leader>fa", "<cmd>Lspsaga finder tyd+ref+imp+def<CR>", opts)
         keymap.set("n", "gc", function() vim.lsp.buf.declaration() end, opts) 
         keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end, opts)
+        keymap.set("n", "<leader>gtd", function() vim.lsp.buf.type_definition() end, opts)
         keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
         keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
         keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)

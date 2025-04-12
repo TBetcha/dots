@@ -54,57 +54,60 @@ enum custom_keycodes {
 // Additional keycodes
 #define SFT_BK RSFT_T(KC_BSPC)
 
+// NOTE: Because of nvim
 uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case HOME_J:
-            return QUICK_TAP_TERM + 150;
+            return QUICK_TAP_TERM + 125;
         case HOME_K:
-            return QUICK_TAP_TERM + 150;
+            return QUICK_TAP_TERM + 125;
         case HOME_L:
-            return QUICK_TAP_TERM + 150;
+            return QUICK_TAP_TERM + 125;
         default:
             return QUICK_TAP_TERM;
     }
 }
 
-bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LT(1, HOME_J):
-        case LT(1, HOME_F):
-            // Immediately select the hold action when another key is tapped.
-            return true;
-        default:
-            // Do not select the hold action when another key is tapped.
-            return false;
-    }
-}
+/*bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {*/
+/*    switch (keycode) {*/
+/*        case LT(1, HOME_J):*/
+/*        case LT(1, HOME_F):*/
+/*            // Immediately select the hold action when another key is tapped.*/
+/*            return true;*/
+/*        default:*/
+/*            // Do not select the hold action when another key is tapped.*/
+/*            return false;*/
+/*    }*/
+/*}*/
 
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case HOME_A:
-        case HOME_S:
-        case HOME_D:
-        case HOME_F:
-        case HOME_J:
-        case HOME_K:
-        case HOME_L:
-        case HOME_SCLN:
-            return TAPPING_TERM + 100;
-        default:
-            return TAPPING_TERM;
-    }
-}
+/*uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {*/
+/*    switch (keycode) {*/
+/*        case HOME_A:*/
+/*        case HOME_S:*/
+/*        case HOME_D:*/
+/*        case HOME_F:*/
+/*        case HOME_J:*/
+/*        case HOME_K:*/
+/*        case HOME_L:*/
+/*        case HOME_SCLN:*/
+/*            return TAPPING_TERM + 50;*/
+/*        default:*/
+/*            return TAPPING_TERM;*/
+/*    }*/
+/*}*/
 
-bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LT(1, HY_ESC):
-            // Immediately select the hold action when another key is pressed.
-            return true;
-        default:
-            // Do not select the hold action when another key is pressed.
-            return false;
-    }
-}
+/*bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {*/
+/*    switch (keycode) {*/
+/*        case LT(1, HY_ESC):*/
+/*        case LT(1, HOME_F):*/
+/*        case LT(1, HOME_J):*/
+/*            // Immediately select the hold action when another key is pressed.*/
+/*            return true;*/
+/*        default:*/
+/*            // Do not select the hold action when another key is pressed.*/
+/*            return false;*/
+/*    }*/
+/*}*/
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {

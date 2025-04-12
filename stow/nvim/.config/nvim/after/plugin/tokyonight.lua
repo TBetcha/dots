@@ -55,13 +55,13 @@ tokyonight.setup({
 
   --   -- hl.Normal = "Foo"
   --   local prompt = "#2d3149"
-    hl.TelescopeBorder = { bg = "#4fd6be", fg = c.bg_dark }
+    -- hl.TelescopeBorder = { bg = "#4fd6be", fg = c.bg_dark }
   --   hl.TelescopeBorder = { bg = c.bg_dark, fg = c.bg_dark }
   --   hl.TelescopePromptNormal = { bg = prompt }
   --   hl.TelescopePromptBorder = { bg = prompt, fg = prompt }
   --   hl.TelescopePromptTitle = { bg = c.fg_gutter, fg = c.orange }
-  --   hl.TelescopePreviewTitle = { bg = c.bg_dark, fg = c.bg_dark }
-  --   hl.TelescopeResultsTitle = { bg = c.bg_dark, fg = c.bg_dark }
+    hl.TelescopePreviewTitle = { bg = "#4fd6be", fg = c.bg_dark }
+    hl.TelescopeResultsTitle = { bg = "#4fd6be", fg = c.bg_dark }
   end,
 
   plugins =
