@@ -59,7 +59,7 @@ return {
     })
 
     vim.diagnostic.config({
-      virtual_text = true,
+      virtual_text = false,
     })
 
     -- used to enable autocompletion (assign to every lsp server config)
@@ -92,10 +92,6 @@ return {
           require("lspconfig")["omnisharp"].setup({
             capabilities = cmp_nvim_lsp.default_capabilities(),
             virtual_text = true,
-            code_lens = {
-              enable = true,
-              resolve = true,
-            },
           }),
         })
       end,

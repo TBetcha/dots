@@ -7,6 +7,6 @@ return {
   vim.diagnostic.config({
     virtual_text = false,
   }),
-  vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
+  vim.diagnostic.config({ virtual_lines = { highlight_whole_line = false, only_current_line = true } })
 
 }

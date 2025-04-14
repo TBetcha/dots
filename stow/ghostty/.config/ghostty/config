@@ -40,7 +40,7 @@ window-decoration = false
 # Other
 copy-on-select = clipboard
 shell-integration-features = cursor,sudo,no-title
-background-opacity = 1.0
+background-opacity = 0.85
 background-blur = true
 window-theme = dark
 theme = catppuccin-mocha
