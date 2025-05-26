@@ -7,7 +7,7 @@ return {
       keywords = { italic = true }, -- style for keywords
       identifiers = { italic = true }, -- style for identifiers
       functions = { bold = true }, -- style for functions
-      variables = { underline = true }, -- style for variables
+      variables = {  }, -- style for variables
     },
   },
   config = function(_, opts)

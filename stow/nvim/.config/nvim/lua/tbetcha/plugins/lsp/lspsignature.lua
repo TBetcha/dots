@@ -1,13 +1,12 @@
 return {
   "ray-x/lsp_signature.nvim",
-  event = "InsertEnter",
   opts = {
     bind = true,
     handler_opts = {
       border = "rounded",
     },
     keymaps = function(bufnr)
-      vim.keymap.set({ "n" }, "<leader>o", function()
+      vim.keymap.set({ "n" }, "<leader>k", function()
         require("lsp_signature").toggle_float_win()
       end, { silent = true, noremap = true, desc = "toggle signature" })
 

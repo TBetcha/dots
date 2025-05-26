@@ -37,7 +37,7 @@ tokyonight.setup({
   ---@param colors ColorScheme
   on_colors = function(colors)
     colors.border = "#ff757f"
-    colors.bg_sidebar = "#ff757f"
+    -- colors.bg_sidebar = "#ff757f"
     colors.border_highlight = "#ff757f"
 
     -- colors.bg_popup = "#6a6fb1"

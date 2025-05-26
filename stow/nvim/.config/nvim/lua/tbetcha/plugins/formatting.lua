@@ -11,6 +11,7 @@ return {
         javascriptreact = { "prettier" },
         typescriptreact = { "prettier" },
         svelte = { "prettier" },
+        vue = { "prettier" },
         css = { "prettier" },
         html = { "prettier" },
         json = { "prettier" },
@@ -23,11 +24,11 @@ return {
         fsharp = { "fantomas" },
         csharp = { "csharpier" },
       },
-      -- format_on_save = {
-      --   lsp_fallback = true,
-      --   async = false,
-      --   timeout_ms = 1000,
-      -- },
+      format_on_save = {
+        lsp_fallback = true,
+        async = false,
+        timeout_ms = 2000,
+      },
     })
 
     vim.keymap.set({ "n", "v" }, "<leader>fm", function()

@@ -42,7 +42,7 @@ map({ "n", "v" }, "<leader>y", [["+y]])
 map("n", "<leader>Y", [["+Y]])
 
 -- delete into void register
-map({ "n", "v" }, "<leader>d", [["_d]])
+map({ "n", "v" }, "<leader>x", [["_d]])
 
 -- ftw
 map("n", "Q", "<nop>")
