@@ -118,8 +118,6 @@ end
 
 [ -f ~/.fzf.fish ] && source ~/.fzf.fish
 
-zoxide init fish | source
-starship init fish | source
 
 # pnpm
 set -gx PNPM_HOME "/Users/tmb/Library/pnpm"
@@ -127,3 +125,7 @@ if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+
+zoxide init fish | source
+starship init fish | source
