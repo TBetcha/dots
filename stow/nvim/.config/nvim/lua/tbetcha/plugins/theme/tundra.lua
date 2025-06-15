@@ -12,7 +12,7 @@ return {
         constants = { bold = true },
         fields = {},
         functions = { italic = true },
-        keywords = { italic = true, bold = true },
+        keywords = { bold = true },
         loops = {},
         operators = { bold = true },
         punctuation = {},
@@ -20,6 +20,6 @@ return {
         types = { italic = true },
       },
     })
-    vim.g.tundra_biome = "jungle"
+    vim.g.tundra_biome = "arctic"
   end,
 }

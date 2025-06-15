@@ -1,4 +1,5 @@
 
+
 #########################
 # BASIC ABBREVIATIONS #
 #########################
@@ -149,6 +150,15 @@ alias proto "cd ~/code/dmg/ProtoProjects/ProviderProto/dmg.providers.proto"
 abbr ifaa "cd ~/code/ifaadfw/Server"
 
 
+#########################
+#     FZF MAPPINGS     #
+#########################
+
+# cttl - v env vars
+# ctrl - opt p -  processes" 
+# ctrl - opt l - git log
+
+
 #############
 # FUNCTIONS #
 #############
@@ -159,7 +169,7 @@ end
 
 # Pretty prints the disk space of the given directory
 function ds -a dir
-  printf "Disk Space for $(set_color -i red)$dir$(set_color normal):$(set_color -o cyan) "
+  printf "Disk Space for $(set_color -i red)$dir$(set_color normal):$(set_color -o cyan)"
   du -sh $dir | head -n1 | awk '{print $1;}'
 end
 

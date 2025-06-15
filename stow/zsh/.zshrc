@@ -37,6 +37,7 @@ path+=('~/.config/scripts')
 path+=('opt/homebrew/bin')
 path+=('opt/homebrew/sbin')
 path+=('/users/tmb/kafka_2.13-3.4.0/bin')
+path+=('~/.local/bin')
 
 export PATH
 export protoc=/opt/homebrew/bin/protoc
@@ -44,6 +45,8 @@ export protoc_include=/opt/homebrew/include
 export zsh="/users/tmb/.oh-my-zsh"
 export bat_theme="twodark"
 export editor="nvim"
+export DOTNET_ROOT=/Users/tmb/dotnet/
+# export DOTNET_ROOT=/usr/local/share/dotnet/
 
 # export ZO_DATA_DIR = "'Users/tmb/Library/Application\\ Support/zoxide'"
 
@@ -171,6 +174,7 @@ alias vim="nvim"
 alias vi="nvim"
 alias n="nvim ."
 alias v="nvim"
+alias .="nvim ."
 
 ##################################### TMUX ##################################
 # alias tmux=tmux -f "/opt/homebrew/bin/tmux"
@@ -306,6 +310,12 @@ alias ifaa="cd ~/code/ifaadfw/server"
 ###############################################################################
 ################################## FZF ########################################
 ###############################################################################
+#
+# ctrl g to search git log
+# ctrl v to search env variables
+# ctrl b to search git branches
+#
+###############################################################################
 
 function envfzf() {
     # Ensure fzf is installed
@@ -347,7 +357,7 @@ function _fzf_wrapper() {
     fzf "$@"
 }
 
-function _fzf_search_git_log() {
+function fzf-search-git-log() {
     # Check if the current directory is inside a git repository
     if ! git rev-parse --git-dir >/dev/null 2>&1; then
         echo '_fzf_search_git_log: Not in a git repository.' >&2
@@ -396,11 +406,6 @@ function _fzf_search_git_log() {
     commandline --function repaint
 }
 
-
-
-
-
-
 function getGb() {
   fzf-git-checkout
 }
@@ -410,7 +415,7 @@ function getEnvs(){
 }
 
 function getGitlog(){
-  fzf_search_git_log
+  fzf-search-git-log
 }
 
 zle -N getGb
@@ -419,7 +424,7 @@ zle -N getGitlog
 
 bindkey "^b" getGb
 bindkey "^v" getEnvs
-bindkey "^l" getGitlog
+bindkey "^g" getGitlog
 
 ###############################################################################
 ################################## VIM STUFF ############################

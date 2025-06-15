@@ -3,6 +3,6 @@ return {
   lazy = false,
   priority = 1000,
   opts = {
-    transparent = true, -- Enable transparent background
+    transparent = false, -- Enable transparent background
   }, -- Optional
 }

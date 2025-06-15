@@ -134,8 +134,8 @@ yabai -m rule --add app="^Safari*" space=^"browser"
 
 yabai -m space 2 --label communication
 yabai -m rule --add app="Messages" space=^"communication" opacity=0.8
-yabai -m rule --add app="Spark" space=^"communication" opacity=0.8
-yabai -m rule --add app="Spark\ Desktop" space=^"communication" opacity=0.8
+yabai -m rule --add app="Spark" space=^"communication" opacity=0.9
+yabai -m rule --add app="Spark\ Desktop" space=^"communication" opacity=0.9
 yabai -m rule --add app="Find\ My" space=^"communication"
 yabai -m rule --add app="Discord" space=^"communication" opacity=0.7
 yabai -m rule --add app="FaceTime" space=^"communication" opacity=0.7
@@ -145,7 +145,7 @@ yabai -m rule --add app="Slack" space=^"communication" opacity=0.7
 yabai -m rule --add app="MsTeams" space=^"communication" opacity=0.7
 
 yabai -m space 1 --label productivity
-yabai -m rule --add app="BusyCal" space=^"productivity" opacity=0.7
+yabai -m rule --add app="BusyCal" space=^"productivity" opacity=0.9
 yabai -m rule --add app="Todoist" space=^"productivity" opacity=0.7
 yabai -m rule --add app="Bear" space=^"productivity"
 yabai -m rule --add app="Notion" space=^"productivity" opacity=0.80
