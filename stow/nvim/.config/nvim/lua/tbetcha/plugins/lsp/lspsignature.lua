@@ -14,6 +14,5 @@ return {
         require("lsp_signature").select_signature_key()
       end, { silent = true, noremap = true, desc = "toggle signature" })
     end,
-
   },
 }

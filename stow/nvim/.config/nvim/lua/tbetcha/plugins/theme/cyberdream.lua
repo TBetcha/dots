@@ -20,8 +20,8 @@ return {
         gitsigns = true,
         treesitter = true,
         treesittercontext = true,
-        trouble = true
-      }
+        trouble = true,
+      },
     })
   end,
 }
