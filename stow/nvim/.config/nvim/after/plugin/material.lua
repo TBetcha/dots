@@ -30,7 +30,7 @@ custom_highlights = {
     comments = { italic = true },
     -- strings = { --[[ bold = true ]] },
     keywords = { italic = true },
-    functions = { bold = true },
+    functions = { bold = true, italic=true },
     -- variables = {},
     -- operators = {},
     -- types = {},
