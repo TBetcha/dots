@@ -24,3 +24,5 @@
     diffFilter = delta --color-only
 [pull]
 	ff = only
+[credential]
+	helper = store

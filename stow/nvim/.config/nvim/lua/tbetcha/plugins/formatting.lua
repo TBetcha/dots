@@ -6,28 +6,22 @@ return {
 
     conform.setup({
       formatters_by_ft = {
-        javascript = {  "prettier"},
-        typescript = {  "prettier"},
-        javascriptreact = { "prettier"},
-        typescriptreact = { "prettier"},
-        svelte = { "prettier"},
-        vue = {  "prettier"},
-        css = {  "prettier"},
-        html = { "prettier"},
-        json = { "prettier"},
-        yaml = { "prettier"},
-        markdown = { "prettier"},
-        graphql = { "prettier"},
-        liquid = {  "prettier"},
+        javascript = { "prettier" },
+        typescript = { "prettier" },
+        javascriptreact = { "prettier" },
+        typescriptreact = { "prettier" },
+        svelte = { "prettier" },
+        vue = { "prettier" },
+        css = { "prettier" },
+        html = { "prettier" },
+        json = { "prettier" },
+        yaml = { "prettier" },
+        markdown = { "prettier" },
+        graphql = { "prettier" },
+        liquid = { "prettier" },
         fsharp = { "fantomas" },
         csharp = { "csharpier" },
-        python = function(bufnr)
-          if require("conform").get_formatter_info("pyright", bufnr).available then
-            return { "ruff_format" }
-          else
-            return { "isort", "black" }
-          end
-        end,
+        python = { "autopep8" },
       },
       format_on_save = {
         lsp_fallback = true,

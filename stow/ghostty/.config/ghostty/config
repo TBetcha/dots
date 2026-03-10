@@ -40,10 +40,11 @@ window-decoration = false
 # Other
 copy-on-select = clipboard
 shell-integration-features = cursor,sudo,no-title
-background-opacity = 0.85
+background-opacity = 0.95
 background-blur = true
 window-theme = dark
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
+# theme = Rose Pine
 macos-window-shadow = true
 macos-icon = chalkboard
 bold-is-bright = true

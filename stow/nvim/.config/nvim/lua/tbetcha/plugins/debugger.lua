@@ -13,7 +13,8 @@ return {
       -- C#
       dap.adapters.coreclr = {
         type = "executable",
-        command = vim.fn.stdpath("data") .. "/mason/bin/netcoredbg",
+        -- command = vim.fn.stdpath("data") .. "/mason/bin/netcoredbg",
+        command = vim.fn.stdpath("data") .. "~/Code/Setup/netcoredbg",
         args = { "--interpreter=vscode" },
       }
       dap.configurations.cs = {
@@ -24,6 +25,9 @@ return {
           program = function() -- Ask the user what executable wants to debug
             return vim.fn.input("Path to dll: ", vim.fn.getcwd() .. "/bin/Debug", "file")
           end,
+          cwd = "{StockAnalyzer.CrossPlatform}",
+          stopAtEntry = false,
+          -- args = {"--project", "Program.cs"}
         },
       }
 
@@ -80,3 +84,14 @@ return {
     },
   },
 }
+    -- -- require("stevearc/overseer.nvim").register_template({
+    --   name = "Build .NET Project",
+    --   builder = function()
+    --     return {
+    --       cmd = { "dotnet" },
+    --       args = { "build", "--project", "~/Code/Courses/AsyncProg/02/demos/Cross-Platform/Start_Here/StockAnalyzer.CrossPlatform/StockAnalyzer.CrossPlatform.csproj" },
+    --       name = "Build .NET Project",
+    --       components = { "default" },
+    --     }
+    --   end,
+    -- })
