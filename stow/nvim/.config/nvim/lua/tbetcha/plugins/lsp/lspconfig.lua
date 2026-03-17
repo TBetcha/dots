@@ -55,11 +55,13 @@ return {
         keymap.set("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>")
         keymap.set("n", "<leader>trr", "<cmd>Telescope lsp_references<cr>", { buffer = true })
 
-        -- omnisharp extended
-        keymap.set("n", "<leader>dd", "<cmd>lua require('omnisharp_extended').lsp_definition()<cr>")
+        -- omnisharp extended 
+        -- NOTE: no longer needed for C# w/ omnisharp have to try again w/ roslyn and FE
+        -- 
+        -- keymap.set("n", "<leader>dd", "<cmd>lua require('omnisharp_extended').lsp_definition()<cr>")
         keymap.set("n", "<leader>td", "<cmd>lua require('omnisharp_extended').lsp_type_definition<cr>")
-        keymap.set("n", "<leader>gr", "<cmd>lua require('omnisharp_extended').lsp_references()<cr>")
-        keymap.set("n", "<leader>gi", "<cmd>lua require('omnisharp_extended').lsp_implementation()<cr>")
+        -- keymap.set("n", "<leader>gr", "<cmd>lua require('omnisharp_extended').lsp_references()<cr>")
+        -- keymap.set("n", "<leader>gi", "<cmd>lua require('omnisharp_extended').lsp_implementation()<cr>")
       end,
     })
 

@@ -58,17 +58,17 @@ cmd - 9 : yabai -m space --focus 9 && sketchybar -m --trigger space_change
 #
 #
 # # create desktop and follow focus - uses jq for parsing json (brew install jq)
-ctrl + cmd - t : yabai -m space --create && \
-                index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
-                yabai -m space --focus "${index}" && \
-                sketchybar -m --trigger space_change
+# ctrl + cmd - t : yabai -m space --create && \
+#                 index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
+#                 yabai -m space --focus "${index}" && \
+#                 sketchybar -m --trigger space_change
 
 # # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
 # ctrl + shift - t : yabai -m space --create && \
-#                   index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
-#                   yabai -m window --space "${index}" && \
-#                   yabai -m space --focus "${index}" && \
-#                   sketchybar -m --trigger space_change
+                  # index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
+                  # yabai -m window --space "${index}" && \
+                  # yabai -m space --focus "${index}" && \
+                  # sketchybar -m --trigger space_change
 
 # -- Modifying Window Size --
 
@@ -104,7 +104,7 @@ alt + cmd + ctrl - left : yabai -m window --display west; yabai -m display --foc
 alt + cmd + ctrl - right : yabai -m window --display east; yabai -m display --focus east;
 
 
-# fast focus desktop - wait on sonoma
+# fast focus desktop
 alt - left : yabai -m space --focus prev && sketchybar -m --trigger space_change
 alt - right : yabai -m space --focus next && sketchybar -m --trigger space_change
 # cmd + ctrl - right : (yabai -m space --focus next || yabai -m space --focus first) || skhd -k "cmd - right"
