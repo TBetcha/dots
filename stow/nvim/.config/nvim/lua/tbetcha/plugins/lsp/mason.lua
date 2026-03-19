@@ -20,7 +20,8 @@ return {
       -- list of servers for mason to install
       ensure_installed = {
         "fsautocomplete",
-        "omnisharp",
+        -- "omnisharp",
+        "c-sharp-language-server",
         "ts_ls",
         "html",
         "cssls",

@@ -91,7 +91,7 @@ yabai -m rule --add app="Spotify" space=^"entertainment" opacity=0.8
 
 yabai -m space 7 --label reference
 yabai -m rule --add app="Bear" space=^"reference"
-yabai -m rule --add app="Notion" space=^"reference" opacity=0.80
+yabai -m rule --add app="Notion" space=^"reference" opacity=0.9
 yabai -m rule --add app="The\ Unarchiver" space=^"reference"
 yabai -m rule --add app="Home" space=^"reference"
 yabai -m rule --add app="BetterTouchTool" space=^"reference"

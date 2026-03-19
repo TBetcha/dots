@@ -131,6 +131,7 @@ require("lazy").setup({
   "kristijanhusak/vim-dadbod-completion",
   "RRethy/vim-illuminate",
   "kamykn/spelunker.vim",
+  'kevinhwang91/nvim-bqf',
   change_detection = {
     notify = false,
   },
