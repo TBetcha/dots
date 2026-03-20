@@ -16,6 +16,7 @@ require 'nvim-treesitter.configs'.setup {
         "scala",
         "c",
         "lua",
+        "latex",
         "vim",
         "vimdoc",
         "query" },
