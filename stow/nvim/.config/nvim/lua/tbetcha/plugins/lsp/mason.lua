@@ -21,7 +21,8 @@ return {
       ensure_installed = {
         "fsautocomplete",
         -- "omnisharp",
-        "c-sharp-language-server",
+        -- "c-sharp-language-server",
+        "csharp_ls",
         "ts_ls",
         "html",
         "cssls",
