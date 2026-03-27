@@ -46,6 +46,9 @@ export zsh="/users/tmb/.oh-my-zsh"
 export bat_theme="twodark"
 export editor="nvim"
 export DOTNET_ROOT=/Users/tmb/dotnet/
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+
 # export DOTNET_ROOT=/usr/local/share/dotnet/
 
 # export ZO_DATA_DIR = "'Users/tmb/Library/Application\\ Support/zoxide'"

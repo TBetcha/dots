@@ -126,6 +126,18 @@ if not string match -q -- $PNPM_HOME $PATH
 end
 # pnpm end
 
+# nvm
+# Set the nvm directory
+set -gx NVM_DIR $HOME/.nvm
+
+# Load nvm using bass (bash helper)
+# --no-use prevents automatic node selection
+bass source /opt/homebrew/opt/nvm/nvm.sh --no-use
+
+# Optional: auto-use a default Node version
+# nvm use 20
+
+
 
 zoxide init fish | source
 starship init fish | source
