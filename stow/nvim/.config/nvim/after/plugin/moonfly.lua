@@ -20,7 +20,9 @@ cmp.setup({
   }
 })
 -- Lua initialization file
-vim.g.moonflyTransparent = true
+vim.g.moonflyTransparent = false
+-- Lua initialization file
+vim.g.moonflyUndercurls = true
 -- Lua initialization file
 vim.g.moonflyItalics = true
 -- Lua initialization file

@@ -19,7 +19,7 @@ return {
           functions = "italic",
           keywords = "bold",
           variables = "NONE",
-          conditionals = "NONE",
+          conditionals = "underline",
           constants = "NONE",
           numbers = "NONE",
           operators = "NONE",

@@ -34,7 +34,7 @@ return {
         keymap.set("n", "<leader>fa", "<cmd>Lspsaga finder tyd+ref+imp+def<CR>", opts)
         keymap.set("n", "gc", function() vim.lsp.buf.declaration() end, opts)
         keymap.set("n", "gD", function() vim.lsp.buf.definition() end, opts)
-        keymap.set("n", "td", function() vim.lsp.buf.type_definition() end, opts)
+        keymap.set("n", "tD", function() vim.lsp.buf.type_definition() end, opts)
         keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
         keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
         keymap.set("n", "ca", "<cmd>Lspsaga code_action<CR>", opts)
@@ -59,14 +59,14 @@ return {
         -- NOTE: no longer needed for C# w/ omnisharp have to try again w/ roslyn and FE
         -- 
         -- keymap.set("n", "<leader>dd", "<cmd>lua require('omnisharp_extended').lsp_definition()<cr>")
-        keymap.set("n", "<leader>td", "<cmd>lua require('omnisharp_extended').lsp_type_definition<cr>")
-        -- keymap.set("n", "<leader>gr", "<cmd>lua require('omnisharp_extended').lsp_references()<cr>")
+        -- keymap.set("n", "<leader>td", "<cmd>lua require('omnisharp_extended').lsp_type_definition<cr>")
+        -- keymap.set("n", "<leader>rf", "<cmd>lua require('omnisharp_extended').lsp_references()<cr>")
         -- keymap.set("n", "<leader>gi", "<cmd>lua require('omnisharp_extended').lsp_implementation()<cr>")
       end,
     })
 
     vim.diagnostic.config({
-      virtual_text = false,
+      virtual_text = true,
     })
 
     -- used to enable autocompletion (assign to every lsp server config)

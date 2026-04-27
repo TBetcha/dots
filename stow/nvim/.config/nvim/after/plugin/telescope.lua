@@ -62,6 +62,8 @@ vim.keymap.set(
   [[<Cmd>lua require'telescope.builtin'.keymaps({results_title='Key Maps Results'})<CR>]],
   { noremap = true, silent = true }
 )
+
+-- NOTE: using oil for this now
 -- vim.keymap.set(
 --   "n",
 --   "<leader>fb",
