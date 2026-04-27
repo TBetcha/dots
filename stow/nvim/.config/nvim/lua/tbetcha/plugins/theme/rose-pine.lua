@@ -10,7 +10,7 @@ return {
       styles = {
         bold = true,
         italic = true,
-        transparency = true,
+        transparency = false,
       },
     })
   end,

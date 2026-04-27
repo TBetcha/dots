@@ -4,7 +4,7 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim", opts = {} },
+    { "folke/neodev.nvim",                   opts = {} },
     "WillEhrendreich/Ionide-Nvim",
     "Hoffs/omnisharp-extended-lsp.nvim",
   },
@@ -41,8 +41,10 @@ return {
         -- keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
         keymap.set("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
         keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
-        keymap.set("n", "[e", function() require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR }) end)
-        keymap.set("n", "]e", function() require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR }) end)
+        keymap.set("n", "[e",
+          function() require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR }) end)
+        keymap.set("n", "]e",
+          function() require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR }) end)
         keymap.set("n", "[d", function() require("lspsaga.diagnostic"):goto_prev() end)
         keymap.set("n", "]d", function() require("lspsaga.diagnostic"):goto_next() end)
         keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
@@ -55,9 +57,9 @@ return {
         keymap.set("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>")
         keymap.set("n", "<leader>trr", "<cmd>Telescope lsp_references<cr>", { buffer = true })
 
-        -- omnisharp extended 
+        -- omnisharp extended
         -- NOTE: no longer needed for C# w/ omnisharp have to try again w/ roslyn and FE
-        -- 
+        --
         -- keymap.set("n", "<leader>dd", "<cmd>lua require('omnisharp_extended').lsp_definition()<cr>")
         -- keymap.set("n", "<leader>td", "<cmd>lua require('omnisharp_extended').lsp_type_definition<cr>")
         -- keymap.set("n", "<leader>rf", "<cmd>lua require('omnisharp_extended').lsp_references()<cr>")

@@ -9,14 +9,14 @@ if not material_colors_status then
 end
 
 material.setup({
-custom_highlights = {
-        LineNr = { fg = '#bb58ba' },
-        CursorLine = { fg = colors.editor.constrast , underline = true },
-      },
- high_visibility = {
-        lighter = false, -- Enable higher contrast text for lighter style
-        darker = true -- Enable higher contrast text for darker style
-    },
+  custom_highlights = {
+    LineNr = { fg = "#bb58ba" },
+    CursorLine = { fg = colors.editor.constrast, underline = true },
+  },
+  high_visibility = {
+    lighter = false, -- Enable higher contrast text for lighter style
+    darker = true, -- Enable higher contrast text for darker style
+  },
   contrast = {
     --     terminal = false, -- Enable contrast for the built-in terminal
     --     sidebars = false, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
@@ -29,11 +29,11 @@ custom_highlights = {
   styles = { -- Give comments style such as bold, italic, underline etc.
     comments = { italic = true },
     -- strings = { --[[ bold = true ]] },
-    keywords = { italic = true },
-    functions = { bold = true, italic=true },
+    keywords = { bold = true },
+    functions = { italic = true },
     -- variables = {},
     -- operators = {},
-    -- types = {},
+    types = { underline = true },
   },
   plugins = { -- Uncomment the plugins that you use to highlight them
     --     -- Available plugins:
@@ -48,7 +48,7 @@ custom_highlights = {
     "harpoon",
     --     -- "hop",
     "illuminate",
-    --     "indent-blankline",
+    "indent-blankline",
     "lspsaga",
     --     -- "mini",
     --     -- "neogit",
@@ -60,7 +60,7 @@ custom_highlights = {
     --     -- "nvim-navic",
     "nvim-tree",
     "nvim-web-devicons",
-    --     -- "rainbow-delimiters",
+    "rainbow-delimiters",
     --     -- "sneak",
     "telescope",
     "trouble",
