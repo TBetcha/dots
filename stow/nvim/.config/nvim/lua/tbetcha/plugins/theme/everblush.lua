@@ -3,6 +3,6 @@ return {
   priority = 1000,
   lazy = false,
   config = function()
-    vim.g.everblush_transp_bg = true
+    vim.g.everblush_transp_bg = false
   end,
 }

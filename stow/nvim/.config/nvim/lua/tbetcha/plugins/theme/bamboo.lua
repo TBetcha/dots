@@ -4,7 +4,7 @@ return {
   priority = 1000,
   config = function()
     require("bamboo").setup({
-      transparent = true,
+      transparent = false,
       code_style = {
         comments = { italic = true },
         conditionals = {},
@@ -14,6 +14,11 @@ return {
         parameters = { underline = true },
         strings = {},
         variables = {},
+      },
+      diagnostics = {
+        darker = true, -- darker colors for diagnostic
+        undercurl = true, -- use undercurl instead of underline for diagnostics
+        background = true, -- use background color for virtual text
       },
     })
     require("bamboo").load()

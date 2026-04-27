@@ -4,7 +4,7 @@ return {
   priority = 1000,
   config = function()
     require("vague").setup({
-      transparent = true,
+      transparent = false,
       bold = true,
       italic = true,
       style = {
@@ -17,8 +17,8 @@ return {
         functions = "italic",
         headings = "bold",
         operators = "none",
-        strings = "italic",
-        variables = "none",
+        strings = "strikethrough",
+        variables = "underline",
 
         -- keywords
         keywords = "bold",
@@ -29,7 +29,7 @@ return {
 
         -- builtin
         builtin_constants = "bold",
-        builtin_functions = "none",
+        builtin_functions = "italic",
         builtin_types = "bold",
         builtin_variables = "none",
 
