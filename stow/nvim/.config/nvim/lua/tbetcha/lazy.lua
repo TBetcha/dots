@@ -70,6 +70,21 @@ require("lazy").setup({
     priority = 1000,
     lazy = false,
   },
+  {
+    "sainnhe/sonokai",
+    priority = 1000, -- Ensure it loads first
+    lazy = false,
+  },
+  {
+    "projekt0n/github-nvim-theme",
+    priority = 1000,
+    lazy = false,
+  },
+  {
+    "AlexvZyl/nordic.nvim",
+    priority = 1000,
+    lazy = false,
+  },
 
   ---------------------------------------
   -------------- LSP & ISH  -------------
@@ -86,7 +101,7 @@ require("lazy").setup({
   { "glepnir/lspsaga.nvim" },
 
   --END OF LSP STUFF
-  { "nvim-telescope/telescope.nvim",            version = "0.1.4" },
+  { "nvim-telescope/telescope.nvim", version = "0.1.4" },
   -- fzf searching for telescope
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   -- zoxide telescope extension
@@ -131,7 +146,7 @@ require("lazy").setup({
   "kristijanhusak/vim-dadbod-completion",
   "RRethy/vim-illuminate",
   "kamykn/spelunker.vim",
-  'kevinhwang91/nvim-bqf',
+  "kevinhwang91/nvim-bqf",
   change_detection = {
     notify = false,
   },
