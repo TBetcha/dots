@@ -147,7 +147,7 @@ require("lazy").setup({
   "RRethy/vim-illuminate",
   "kamykn/spelunker.vim",
   "kevinhwang91/nvim-bqf",
-  "hiphish/rainbow-delimiters",
+  -- "hiphish/rainbow-delimiters",
   change_detection = {
     notify = false,
   },
