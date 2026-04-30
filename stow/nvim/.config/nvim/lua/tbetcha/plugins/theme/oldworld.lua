@@ -6,7 +6,8 @@ return {
     require("oldworld").setup({
       variant = "oled",
       styles = {
-        booleans = { bold = true },
+        booleans = { underline = true },
+        variables = { bold = true },
         keywords = {italic = true},
         functions = {italic=true, bold=true}
       },
