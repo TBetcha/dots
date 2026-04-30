@@ -3,5 +3,5 @@ return {
   config = function()
     require("inc_rename").setup()
   end,
-  vim.keymap.set("n", "<leader>ra", ":IncRename "),
+  vim.keymap.set("n", "<leader>rn", ":IncRename "),
 }
