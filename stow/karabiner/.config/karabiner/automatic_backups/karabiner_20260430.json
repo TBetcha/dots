@@ -1,5 +1,5 @@
 {
-    "global": { "show_additional_menu_items": true },
+    "global": { "show_profile_name_in_menu_bar": true },
     "profiles": [
         {
             "name": "Default profile",
@@ -156,10 +156,11 @@
                 {
                     "identifiers": {
                         "is_keyboard": true,
-                        "product_id": 834,
-                        "vendor_id": 1452
+                        "is_pointing_device": true,
+                        "product_id": 61139,
+                        "vendor_id": 1240
                     },
-                    "ignore": true
+                    "ignore": false
                 }
             ],
             "fn_function_keys": [
