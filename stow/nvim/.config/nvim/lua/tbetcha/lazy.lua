@@ -99,6 +99,12 @@ require("lazy").setup({
   "jose-elias-alvarez/typescript.nvim",
   { "onsails/lspkind.nvim" },
   { "glepnir/lspsaga.nvim" },
+  -- lazy.nvim
+  {
+    "chrisgrieser/nvim-lsp-endhints",
+    event = "LspAttach",
+    opts = {}, -- required, even if empty
+  },
 
   --END OF LSP STUFF
   { "nvim-telescope/telescope.nvim", version = "0.1.4" },

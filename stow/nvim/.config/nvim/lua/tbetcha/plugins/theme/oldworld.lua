@@ -7,7 +7,7 @@ return {
       variant = "oled",
       styles = {
         booleans = { underline = true },
-        variables = { bold = true },
+        -- variables = { bold = true },
         keywords = {italic = true},
         functions = {italic=true, bold=true}
       },

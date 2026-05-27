@@ -6,7 +6,7 @@ return {
       border = "rounded",
     },
     keymaps = function(bufnr)
-      vim.keymap.set({ "n" }, "<leader>k", function()
+      vim.keymap.set({ "n" }, "<leader>d", function()
         require("lsp_signature").toggle_float_win()
       end, { silent = true, noremap = true, desc = "toggle signature" })
 

@@ -6,7 +6,7 @@ return {
     -- Optionally configure and load the colorscheme
     -- directly inside the plugin declaration.
     vim.g.sonokai_enable_italic = true
-    vim.g.sonokai_transparent_background = true
+    vim.g.sonokai_transparent_background = false
     vim.g.sonokdai_style = 'shusia'
     vim.g.sonokai_diagnostic_text_highlight = true
     vim.g.sonokai_float_styl = 'bright'

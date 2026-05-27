@@ -4,7 +4,7 @@ return {
     transparent_background = false,
     styles = {
       comments = { italic = true }, -- style for comments
-      keywords = {}, -- style for keywords
+      keywords = {bold = true}, -- style for keywords
       identifiers = { strikethrough = true }, -- style for identifiers
       functions = { italic = true }, -- style for functions
       types = { underline = true }, -- style for functions

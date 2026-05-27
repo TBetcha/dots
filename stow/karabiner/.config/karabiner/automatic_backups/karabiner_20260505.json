@@ -130,13 +130,7 @@
                         "product_id": 480,
                         "vendor_id": 13364
                     },
-                    "ignore": false,
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "right_shift" },
-                            "to": [{ "key_code": "left_shift" }]
-                        }
-                    ]
+                    "ignore": false
                 },
                 {
                     "identifiers": {

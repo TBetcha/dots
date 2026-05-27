@@ -25,7 +25,7 @@ return {
         keyword_return = "italic",
         keywords_loop = "none",
         keywords_label = "none",
-        keywords_exception = "none",
+        keywords_exception = "underline",
 
         -- builtin
         builtin_constants = "bold",
