@@ -9,7 +9,7 @@ return {
     vim.g.sonokai_transparent_background = false
     vim.g.sonokdai_style = 'shusia'
     vim.g.sonokai_diagnostic_text_highlight = true
-    vim.g.sonokai_float_styl = 'bright'
+    vim.g.sonokai_float_style = 'bright'
     vim.g.sonokai_menu_selection_background = 'green'
 
     require 'lualine'.setup {

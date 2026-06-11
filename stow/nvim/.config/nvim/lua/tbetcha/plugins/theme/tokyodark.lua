@@ -5,9 +5,9 @@ return {
     styles = {
       comments = { italic = true }, -- style for comments
       keywords = {bold = true}, -- style for keywords
-      identifiers = { strikethrough = true }, -- style for identifiers
+      identifiers = { underline = true }, -- style for identifiers
       functions = { italic = true }, -- style for functions
-      types = { underline = true }, -- style for functions
+      types = { strikethrough = true }, -- style for functions
       variables = {}, -- style for variables
     },
   },
