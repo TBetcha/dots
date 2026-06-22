@@ -43,6 +43,7 @@ return {
         "prettierd", -- prettier formatter
         "stylua", -- lua formatter
         "black", -- python formatter
+        "autopep8", -- python formatter"
         "pylint",
         "eslint_d",
         "fantomas",

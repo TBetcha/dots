@@ -66,7 +66,7 @@ return {
         -- keymap.set("i", "<leader>sig", function() vim.lsp.buf.signature_help() end, opts)
         keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
         keymap.set("n", "<leader>of", function() vim.diagnostic.open_float() end, opts)
-        keymap.set("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>")
+        -- keymap.set("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>")
         keymap.set("n", "<leader>trr", "<cmd>Telescope lsp_references<cr>", { buffer = true })
 
         -- omnisharp extended

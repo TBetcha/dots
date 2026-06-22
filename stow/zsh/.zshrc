@@ -190,6 +190,10 @@ alias td="tmux detach -s"
 alias ts="tmux new -s"
 alias tnds="tmux new -d -s" 
 
+################################## PYTHON #####################################
+alias python='python3'
+alias pip='pip3'
+
 ################################## PROGRAMS ###################################
 alias lzd="lazydocker"
 alias lzg="lazygit"

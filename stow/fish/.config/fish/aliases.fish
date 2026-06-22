@@ -46,6 +46,8 @@ abbr stow "stow --target $HOME"
 abbr gpg "7DAAE552563BD34F"
 abbr kill-spaces "rm ~/Library/Preferences/com.apple.spaces.plist"
 abbr y "yazi"
+alias python "python3"
+alias pip "pip3"
 thefuck --alias fck | source 
 
 

@@ -21,24 +21,21 @@ return {
         liquid = { "prettierd" },
         fsharp = { "fantomas" },
         csharp = { "csharpier" },
-        python = { "autopep8" },
+        python = { "black" },
       },
       format_on_save = {
         lsp_fallback = true,
-        async = false,
         timeout_ms = 2000,
       },
     })
-
-    require("conform").setup({
-      format_on_save = function(bufnr)
-        -- Disable autoformat on certain filetypes
-        local ignore_filetypes = { "lua" }
-        if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
-          return
-        end
-      end,
-    })
+    --   format_on_save = function(bufnr)
+    --     -- Disable autoformat on certain filetypes
+    --     local ignore_filetypes = { "lua" }
+    --     if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
+    --       return
+    --     end
+    --   end,
+    -- })
 
     vim.keymap.set({ "n", "v" }, "<leader>fm", function()
       conform.format({
